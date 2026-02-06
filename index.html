@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body class="bg-white">
+    <!-- Header Navigation -->
     <header class="fixed top-0 left-0 w-full pt-10 px-6 md:px-20 z-20 flex items-center justify-center">
         <div class="absolute left-6 md:left-20">
             <img class="w-15 h-auto" src="images/pmk_logo.png" alt="pmk-logo">
@@ -18,22 +21,26 @@
 
         <nav class="mx-auto bg-[#7a1f1f] rounded-full p-3 z-10">
             <ul id="navbar-links" class="flex justify-center items-center gap-2 text-[18px] font-medium font-inter">
-                <li class="nav-item active px-8 py-2 bg-white text-[#7a1f1f] font-bold rounded-full cursor-pointer transition-all duration-300"><a href="#home">Home</a>
+                <li class="nav-item active px-8 py-2 bg-white text-[#7a1f1f] font-bold rounded-full cursor-pointer transition-all duration-300">
+                    <a href="#home">Home</a>
                 </li>
-                <li class="nav-item px-8 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10"><a href="#product">Product</a>
+                <li class="nav-item px-8 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="#product">Product</a>
                 </li>
-                <li class="nav-item px-8 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10"><a href="#gallery">Gallery</a>
-                </li>             
-                <li class="nav-item px-8 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10"><a href="#about">About</a>
-                </li>              
-                <li class="nav-item px-8 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10"><a href="#contact">Contact</a>
+                <li class="nav-item px-8 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="#gallery">Gallery</a>
+                </li>
+                <li class="nav-item px-8 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="#about">About</a>
+                </li>
+                <li class="nav-item px-8 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-   <main class="mx-auto w-full">
-
+    <main class="mx-auto w-full">
         <!-- Home Section -->
         <section id="home" class="flex flex-col w-full items-center justify-center min-h-screen pt-32 px-10 text-center">
             <div class="flex w-full flex-col mx-auto font-plus-jakarta-sans text-black gap-5">
@@ -46,8 +53,8 @@
         <section class="w-full py-20 mx-auto bg-white">
             <div class="container mx-auto px-4">
                 <div class="flex flex-col md:flex-row justify-between items-start gap-10">
-                     <div class="md:w-1/2 px-4">
-                        <h2 class="text-[50px] font-extrabold font-plus-jakarta-sans leading-tight"> Why Choose <span class="text-[#7a1f1f]">Us?</span></h2>
+                    <div class="md:w-1/2 px-4">
+                        <h2 class="text-[50px] font-extrabold font-plus-jakarta-sans leading-tight">Why Choose <span class="text-[#7a1f1f]">Us?</span></h2>
                     </div>
 
                     <div class="md:w-1/2 flex flex-col items-end text-right">
@@ -56,31 +63,40 @@
                         </p>
                         <div class="flex items-center gap-4 mt-6">
                             <button class="bg-[#7a1f1f] text-white px-8 py-3 rounded-full font-medium font-inter">Lihat Tentang kami</button>
-                            <a href="" class="inline-flex items-center justify-center w-12 h-12 bg-[#7a1f1f] text-[#7a1f1f] rounded-full"><i class="fa-brands fa-whatsapp fa-2xl" style="color: #fff;"></i></a>
+                            <a href="#" class="inline-flex items-center justify-center w-12 h-12 bg-[#7a1f1f] text-[#7a1f1f] rounded-full">
+                                <i class="fa-brands fa-whatsapp fa-2xl" style="color: #fff;"></i>
+                            </a>
                         </div>
                     </div>
-                 </div>
+                </div>
             </div>
+
             <div class="w-full inline-grid grid-cols-3 gap-2 items-center justify-center text-center mt-20">
                 <div class="flex flex-col items-center text-center gap-4 p-6 mt-20">
-                    <a href="" class="inline-flex items-center justify-center w-[100px] h-[100px] bg-[#7a1f1f] text-[#7a1f1f] rounded-3xl"><i class="fa-solid fa-gear text-5xl" style="color: #ffffff;"></i></a>
+                    <a href="#" class="inline-flex items-center justify-center w-[100px] h-[100px] bg-[#7a1f1f] text-[#7a1f1f] rounded-3xl">
+                        <i class="fa-solid fa-gear text-5xl" style="color: #ffffff;"></i>
+                    </a>
                     <h2 class="text-[#7a1f1f] text-[25px] font-semibold font-jakarta">Penyediaan Wiremesh Berkualitas</h2>
                     <p class="text-[18px]">Penyediaan wiremesh berkualitas <br> untuk konstruksi dan industri.</p>
                 </div>
                 <div class="flex flex-col items-center text-center gap-4 p-6 mt-20 border-r border-gray-400 border-l">
-                    <a href="" class="inline-flex items-center justify-center w-[100px] h-[100px] bg-[#7a1f1f] text-[#7a1f1f] rounded-3xl"><i class="fa-solid fa-gear text-5xl" style="color: #ffffff;"></i></a>
+                    <a href="#" class="inline-flex items-center justify-center w-[100px] h-[100px] bg-[#7a1f1f] text-[#7a1f1f] rounded-3xl">
+                        <i class="fa-solid fa-gear text-5xl" style="color: #ffffff;"></i>
+                    </a>
                     <h2 class="text-[#7a1f1f] text-[25px] font-semibold font-jakarta">Produk Stainless & Galvanized</h2>
                     <p class="text-[18px]">Produk baja tahan karat dan galvanis untuk <br> kebutuhan manufaktur dan konstruksi.</p>
                 </div>
                 <div class="flex flex-col items-center text-center gap-4 p-6 mt-20">
-                    <a href="" class="inline-flex items-center justify-center w-[100px] h-[100px] bg-[#7a1f1f] text-[#7a1f1f] rounded-3xl"><i class="fa-solid fa-server text-5xl" style="color: #ffffff;"></i></a>
+                    <a href="#" class="inline-flex items-center justify-center w-[100px] h-[100px] bg-[#7a1f1f] text-[#7a1f1f] rounded-3xl">
+                        <i class="fa-solid fa-server text-5xl" style="color: #ffffff;"></i>
+                    </a>
                     <h2 class="text-[#7a1f1f] text-[25px] font-semibold font-jakarta">Custom Fabrication & Engineering</h2>
                     <p class="text-[18px]">Layanan pembuatan produk sesuai <br> kebutuhan klien dengan teknologi modern.</p>
                 </div>
             </div>
         </section>
 
-        ?<!-- About Us Section -->
+        <!-- About Us Section -->
         <section class="w-full py-20 mx-auto px-10">
             <div>
                 <h1 class="text-[90px] font-jakarta">About Us</h1>
@@ -99,10 +115,13 @@
                         <i class="fa-regular fa-star fa-1xl" style="color: #FFD43B;"></i>
                     </div>
                     <div class="flex items-center gap-4 mt-15">
-                        <a href="#" class="bg-[#7a1f1f] text-white px-8 py-2 rounded-full font-medium"> Hubungi kami</a>
-                        <a href="" class="inline-flex items-center justify-center w-12 h-12 bg-[#7a1f1f] text-[#7a1f1f] rounded-full"><i class="fa-brands fa-whatsapp fa-2xl" style="color: #fff;"></i></a>
+                        <a href="#contact" class="bg-[#7a1f1f] text-white px-8 py-2 rounded-full font-medium">Hubungi kami</a>
+                        <a href="#" class="inline-flex items-center justify-center w-12 h-12 bg-[#7a1f1f] text-[#7a1f1f] rounded-full">
+                            <i class="fa-brands fa-whatsapp fa-2xl" style="color: #fff;"></i>
+                        </a>
                     </div>
                 </div>
+
                 <div class="bg-white shadow-xl w-[387px] h-[488px] flex flex-col justify-between overflow-hidden">
                     <div class="relative mt-4">
                         <h2 class="text-[150px] font-semibold font-jakarta text-[#7a1f1f] opacity-20 absolute -top-22 left-46">3+</h2>
@@ -110,6 +129,7 @@
                     </div>
                     <p class="text-[20px] font-semibold py-8 px-6">Industri yang telah <br> terlayani</p>
                 </div>
+
                 <div class="bg-white shadow-xl w-[387px] h-[488px] flex flex-col justify-between overflow-hidden">
                     <div class="relative mt-4">
                         <h2 class="text-[150px] font-semibold font-jakarta text-[#7a1f1f] opacity-20 absolute -top-23 left-32">98%</h2>
@@ -117,6 +137,7 @@
                     </div>
                     <p class="text-[20px] font-semibold py-8 px-6">Kepuasan Client <br> terhadap kami</p>
                 </div>
+
                 <div class="bg-white shadow-xl w-[387px] h-[488px] flex flex-col justify-between overflow-hidden">
                     <div class="relative mt-4">
                         <h2 class="text-[150px] font-semibold font-jakarta text-[#7a1f1f] opacity-20 absolute -top-21 left-36">20+</h2>
@@ -136,75 +157,74 @@
                         <p class="text-black text-[18px] font-plus-jakarta-sans leading-relaxed">Wire Mesh Filter adalah media penyaring berbahan anyaman kawat logam yang digunakan pada proses peleburan <br> dan pengecoran logam untuk menyaring kotoran dan slag. Terbuat dari material stainless steel berkualitas, tahan suhu <br> tinggi dan korosi, serta membantu menghasilkan hasil casting yang lebih bersih, rapi, dan berkualitas. Cocok <br> digunakan di berbagai industri manufaktur dan metal casting.</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-4  gap-6 mx-6 mt-20">
+                <div class="grid grid-cols-4 gap-6 mx-6 mt-20">
                     <div class="max-w-xl bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/1.png" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
                         </div>
-
                         <div class="p-6">
                             <h2 class="text-[20px] font-medium text-amber-900 leading-tight">filter wire mesh stainless <br> steel</h2>
                         </div>
                     </div>
+
                     <div class="max-w-xl bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/2.png" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
                         </div>
-
                         <div class="p-6">
                             <h2 class="text-[20px] font-medium text-amber-900 leading-tight">filter wire mesh stainless <br> steel</h2>
                         </div>
                     </div>
+
                     <div class="max-w-xl bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/3.png" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
                         </div>
-
                         <div class="p-6">
                             <h2 class="text-[20px] font-medium text-amber-900 leading-tight">filter wire mesh stainless <br> steel</h2>
                         </div>
                     </div>
+
                     <div class="max-w-xl bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/4.png" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
                         </div>
-
                         <div class="p-6">
                             <h2 class="text-[20px] font-medium text-amber-900 leading-tight">filter wire mesh stainless <br> steel</h2>
                         </div>
                     </div>
+
                     <div class="max-w-xl bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/1.png" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
                         </div>
-
                         <div class="p-6">
                             <h2 class="text-[20px] font-medium text-amber-900 leading-tight">filter wire mesh stainless <br> steel</h2>
                         </div>
                     </div>
+
                     <div class="max-w-xl bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/2.png" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
                         </div>
-
                         <div class="p-6">
                             <h2 class="text-[20px] font-medium text-amber-900 leading-tight">filter wire mesh stainless <br> steel</h2>
                         </div>
                     </div>
+
                     <div class="max-w-xl bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/3.png" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
                         </div>
-
                         <div class="p-6">
                             <h2 class="text-[20px] font-medium text-amber-900 leading-tight">filter wire mesh stainless <br> steel</h2>
                         </div>
                     </div>
+
                     <div class="max-w-xl bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/4.png" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
                         </div>
-
                         <div class="p-6">
                             <h2 class="text-[20px] font-medium text-amber-900 leading-tight">filter wire mesh stainless <br> steel</h2>
                         </div>
@@ -221,33 +241,33 @@
                 <div class="mt-5 overflow-hidden transition-all duration-300 group">
                     <img src="images/Galerry1.png" alt="gallery image" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>  
+                <div c
                 <div class="mt-5 overflow-hidden transition-all duration-300 group">
                     <img src="images/Galerry2.png" alt="gallery image" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>  
+                </div>
                 <div class="mt-5 overflow-hidden transition-all duration-300 group">
                     <img src="images/Galerry3.png" alt="gallery image" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>  
+                </div>
                 <div class="mt-5 overflow-hidden transition-all duration-300 group">
                     <img src="images/Galerry4.png" alt="gallery image" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>  
+                </div>
                 <div class="mt-5 overflow-hidden transition-all duration-300 group">
                     <img src="images/Galerry5.png" alt="gallery image" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>  
+                </div>
                 <div class="mt-5 overflow-hidden transition-all duration-300 group">
                     <img src="images/Galerry6.png" alt="gallery image" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>  
-            </div>
+                </div>
         </section>
 
         <!-- Contact Us Section -->
        <section class="relative min-h-screen py-20 mx-auto">
+        <section id="contact" class="relative min-h-screen py-20 mx-auto">
             <div class="flex justify-between items-start mb-16 relative z-10 px-10">
                 <h1 class="text-[70px] font-semibold font-jakarta">Contact Us</h1>
                 <p class="text-[16px] text-right text-gray-600 mt-10 leading-relaxed">Hubungi Kami <br> Kami siap membantu kebutuhan Anda. Silakan hubungi kami untuk informasi lebih lanjut, <br> konsultasi produk, atau kerja sama bisnis. Tim kami akan merespons secepat mungkin.</p>
             </div>
 
             <div class="relative w-full h-[600px] flex items-center">
-                
                 <div class="flex justify-start absolute inset-0 z-0">
                     <img src="images/contact_bg.png" alt="Contact Background" class="w-[1080px] h-[1080px]">
                 </div>
@@ -261,7 +281,7 @@
                     </p>
                 </div>
 
-                <div class=" z-10 bg-white border border-black p-8 rounded-3xl shadow-2xl w-[700px] h-[600px] mt-10">
+                <div class="z-10 bg-white border border-black p-8 rounded-3xl shadow-2xl w-[700px] h-[600px] mt-10">
                     <form class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium mb-1">Nama</label>
@@ -280,11 +300,9 @@
                         </button>
                     </form>
                 </div>
-
             </div>
         </section>
     </main>
 
-   <script src="js/script.js"></script>
-</body>
+ </body>
 </html>
