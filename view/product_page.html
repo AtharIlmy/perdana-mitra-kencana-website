@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Perdana Mitra Kencana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- RESET & ROOT --- */
+        :root {
+            --primary-red: #7a1f1f;
+            --sidebar-red: #962323;
+            --dark-red: #851f1f;
+            --text-main: #111;
+            --text-gray: #555;
+            --bg-light: #f3f4f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body { background-color: #fff; overflow-x: hidden; scroll-behavior: smooth; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 25px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        .logo img { height: 50px; width: auto; }
+        
+        nav {
+            background-color: var(--primary-red);
+            padding: 6px 12px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        nav ul { display: flex; list-style: none; gap: 5px; }
+
+        .nav-item {
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .nav-item.active { background-color: #fff; color: var(--primary-red); font-weight: 700; }
+        .nav-item:hover:not(.active) { background-color: rgba(255,255,255,0.1); }
+
+        /* --- HERO SECTION --- */
+        .hero { position: relative; padding: 160px 8% 0 8%; }
+        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 20px; color: var(--text-main); }
+        .hero-text p { max-width: 750px; color: var(--text-gray); line-height: 1.6; font-size: 1.1rem; margin-bottom: 60px; }
+
+        .hero-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-gallery img {
+            width: 100%; height: 450px;
+            object-fit: cover; border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .curved-shape {
+            position: absolute; bottom: 0; right: 0;
+            width: 50%; height: 400px;
+            background-color: var(--bg-light);
+            border-top-left-radius: 100% 60%;
+            z-index: 1;
+        }
+
+        .red-bar { width: 100%; height: 100px; background-color: var(--primary-red); position: relative; z-index: 3; }
+
+        /* --- PRODUCT SECTION --- */
+        .product-section { padding: 100px 8%; }
+        .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
+        .section-title { font-size: 3.5rem; font-weight: 800; line-height: 1; }
+        .section-desc { max-width: 55%; text-align: right; color: var(--text-gray); font-size: 0.95rem; }
+        
+        .divider { border: 0; border-top: 1px solid #eee; margin-bottom: 50px; }
+
+        .main-layout { display: flex; gap: 40px; }
+        
+        .sidebar { flex: 1; min-width: 280px; }
+        .sidebar-menu { background-color: var(--sidebar-red); border-radius: 25px; color: #fff; overflow: hidden; }
+        .menu-header { padding: 20px; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 700; }
+        .menu-body { padding: 30px; }
+        .active-link { border-right: 3px solid #fff; padding-right: 15px; font-weight: 700; margin-bottom: 20px; display: inline-block; }
+        .submenu { list-style: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 30px; }
+        .submenu li { margin-bottom: 12px; cursor: pointer; }
+        
+        .sidebar-footer { background-color: var(--dark-red); padding: 25px; }
+        .social-row { display: flex; gap: 12px; margin-bottom: 15px; }
+        .social-row i { width: 35px; height: 35px; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+        .phone-badge { background: rgba(0,0,0,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; }
+
+        .product-grid { flex: 3; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .p-card { border: 1px solid #f0f0f0; border-radius: 12px; overflow: hidden; transition: 0.3s; }
+        .p-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.08); }
+        .p-img { height: 220px; background: #f9f9f9; }
+        .p-img img { width: 100%; height: 100%; object-fit: cover; }
+        .p-info { padding: 20px; }
+        .p-info h3 { font-size: 0.8rem; color: var(--sidebar-red); font-weight: 800; text-transform: uppercase; }
+
+        /* --- CONTACT SECTION --- */
+        .contact-section { padding: 100px 8%; background: #fff; }
+        .contact-flex { display: flex; gap: 60px; align-items: center; margin-top: 40px; }
+        .contact-text { flex: 1; }
+        .contact-text h2 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+
+        .contact-form { flex: 1; background: #fff; padding: 40px; border-radius: 30px; border: 1px solid #f0f0f0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid #eee; border-radius: 10px; background: #fafafa; outline: none; }
+        .form-group textarea { height: 120px; resize: none; }
+        .btn-send { background: var(--sidebar-red); color: #fff; border: none; padding: 12px 30px; border-radius: 30px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; }
+
+        .map-box { margin-top: 60px; width: 100%; height: 350px; border-radius: 20px; overflow: hidden; border: 8px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .map-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- FOOTER --- */
+        footer { background: var(--sidebar-red); color: #fff; padding: 80px 8% 30px 8%; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 50px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-col h2 { font-size: 1.5rem; margin-bottom: 20px; }
+        .footer-col h4 { margin-bottom: 20px; font-size: 1.1rem; }
+        .footer-col p { font-size: 0.85rem; opacity: 0.8; line-height: 1.7; margin-bottom: 20px; }
+        .footer-col a { display: block; font-size: 0.85rem; opacity: 0.7; margin-bottom: 12px; transition: 0.3s; }
+        .footer-col a:hover { opacity: 1; padding-left: 5px; }
+
+        .cta-box { background: #fff; color: #999; padding: 12px 20px; border-radius: 30px; display: flex; justify-content: space-between; align-items: center; margin: 20px 0; cursor: pointer; }
+        .footer-bottom { text-align: center; padding-top: 30px; font-size: 0.75rem; opacity: 0.6; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            .main-layout, .contact-flex, .footer-grid { flex-direction: column; grid-template-columns: 1fr; }
+            .section-header { flex-direction: column; align-items: flex-start; }
+            .section-desc { text-align: left; max-width: 100%; margin-top: 20px; }
+            .product-grid { grid-template-columns: 1fr 1fr; }
+            .hero-gallery { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="img/pmk_logo.png" alt="Logo"></div>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item active"><a href="#product">Product</a></li>
+                <li class="nav-item"><a href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a href="#about">About</a></li>
+                <li class="nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div style="width: 50px;"></div>
+    </header>
+
+    <main class="hero" id="home">
+        <div class="hero-text">
+            <h1>PT Perdana Mitra Kencana</h1>
+            <p>Filter Mesh Berkualitas Tinggi Untuk Kebutuhan Industri Casting Dan Peleburan Logam. Terbuat Dari Material Pilihan Dengan Daya Tahan Kuat, Presisi Tinggi, Dan Performa Optimal.</p>
+        </div>
+        <div class="hero-gallery">
+            <img src="img/product 2.png" alt="Mesh 1">
+            <img src="img/mesh 2.png" alt="Mesh 2">
+            <img src="img/mesh 3.png" alt="Mesh 3">
+        </div>
+        <div class="curved-shape"></div>
+        <div class="red-bar"></div>
+    </main>
+    
+    <section class="product-section" id="product">
+        <div class="section-header">
+            <h2 class="section-title">Our<br>Product</h2>
+            <p class="section-desc">Wire Mesh Filter adalah media penyaring berbahan anyaman kawat logam yang digunakan pada proses peleburan dan pengecoran logam untuk menyaring kotoran dan slag. Terbuat dari material stainless steel berkualitas.</p>
+        </div>
+        <hr class="divider">
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <div class="sidebar-menu">
+                    <div class="menu-header">Product <i class="fas fa-chevron-right"></i></div>
+                    <div class="menu-body">
+                        <div class="active-link">Filter Mesh Galvanized</div>
+                        <ul class="submenu">
+                            <li>Filter Mesh Glassweve</li>
+                            <li>Filter Mesh SS</li>
+                            <li>Steel Cap Stoper</li>
+                        </ul>
+                        <div style="font-weight: 800;">Up Coming</div>
+                    </div>
+                    <div class="sidebar-footer">
+                        <div class="social-row">
+                            <i class="fab fa-whatsapp"></i><a href="https://www.instagram.com/perdanamitrakencana/"><i class="fab fa-instagram"></i></a><i class="far fa-envelope"></i>
+                        </div>
+                        <div class="phone-badge">+68 000 0000 0000</div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="product-grid">
+                <script>
+                    for(let i=1; i<=1; i++) {
+                        document.write(`
+                            <div class="p-card">
+                                <div class="p-img"><img src="img/product 1.png" alt="Product"></div>
+                                <div class="p-info"><h3>FILTER WIRE MESH STAINLESS STEEL</h3></div>
+                            </div>
+                        `);
+                        
+                    }
+
+                     for(let i=1; i<=1; i++) {
+                        document.write(`
+                            <div class="p-card">
+                                <div class="p-img"><img src="img/product 2.png" alt="Product"></div>
+                                <div class="p-info"><h3>FILTER WIRE MESH STAINLESS STEEL</h3></div>
+                            </div>
+                        `);
+                        
+                    }
+                     for(let i=1; i<=1; i++) {
+                        document.write(`
+                            <div class="p-card">
+                                <div class="p-img"><img src="img/product 3.png" alt="Product"></div>
+                                <div class="p-info"><h3>FILTER WIRE MESH STAINLESS STEEL</h3></div>
+                            </div>
+                        `);
+                        
+                    }
+                     for(let i=1; i<=1; i++) {
+                        document.write(`
+                            <div class="p-card">
+                                <div class="p-img"><img src="img/product 1.png" alt="Product"></div>
+                                <div class="p-info"><h3>FILTER WIRE MESH STAINLESS STEEL</h3></div>
+                            </div>
+                        `);
+                        
+                    }
+                     for(let i=1; i<=1; i++) {
+                        document.write(`
+                            <div class="p-card">
+                                <div class="p-img"><img src="img/product 2.png" alt="Product"></div>
+                                <div class="p-info"><h3>FILTER WIRE MESH STAINLESS STEEL</h3></div>
+                            </div>
+                        `);
+                        
+                    }
+                     for(let i=1; i<=1; i++) {
+                        document.write(`
+                            <div class="p-card">
+                                <div class="p-img"><img src="img/product 3.png" alt="Product"></div>
+                                <div class="p-info"><h3>FILTER WIRE MESH STAINLESS STEEL</h3></div>
+                            </div>
+                        `);
+                        
+                    }
+                    
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-desc">Kami siap membantu kebutuhan Anda. Silakan hubungi kami untuk informasi lebih lanjut.</p>
+        </div>
+        <div class="contact-flex">
+            <div class="contact-text">
+                <h2>Kolaborasi yang tepat dimulai dari komunikasi yang baik.</h2>
+                <p style="color:#666">Hubungi kami untuk solusi industri yang andal dan berkelanjutan.</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group"><label>Nama</label><input type="text" placeholder="Nama"></div>
+                    <div class="form-group"><label>Email</label><input type="email" placeholder="Email"></div>
+                    <div class="form-group"><label>Pesan</label><textarea placeholder="Pesan Anda..."></textarea></div>
+                    <button type="submit" class="btn-send">Kirim Pesan <i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="map-box">
+            <img src="img/lokasi.png" alt="Lokasi">
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h2>PT. Perdana Mitra Kencana</h2>
+                <p>Spesialis manufaktur filter mesh dan sistem penyaringan untuk kebutuhan industri casting dan peleburan logam global.</p>
+                <div style="font-size:0.85rem">
+                    <p><i class="fas fa-map-marker-alt"></i> Bekasi, Jawa Barat</p>
+                    <p><i class="fas fa-envelope"></i> contact@pmk.com</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <a href="#">Filter Mesh Stainless</a>
+                <a href="#">Filter Mesh Galvanized</a>
+                <a href="#">Filter Mesh SS</a>
+                <a href="#">Steel Cap Stoper</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#product">Product</a>
+                <a href="#gallery">Gallery</a>
+            </div>
+            <div class="footer-col">
+                <h4>Call to Action</h4>
+                <p>Solusi penyaringan industri tepat guna dimulai di sini.</p>
+                <div class="cta-box"><span>Hubungi Kami</span><i class="fas fa-chevron-right"></i></div>
+                <div class="social-row">
+                    <i class="fab fa-whatsapp"></i><i class="fab fa-instagram"></i><i class="far fa-envelope"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 PT Perdana Mitra Kencana. All rights reserved. Designed by PMK Digital Team.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
