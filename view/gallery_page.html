@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery</title>
-  <link rel="stylesheet" href="../dist/output.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdana Mitra Kencana</title>
+    <link href="output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body class="mx-auto bg-white">
-    <header class=" top-0 left-0 w-full pt-10 px-6 md:px-20 z-20 flex items-center justify-center">
+     <!-- Header Navigation -->
+    <header class="top-0 left-0 w-full pt-10 px-6 md:px-20 z-20 flex items-center justify-center">
         <div class="absolute left-6 md:left-20">
-            <img class="w-15 h-auto" src="images/pmk_logo.png" alt="pmk-logo">
+            <img class="w-15 h-auto" src="../images/pmk_logo.png" alt="pmk-logo">
         </div>
 
-        <nav class="mx-auto bg-[#7a1f1f] rounded-full p-2 z-10">
-            <ul id="navbar-links" class="flex justify-center items-center gap-2 text-[16px] font-medium font-inter">
+        <nav id="navLinks" class="duration-500 md:static absolute bg-[#7a1f1f] md:min-h-fit min-h-[30vh] left-0 top-full w-full md:w-auto flex items-center px-5 py-3 md:rounded-full rounded-b-3xl z-[-1] md:z-10">
+            <ul id="navbar-links" class="flex md:flex-row flex-col justify-center items-center gap-4 md:gap-2 text-[16px] font-medium font-inter w-full py-5 md:py-0">
                 <li class="nav-item active px-6 py-2 bg-white text-[#7a1f1f] font-bold rounded-full cursor-pointer transition-all duration-300">
                     <a href="../index.html">Home</a>
                 </li>
                 <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
-                    <a href="view/product_page.html">Product</a>
+                    <a href="product_page.html">Product</a>
                 </li>
                 <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
-                    <a href="view/gallery_page.html">Gallery</a>
+                    <a href="#gallery">Gallery</a>
                 </li>
-                <!-- <li class="nav-item px-8 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
-                    <a href="#about">About</a>
-                </li> -->
                 <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
                     <a href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
 
+        <div onclick="onToggleMenu(this)" class="absolute right-6 md:right-20 md:hidden cursor-pointer">
+            <i name="menu" class="fa-solid fa-bars fa-2xl" style="color: rgb(122, 31, 31);"></i>
+        </div>
+    </header>
+
+
+<main class="mx-auto w-full">
   <!-- ================= Gallery Section ================= -->
   <section class="mt-auto py-14 mx-auto px-3 sm:px-6 lg:px-8 max-w-[95%]">
     
@@ -53,16 +58,11 @@
     </p>
 
     <div class="mt-4 flex items-center gap-6">
-        <div class="w-20 sm:w-32 h-[2px] bg-red-900"></div>
-        <div class="flex-1 h-[2px] bg-red-900"></div>
+        <div class="w-20 sm:w-32 h-0.5 bg-red-900"></div>
+        <div class="flex-1 h-0.5 bg-red-900"></div>
     </div>
 
-    <div class="grid 
-        grid-cols-1 
-        sm:grid-cols-2 
-        lg:grid-cols-3 
-        gap-4 sm:gap-5 
-        pt-6 sm:pt-8 lg:pt-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 pt-6 sm:pt-8 lg:pt-10">
 
         <div class="overflow-hidden transition-all duration-300 group">
             <img src="../images/Galerry1.png" alt="gallery image"
@@ -109,8 +109,8 @@
                 </div>
 
                 <div class="mt-4 flex items-center gap-6">
-                    <div class="w-20 sm:w-32 h-[2px] bg-red-900"></div>
-                    <div class="flex-1 h-[2px] bg-red-900"></div>
+                    <div class="w-20 sm:w-32 h-0.5 bg-red-900"></div>
+                    <div class="flex-1 h-0.5 bg-red-900"></div>
                 </div>
 
                 <div class="grid grid-cols-4 gap-6">
@@ -156,127 +156,129 @@
 
 
    <!-- Contact Us Section -->
-    <section id="contact" class="relative min-h-screen py-20 mx-auto">
-        <div class="flex justify-between items-start mb-16 relative z-10 px-10">
-            <h1 class="text-[50px] font-semibold font-jakarta">Contact Us</h1>
-            <p class="text-[14px] text-right text-black mt-10 leading-relaxed">Hubungi Kami <br> Kami siap membantu kebutuhan Anda. Silakan hubungi kami untuk informasi lebih lanjut, <br> konsultasi produk, atau kerja sama bisnis. Tim kami akan merespons secepat mungkin.</p>
-        </div>
-
-        <div class="relative w-full h-[600px] flex items-center">
-            <div class="flex justify-start absolute inset-2">
-                <img src="../images/contact_bg.png" alt="Contact Background" class="w-[1080px] h-[800px]">
+        <section id="contact" class="relative min-h-screen py-20 mx-auto">
+            <div class="flex justify-between items-start mb-16 relative z-10 px-10">
+                <h1 class="text-[50px] font-semibold font-jakarta">Contact Us</h1>
+                <p class="text-[14px] text-right text-black mt-10 leading-relaxed">Hubungi Kami <br> Kami siap membantu kebutuhan Anda. Silakan hubungi kami untuk informasi lebih lanjut, <br> konsultasi produk, atau kerja sama bisnis. Tim kami akan merespons secepat mungkin.</p>
             </div>
 
-            <div class="relative z-10 w-1/2 pl-10">
-                <h2 class="text-5xl font-bold text-[#7a1f1f] leading-tight mb-4">
-                    Kolaborasi yang tepat <br> dimulai dari komunikasi <br> yang baik.
-                </h2>
-                <p class="text-[16px] text-black">
-                    Hubungi kami untuk solusi industri yang andal dan berkelanjutan.
-                </p>
-            </div>
-
-            <div class="z-10 bg-white border border-black p-8 rounded-3xl shadow-2xl w-[600px] h-[500px] mt-10">
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Nama</label>
-                        <input type="text" class="w-full h-[55px] p-3 bg-gray-100 rounded-2xl focus:outline-none" placeholder="Nama Anda">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Email</label>
-                        <input type="email" class="w-full p-3 bg-gray-100 rounded-xl focus:outline-none" placeholder="Email Anda">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Pesan</label>
-                        <textarea class="w-full p-3 bg-gray-100 rounded-xl h-44 focus:outline-none" placeholder="Pesan Anda"></textarea>
-                    </div>
-                    <button class="group flex items-center gap-2 bg-[#7a1f1f] text-white px-4 py-2 rounded-full hover:bg-[#651818] transition">
-                        <span class="text-[15px] font-medium">Kirim Pesan</span>
-
-                        <span class="flex items-center justify-center w-6 h-6 bg-white rounded-full group-hover:translate-x-1 transition">
-                            <i class="fa-solid fa-arrow-right text-[#7a1f1f] text-lg"></i>
-                        </span>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section class="flex justify-center items-center py-10 mt-30 w-full">
-        <div class="container flex justify-center">
-            <div class="overflow-hidden rounded-3xl shadow-lg border border-gray-200">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.2784700288985!2d106.8869848540482!3d-6.111949706415569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f006cdfa0b5%3A0x2a09ead5cb0fa2cf!2sPT.%20Perdana%20Mitra%20Kencana!5e0!3m2!1sen!2sid!4v1771299882137!5m2!1sen!2sid" class="w-[100rem] h-[300px]" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="w-full bg-[#7A1F1F] rounded-t-[20px] mt-30 px-10 py-10 flex flex-col">
-        <div class="fle w-full mb-10">
-            <h1 class="text-white text-[90px] font-semibold ">PT. Perdana Mitra Kencana</h1>
-        </div>
-
-        <div class="w-full flex flex-col gap-8">
-            <hr class="w-full border-t border-white-30 pt-3">
-            <div class="flex justify-start items-start gap-x-10">
-                <div class="flex justify-between gap-10">
-                    <div class="flex flex-col gap-y-17">
-                        <a href=""><i class="fa-solid fa-location-dot text-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
-                        <div class="flex flex-col gap-12">
-                            <a href=""><i class="fa-solid fa-envelope text-white text-xl"></i></a>
-                            <a href=""><i class="fa-solid fa-phone text-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-6 text-white text-[14px]">
-                        <p>Jl. Kb. Bawang No.35, RT.8/RW.6, Kb.<br> Bawang, Kec. Tj. Priok, Jkt Utara, Daerah <br> Khusus Ibukota Jakarta 14320</p>
-                        <div class="flex flex-col gap-12">
-                            <p>perdanamitrakencana@outlook.com</p>
-                            <p>perdanamitrakencana@outlook.co</p>
-                        </div>
-                    </div>
+            <div class="relative w-full h-150 flex items-center">
+                <div class="flex justify-start absolute inset-0">
+                    <img src="../images/contact_bg.png" alt="Contact Background" class="w-270 h-full">
                 </div>
-                
-                <div class="flex gap-x-40">
-                    <div class="flex flex-col gap-4">
-                        <h1 class="text-[18px] text-white font-semibold">Product</h1>
-                        <p class="text-white text-[16px] font-light">Filter Mesh Stainless</p>
-                        <p class="text-white text-[16px] font-light">Filter Mesh Galvanized</p>
-                        <p class="text-white text-[16px] font-light">Filter Mesh SS</p>
-                        <p class="text-white text-[16px] font-light">Steel Cap Stoper</p>
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <h1 class="text-[18px] text-white font-semibold">Quick Link</h1>
-                        <p class="text-white text-[16px] font-light">Home</p>
-                        <p class="text-white text-[16px] font-light">Product</p>
-                        <p class="text-white text-[16px] font-light">Gallery</p>
-                        <p class="text-white text-[16px] font-light">Contact</p>
-                    </div>
 
-                    <div class="flex flex-col text-white">
-                        <h1 class="text-[18px] font-semibold">Call to Action</h1>
-                        <p class="text-[16px] font-light">Solusi penyaringan industri yang tepat.<br>Efisiensi produksi dimulai dari sistem filtrasi <br> yang berkualitas.</p>
+                <div class="relative z-10 w-1/2 pl-10">
+                    <h2 class="text-5xl font-bold text-[#7a1f1f] leading-tight mb-4">
+                        Kolaborasi yang tepat <br> dimulai dari komunikasi <br> yang baik.
+                    </h2>
+                    <p class="text-[16px] text-black">
+                        Hubungi kami untuk solusi industri yang andal dan berkelanjutan.
+                    </p>
+                </div>
+
+                <div class="z-10 bg-white border border-black p-8 rounded-3xl shadow-2xl w-150 mt-10">
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Nama</label>
+                            <input type="text" class="w-full h-13.75 p-3 bg-gray-100 rounded-2xl focus:outline-none" placeholder="Nama Anda">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" class="w-full p-3 bg-gray-100 rounded-xl focus:outline-none" placeholder="Email Anda">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Pesan</label>
+                            <textarea class="w-full p-3 bg-gray-100 rounded-xl h-44 focus:outline-none" placeholder="Pesan Anda"></textarea>
+                        </div>
+                        <button class="group  flex items-center gap-2 bg-[#7a1f1f] text-white px-4 py-2 rounded-full hover:bg-[#651818] transition">
+                            <span class="text-[15px] font-medium">Kirim Pesan</span>
+
+                            <span class="flex items-center justify-center w-6 h-6 bg-white rounded-full group-hover:translate-x-1 transition">
+                                <i class="fa-solid fa-arrow-right text-[#7a1f1f] text-lg"></i>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+       <section class="flex justify-center items-center py-10 mt-30 w-full">
+            <div class="container flex justify-center">
+                <div class="overflow-hidden rounded-3xl shadow-lg border border-gray-200">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.2784700288985!2d106.8869848540482!3d-6.111949706415569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f006cdfa0b5%3A0x2a09ead5cb0fa2cf!2sPT.%20Perdana%20Mitra%20Kencana!5e0!3m2!1sen!2sid!4v1771299882137!5m2!1sen!2sid" class="w-400 h-80" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+       <footer class="w-full bg-[#7A1F1F] rounded-t-[20px] mt-30 px-10 py-10 flex flex-col">
+            <div class="fle w-full mb-10">
+                <h1 class="text-white text-[90px] font-semibold ">PT. Perdana Mitra Kencana</h1>
+            </div>
+
+            <div class="w-full flex flex-col gap-8">
+                <hr class="w-full border-t border-white-30 pt-3">
+                <div class="flex justify-start items-start gap-x-10">
+                    <div class="flex justify-between gap-10">
+                        <div class="flex flex-col gap-y-17">
+                            <a href=""><i class="fa-solid fa-location-dot text-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
+                            <div class="flex flex-col gap-12">
+                                <a href=""><i class="fa-solid fa-envelope text-white text-xl"></i></a>
+                                <a href=""><i class="fa-solid fa-phone text-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-6 text-white text-[14px]">
+                            <p>Jl. Kb. Bawang No.35, RT.8/RW.6, Kb.<br> Bawang, Kec. Tj. Priok, Jkt Utara, Daerah <br> Khusus Ibukota Jakarta 14320</p>
+                            <div class="flex flex-col gap-12">
+                                <p>perdanamitrakencana@outlook.com</p>
+                                <p>perdanamitrakencana@outlook.co</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-x-30">
                         <div class="flex flex-col gap-4">
-                            <div class="relative">
-                                <input type="text" placeholder="hubungi kami" class="w-60 h-8 bg-white text-black border border-white rounded-full px-[20px] py-[10px] text-[14px] mt-4">
-                                <i class="fa-solid fa-angle-right absolute bottom-2 right-14" style="color: rgb(122, 31, 31);"></i></i>
-                            </div>
-                            <div class="flex gap-3">
-                                <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
-                                <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-instagram" style="color: white;"></i></a>
-                                <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-solid fa-envelope" style="color: white;"></i></a>
+                            <h1 class="text-[18px] text-white font-semibold">Product</h1>
+                            <p class="text-white text-[16px] font-light">Filter Mesh Stainless</p>
+                            <p class="text-white text-[16px] font-light">Filter Mesh Galvanized</p>
+                            <p class="text-white text-[16px] font-light">Filter Mesh SS</p>
+                            <p class="text-white text-[16px] font-light">Steel Cap Stoper</p>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h1 class="text-[18px] text-white font-semibold">Quick Link</h1>
+                            <p class="text-white text-[16px] font-light">Home</p>
+                            <p class="text-white text-[16px] font-light">Product</p>
+                            <p class="text-white text-[16px] font-light">Gallery</p>
+                            <p class="text-white text-[16px] font-light">Contact</p>
+                        </div>
+
+                        <div class="flex flex-col text-white">
+                            <h1 class="text-[18px] font-semibold">Call to Action</h1>
+                            <p class="text-[16px] font-light">Solusi penyaringan industri yang tepat.<br>Efisiensi produksi dimulai dari sistem filtrasi <br> yang berkualitas.</p>
+                            <div class="flex flex-col gap-4">
+                                <div class="relative">
+                                    <input type="text" placeholder="hubungi kami" class="w-60 h-8 bg-white text-black border border-white rounded-full px-5 py-2.5 text-[14px] mt-4">
+                                    <i class="fa-solid fa-angle-right absolute bottom-2 right-14" style="color: rgb(122, 31, 31);"></i></i>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
+                                    <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-instagram" style="color: white;"></i></a>
+                                    <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-solid fa-envelope" style="color: white;"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
+    
                 </div>
-
+                <div class="flex justify-center items-center">
+                    <p class="text-white/50 text-[18px] font-light">© 2026 PT Perdana Mitra Kencana. All rights reserved. Designed by PMK Digital Team.</p>
+                </div>
             </div>
-            <div class="flex justify-center items-center">
-                <p class="text-white/50 text-[18px] font-light">© 2026 PT Perdana Mitra Kencana. All rights reserved. Designed by PMK Digital Team.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
         
     </main>
+
+    <script src="../js/script.js"></script>
 
 </body>
 </html>

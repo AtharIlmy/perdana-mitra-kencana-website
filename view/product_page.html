@@ -8,348 +8,212 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <style>
-        /* --- RESET & ROOT --- */
-        :root {
-            --primary-red: #7a1f1f;
-            --sidebar-red: #962323;
-            --dark-red: #851f1f;
-            --text-main: #111;
-            --text-gray: #555;
-            --bg-light: #f3f4f6;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pmk-red': '#7a1f1f',
+                        'pmk-sidebar': '#962323',
+                        'pmk-dark': '#851f1f',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body { background-color: #fff; overflow-x: hidden; scroll-behavior: smooth; }
-        a { text-decoration: none; color: inherit; }
-
-        /* --- HEADER --- */
-        header {
-            position: fixed;
-            top: 0; left: 0; width: 100%;
-            padding: 25px 8%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 1000;
-        }
-
-        .logo img { height: 50px; width: auto; }
-        
-        nav {
-            background-color: var(--primary-red);
-            padding: 6px 12px;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        nav ul { display: flex; list-style: none; gap: 5px; }
-
-        .nav-item {
-            padding: 10px 22px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #fff;
-            transition: 0.3s;
-        }
-
-        .nav-item.active { background-color: #fff; color: var(--primary-red); font-weight: 700; }
-        .nav-item:hover:not(.active) { background-color: rgba(255,255,255,0.1); }
-
-        /* --- HERO SECTION --- */
-        .hero { position: relative; padding: 160px 8% 0 8%; }
-        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 20px; color: var(--text-main); }
-        .hero-text p { max-width: 750px; color: var(--text-gray); line-height: 1.6; font-size: 1.1rem; margin-bottom: 60px; }
-
-        .hero-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-gallery img {
-            width: 100%; height: 450px;
-            object-fit: cover; border-radius: 4px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .curved-shape {
-            position: absolute; bottom: 0; right: 0;
-            width: 50%; height: 400px;
-            background-color: var(--bg-light);
-            border-top-left-radius: 100% 60%;
-            z-index: 1;
-        }
-
-        .red-bar { width: 100%; height: 100px; background-color: var(--primary-red); position: relative; z-index: 3; }
-
-        /* --- PRODUCT SECTION --- */
-        .product-section { padding: 100px 8%; }
-        .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
-        .section-title { font-size: 3.5rem; font-weight: 800; line-height: 1; }
-        .section-desc { max-width: 55%; text-align: right; color: var(--text-gray); font-size: 0.95rem; }
-        
-        .divider { border: 0; border-top: 1px solid #eee; margin-bottom: 50px; }
-
-        .main-layout { display: flex; gap: 40px; }
-        
-        .sidebar { flex: 1; min-width: 280px; }
-        .sidebar-menu { background-color: var(--sidebar-red); border-radius: 25px; color: #fff; overflow: hidden; }
-        .menu-header { padding: 20px; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 700; }
-        .menu-body { padding: 30px; }
-        .active-link { border-right: 3px solid #fff; padding-right: 15px; font-weight: 700; margin-bottom: 20px; display: inline-block; }
-        .submenu { list-style: none; opacity: 0.8; font-size: 0.9rem; margin-bottom: 30px; }
-        .submenu li { margin-bottom: 12px; cursor: pointer; }
-        
-        .sidebar-footer { background-color: var(--dark-red); padding: 25px; }
-        .social-row { display: flex; gap: 12px; margin-bottom: 15px; }
-        .social-row i { width: 35px; height: 35px; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
-        .phone-badge { background: rgba(0,0,0,0.2); padding: 8px 15px; border-radius: 20px; font-size: 0.8rem; }
-
-        .product-grid { flex: 3; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .p-card { border: 1px solid #f0f0f0; border-radius: 12px; overflow: hidden; transition: 0.3s; }
-        .p-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.08); }
-        .p-img { height: 220px; background: #f9f9f9; }
-        .p-img img { width: 100%; height: 100%; object-fit: cover; }
-        .p-info { padding: 20px; }
-        .p-info h3 { font-size: 0.8rem; color: var(--sidebar-red); font-weight: 800; text-transform: uppercase; }
-
-        /* --- CONTACT SECTION --- */
-        .contact-section { padding: 100px 8%; background: #fff; }
-        .contact-flex { display: flex; gap: 60px; align-items: center; margin-top: 40px; }
-        .contact-text { flex: 1; }
-        .contact-text h2 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
-
-        .contact-form { flex: 1; background: #fff; padding: 40px; border-radius: 30px; border: 1px solid #f0f0f0; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid #eee; border-radius: 10px; background: #fafafa; outline: none; }
-        .form-group textarea { height: 120px; resize: none; }
-        .btn-send { background: var(--sidebar-red); color: #fff; border: none; padding: 12px 30px; border-radius: 30px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; }
-
-        .map-box { margin-top: 60px; width: 100%; height: 350px; border-radius: 20px; overflow: hidden; border: 8px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .map-box img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* --- FOOTER --- */
-        footer { background: var(--sidebar-red); color: #fff; padding: 80px 8% 30px 8%; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 50px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .footer-col h2 { font-size: 1.5rem; margin-bottom: 20px; }
-        .footer-col h4 { margin-bottom: 20px; font-size: 1.1rem; }
-        .footer-col p { font-size: 0.85rem; opacity: 0.8; line-height: 1.7; margin-bottom: 20px; }
-        .footer-col a { display: block; font-size: 0.85rem; opacity: 0.7; margin-bottom: 12px; transition: 0.3s; }
-        .footer-col a:hover { opacity: 1; padding-left: 5px; }
-
-        .cta-box { background: #fff; color: #999; padding: 12px 20px; border-radius: 30px; display: flex; justify-content: space-between; align-items: center; margin: 20px 0; cursor: pointer; }
-        .footer-bottom { text-align: center; padding-top: 30px; font-size: 0.75rem; opacity: 0.6; }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 1024px) {
-            .main-layout, .contact-flex, .footer-grid { flex-direction: column; grid-template-columns: 1fr; }
-            .section-header { flex-direction: column; align-items: flex-start; }
-            .section-desc { text-align: left; max-width: 100%; margin-top: 20px; }
-            .product-grid { grid-template-columns: 1fr 1fr; }
-            .hero-gallery { grid-template-columns: 1fr; }
-        }
-    </style>
+    </script>
 </head>
-<body>
+<body class="font-inter bg-white overflow-x-hidden">
 
-    <header>
-        <div class="logo"><img src="img/pmk_logo.png" alt="Logo"></div>
-        <nav>
-            <ul>
-                <li class="nav-item"><a href="#home">Home</a></li>
-                <li class="nav-item active"><a href="#product">Product</a></li>
-                <li class="nav-item"><a href="#gallery">Gallery</a></li>
-                <li class="nav-item"><a href="#about">About</a></li>
-                <li class="nav-item"><a href="#contact">Contact</a></li>
+    <header class="fixed top-0 left-0 w-full py-6 px-[8%] flex items-center justify-between z-[1000] bg-white/80 backdrop-blur-md md:bg-transparent">
+        <div class="logo">
+            <img src="img/pmk_logo.png" alt="Logo" class="h-12 w-auto">
+        </div>
+        
+        <nav class="hidden md:block bg-pmk-red px-4 py-2 rounded-full shadow-xl">
+            <ul class="flex items-center gap-1 text-white text-sm font-medium">
+                <li><a href="#home" class="px-5 py-2 rounded-full hover:bg-white/10 transition">Home</a></li>
+                <li><a href="#product" class="px-5 py-2 rounded-full bg-white text-pmk-red font-bold transition">Product</a></li>
+                <li><a href="#gallery" class="px-5 py-2 rounded-full hover:bg-white/10 transition">Gallery</a></li>
+                <li><a href="#about" class="px-5 py-2 rounded-full hover:bg-white/10 transition">About</a></li>
+                <li><a href="#contact" class="px-5 py-2 rounded-full hover:bg-white/10 transition">Contact</a></li>
             </ul>
         </nav>
-        <div class="hidden lg:block w-[50px]"></div>
+
+        <div class="md:hidden text-pmk-red text-2xl cursor-pointer">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
 
-    <main id="home" class="relative pt-40 px-[8%] pb-20">
-        <div class="relative z-10">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-5 leading-tight text-black">
+    <main id="home" class="relative pt-40 px-[8%] pb-20 min-h-screen flex flex-col justify-center">
+        <div class="relative z-10 mb-16">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-black tracking-tight">
                 PT Perdana Mitra Kencana
             </h1>
-            <p class="max-w-3xl text-gray-600 leading-relaxed text-lg mb-10">
-                Filter Mesh Berkualitas Tinggi Untuk Kebutuhan Industri Casting Dan Peleburan Logam. Terbuat Dari Material Pilihan Dengan Daya Tahan Kuat, Presisi Tinggi, Dan Performa Optimal.
+            <p class="max-w-2xl text-gray-500 leading-relaxed text-lg md:text-xl">
+                Filter Mesh Berkualitas Tinggi Untuk Kebutuhan Industri Casting Dan Peleburan Logam. Terbuat Dari Material Pilihan Dengan Daya Tahan Kuat.
             </p>
         </div>
-        <div class="hero-gallery">
-            <img src="img/product 2.png" alt="Mesh 1">
-            <img src="img/mesh 2.png" alt="Mesh 2">
-            <img src="img/mesh 3.png" alt="Mesh 3">
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
+            <img src="img/product 2.png" alt="Mesh 1" class="w-full h-112.5 object-cover rounded-lg shadow-lg">
+            <img src="img/mesh 2.png" alt="Mesh 2" class="w-full h-112.5 object-cover rounded-lg shadow-lg">
+            <img src="img/mesh 3.png" alt="Mesh 3" class="w-full h-112.5 object-cover rounded-lg shadow-lg">
         </div>
 
-        <div class="absolute bottom-0 right-0 w-1/2 h-96 bg-gray-100 rounded-tl-[100%_60%] z-0"></div>
-        <div class="w-full h-24 bg-pmk-red absolute -bottom-10 left-0 z-10"></div>
+        <div class="absolute bottom-0 right-0 w-1/2 h-125 bg-gray-100 rounded-tl-[100%_60%] z-0"></div>
+        <div class="absolute -bottom-10 left-0 w-full h-32 bg-pmk-red z-5"></div>
     </main>
 
-    <section id="product" class="py-24 px-[8%]">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-5">
-            <h2 class="text-6xl font-extrabold leading-none text-black">Our<br>Product</h2>
-            <p class="max-w-xl text-right text-gray-500 text-sm hidden md:block">
-                Wire Mesh Filter adalah media penyaring berbahan anyaman kawat logam yang digunakan pada proses peleburan dan pengecoran logam untuk menyaring kotoran dan slag.
+    <section id="product" class="py-32 px-[8%] bg-white">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+            <h2 class="text-6xl md:text-8xl font-extrabold leading-none text-black">Our<br>Product</h2>
+            <p class="max-w-md text-right text-gray-400 text-sm italic border-r-4 border-pmk-red pr-4">
+                Wire Mesh Filter adalah media penyaring berbahan anyaman kawat logam yang digunakan pada proses peleburan dan pengecoran logam.
             </p>
         </div>
         
-        <hr class="border-gray-200 mb-12">
+        <hr class="border-gray-100 mb-16">
 
-        <div class="flex flex-col lg:flex-row gap-10">
+        <div class="flex flex-col lg:flex-row gap-12">
             <aside class="lg:w-1/4">
-                <div class="bg-pmk-sidebar rounded-3xl overflow-hidden sticky top-32">
-                    <div class="p-5 flex justify-between items-center font-bold text-white border-b border-white/10 uppercase tracking-wider">
-                        Product <i class="fas fa-chevron-right text-xs"></i>
+                <div class="bg-pmk-sidebar rounded-4xl overflow-hidden sticky top-32 shadow-2xl">
+                    <div class="p-6 flex justify-between items-center font-bold text-white border-b border-white/10 uppercase tracking-widest text-xs">
+                        Product Categories <i class="fas fa-chevron-right"></i>
                     </div>
                     <div class="p-8 text-white">
-                        <div class="inline-block border-r-4 border-white pr-4 font-bold mb-5">Filter Mesh Galvanized</div>
-                        <ul class="space-y-3 opacity-80 text-sm mb-8">
-                            <li class="hover:translate-x-1 transition cursor-pointer">Filter Mesh Glassweve</li>
-                            <li class="hover:translate-x-1 transition cursor-pointer text-white opacity-100 font-semibold">Filter Mesh SS</li>
-                            <li class="hover:translate-x-1 transition cursor-pointer">Steel Cap Stoper</li>
+                        <div class="inline-block border-r-4 border-white pr-4 font-bold text-lg mb-6">Filter Mesh Galvanized</div>
+                        <ul class="space-y-4 opacity-70 text-sm">
+                            <li class="hover:translate-x-2 hover:opacity-100 transition duration-300 cursor-pointer">Filter Mesh Glassweve</li>
+                            <li class="hover:translate-x-2 hover:opacity-100 transition duration-300 cursor-pointer text-white opacity-100 font-semibold">Filter Mesh SS</li>
+                            <li class="hover:translate-x-2 hover:opacity-100 transition duration-300 cursor-pointer">Steel Cap Stoper</li>
                         </ul>
-                        <div class="font-extrabold text-xs uppercase opacity-50">Up Coming</div>
                     </div>
-                    <div class="bg-pmk-dark p-6">
-                        <div class="flex gap-3 mb-4 text-white">
-                            <i class="fab fa-whatsapp w-9 h-9 border border-white/30 rounded-full flex items-center justify-center hover:bg-white hover:text-pmk-dark transition"></i>
-                            <a href="https://www.instagram.com/perdanamitrakencana/" class="fab fa-instagram w-9 h-9 border border-white/30 rounded-full flex items-center justify-center hover:bg-white hover:text-pmk-dark transition"></a>
-                            <i class="far fa-envelope w-9 h-9 border border-white/30 rounded-full flex items-center justify-center hover:bg-white hover:text-pmk-dark transition"></i>
+                    <div class="bg-pmk-dark p-8">
+                        <div class="flex gap-4 mb-6">
+                            <a href="#" class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-pmk-dark transition-all duration-300"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-pmk-dark transition-all duration-300"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-pmk-dark transition-all duration-300"><i class="far fa-envelope"></i></a>
                         </div>
-                        <div class="bg-black/20 py-2 px-4 rounded-full text-xs text-white text-center font-medium">
+                        <div class="bg-black/30 py-3 px-6 rounded-full text-xs text-white text-center font-bold tracking-widest">
                             +62 800 0000 0000
                         </div>
                     </div>
                 </div>
             </aside>
 
-            <div class="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
-                <div class="group border border-gray-100 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-                    <div class="h-56 bg-gray-50 overflow-hidden">
-                        <img src="images/product 1.png" alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+                <div class="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:-translate-y-3 hover:shadow-3xl transition-all duration-500">
+                    <div class="h-64 bg-gray-50 overflow-hidden">
+                        <img src="images/product 1.png" alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-5">
-                        <h3 class="text-[0.75rem] text-pmk-sidebar font-extrabold uppercase">Filter Wire Mesh Stainless Steel</h3>
-                    </div>
-                </div>
-                <div class="group border border-gray-100 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-                    <div class="h-56 bg-gray-50 overflow-hidden">
-                        <img src="images/product 2.png" alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-5">
-                        <h3 class="text-[0.75rem] text-pmk-sidebar font-extrabold uppercase text-wrap">Filter Wire Mesh Stainless Steel</h3>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xs text-pmk-sidebar font-black uppercase tracking-tighter">Filter Wire Mesh Stainless Steel</h3>
                     </div>
                 </div>
-                <div class="group border border-gray-100 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-                    <div class="h-56 bg-gray-50 overflow-hidden">
-                        <img src="images/product 3.png" alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:-translate-y-3 hover:shadow-3xl transition-all duration-500">
+                    <div class="h-64 bg-gray-50 overflow-hidden">
+                        <img src="images/product 2.png" alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-5">
-                        <h3 class="text-[0.75rem] text-pmk-sidebar font-extrabold uppercase">Filter Wire Mesh Stainless Steel</h3>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xs text-pmk-sidebar font-black uppercase tracking-tighter">Filter Wire Mesh Stainless Steel</h3>
+                    </div>
+                </div>
+                <div class="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:-translate-y-3 hover:shadow-3xl transition-all duration-500">
+                    <div class="h-64 bg-gray-50 overflow-hidden">
+                        <img src="images/product 3.png" alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xs text-pmk-sidebar font-black uppercase tracking-tighter">Filter Wire Mesh Stainless Steel</h3>
                     </div>
                 </div>
             </div>
         </div>
-        
     </section>
 
-    <section id="contact" class="py-24 px-[8%] bg-white">
-        <div class="mb-12">
-            <h2 class="text-5xl font-extrabold mb-4 text-black">Contact Us</h2>
-            <p class="text-gray-500 max-w-2xl">Kami siap membantu kebutuhan Anda. Tim kami akan merespons secepat mungkin.</p>
-        </div>
-        
-        <div class="flex flex-col lg:flex-row gap-16 items-center">
+    <section id="contact" class="py-32 px-[8%] bg-gray-50/50">
+        <div class="flex flex-col lg:flex-row gap-20 items-center">
             <div class="lg:w-1/2">
-                <h2 class="text-4xl font-extrabold leading-tight mb-6">Kolaborasi yang tepat dimulai dari komunikasi yang baik.</h2>
-                <p class="text-gray-500 italic text-lg border-l-4 border-pmk-red pl-4">Hubungi kami untuk solusi industri yang andal dan berkelanjutan.</p>
+                <span class="text-pmk-red font-bold uppercase tracking-widest text-sm mb-4 block">Get In Touch</span>
+                <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8 text-black">Kolaborasi yang tepat dimulai dari komunikasi.</h2>
+                <p class="text-gray-500 text-lg italic border-l-4 border-pmk-red pl-6 py-2">
+                    Hubungi kami untuk solusi industri yang andal dan berkelanjutan.
+                </p>
             </div>
             
-            <div class="lg:w-1/2 w-full bg-white p-10 rounded-[40px] border border-gray-100 shadow-2xl shadow-red-500/5">
-                <form class="space-y-5">
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Nama</label>
-                        <input type="text" placeholder="Nama Lengkap" class="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pmk-red transition">
+            <div class="lg:w-1/2 w-full bg-white p-12 rounded-[3rem] shadow-2xl shadow-pmk-red/5 border border-gray-100">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-[10px] uppercase font-black text-gray-400 mb-2 tracking-widest">Nama</label>
+                            <input type="text" placeholder="Nama Lengkap" class="w-full p-4 border border-gray-100 rounded-2xl bg-gray-50 focus:bg-white focus:ring-2 focus:ring-pmk-red outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase font-black text-gray-400 mb-2 tracking-widest">Email</label>
+                            <input type="email" placeholder="Email Anda" class="w-full p-4 border border-gray-100 rounded-2xl bg-gray-50 focus:bg-white focus:ring-2 focus:ring-pmk-red outline-none transition">
+                        </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-bold mb-2">Email</label>
-                        <input type="email" placeholder="email@perusahaan.com" class="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pmk-red transition">
+                        <label class="block text-[10px] uppercase font-black text-gray-400 mb-2 tracking-widest">Pesan</label>
+                        <textarea placeholder="Bagaimana kami bisa membantu Anda?" rows="4" class="w-full p-4 border border-gray-100 rounded-2xl bg-gray-50 focus:bg-white focus:ring-2 focus:ring-pmk-red outline-none transition resize-none"></textarea>
                     </div>
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Pesan</label>
-                        <textarea placeholder="Pesan Anda..." rows="4" class="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pmk-red transition resize-none"></textarea>
-                    </div>
-                    <button class="bg-pmk-sidebar text-white w-full py-4 rounded-full font-bold flex items-center justify-center gap-3 hover:bg-pmk-red transition-all">
-                        Kirim Pesan <i class="fas fa-arrow-right"></i>
+                    <button class="bg-pmk-red text-white w-full py-5 rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-pmk-red/20 transition-all duration-300">
+                        Kirim Pesan <i class="fas fa-paper-plane"></i>
                     </button>
                 </form>
             </div>
         </div>
 
-        <div class="mt-20 w-full h-96 rounded-3xl overflow-hidden border-8 border-white shadow-2xl">
-            <img src="images/lokasi.png" alt="Lokasi" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+        <div class="mt-24 w-full h-100 rounded-[3rem] overflow-hidden border-12 border-white shadow-2xl">
+            <img src="images/lokasi.png" alt="Lokasi" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-1000">
         </div>
     </section>
 
-    <footer class="bg-pmk-sidebar text-white pt-20 pb-10 px-[8%]">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-8">
-            <div>
-                <h2 class="text-2xl font-bold mb-6">PT. Perdana Mitra Kencana</h2>
-                <p class="text-sm opacity-70 leading-relaxed mb-6">Spesialis manufaktur filter mesh dan sistem penyaringan untuk kebutuhan industri casting dan peleburan logam global.</p>
-                <div class="text-xs space-y-2">
-                    <p><i class="fas fa-map-marker-alt mr-2"></i> Bekasi, Jawa Barat</p>
-                    <p><i class="fas fa-envelope mr-2"></i> contact@pmk.com</p>
+    <footer class="bg-pmk-sidebar text-white pt-24 pb-12 px-[8%]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 border-b border-white/5 pb-20 mb-10">
+            <div class="space-y-6">
+                <h2 class="text-2xl font-black">PT. Perdana Mitra Kencana</h2>
+                <p class="text-sm opacity-60 leading-loose">Spesialis manufaktur filter mesh dan sistem penyaringan untuk kebutuhan industri casting global.</p>
+                <div class="text-xs space-y-3 font-medium uppercase tracking-tighter">
+                    <p><i class="fas fa-map-marker-alt mr-3 text-white/50"></i> Bekasi, Jawa Barat</p>
+                    <p><i class="fas fa-envelope mr-3 text-white/50"></i> contact@pmk.com</p>
                 </div>
             </div>
             
-            <div>
-                <h4 class="font-bold text-lg mb-6">Products</h4>
-                <div class="flex flex-col space-y-3 text-sm opacity-70">
-                    <a href="#" class="hover:pl-2 transition-all">Filter Mesh Stainless</a>
-                    <a href="#" class="hover:pl-2 transition-all">Filter Mesh Galvanized</a>
-                    <a href="#" class="hover:pl-2 transition-all">Filter Mesh SS</a>
-                    <a href="#" class="hover:pl-2 transition-all">Steel Cap Stoper</a>
+            <div class="space-y-6">
+                <h4 class="font-black text-sm uppercase tracking-widest">Products</h4>
+                <div class="flex flex-col space-y-4 text-xs font-bold opacity-50">
+                    <a href="#" class="hover:text-white hover:pl-2 transition-all">Filter Mesh Stainless</a>
+                    <a href="#" class="hover:text-white hover:pl-2 transition-all">Filter Mesh Galvanized</a>
+                    <a href="#" class="hover:text-white hover:pl-2 transition-all">Filter Mesh Glassweave</a>
+                    <a href="#" class="hover:text-white hover:pl-2 transition-all">Steel Cap Stoper</a>
                 </div>
             </div>
 
-            <div>
-                <h4 class="font-bold text-lg mb-6">Quick Links</h4>
-                <div class="flex flex-col space-y-3 text-sm opacity-70">
-                    <a href="#home" class="hover:pl-2 transition-all">Home</a>
-                    <a href="#" class="hover:pl-2 transition-all">About Us</a>
-                    <a href="#product" class="hover:pl-2 transition-all">Product</a>
-                    <a href="#contact" class="hover:pl-2 transition-all">Contact</a>
+            <div class="space-y-6">
+                <h4 class="font-black text-sm uppercase tracking-widest">Quick Links</h4>
+                <div class="flex flex-col space-y-4 text-xs font-bold opacity-50">
+                    <a href="#home" class="hover:text-white hover:pl-2 transition-all">Home</a>
+                    <a href="#" class="hover:text-white hover:pl-2 transition-all">About Us</a>
+                    <a href="#product" class="hover:text-white hover:pl-2 transition-all">Product</a>
+                    <a href="#contact" class="hover:text-white hover:pl-2 transition-all">Contact</a>
                 </div>
             </div>
 
-            <div>
-                <h4 class="font-bold text-lg mb-6">Call to Action</h4>
-                <p class="text-sm opacity-70 mb-5">Solusi penyaringan industri tepat guna dimulai di sini.</p>
-                <div class="bg-white text-gray-400 py-3 px-6 rounded-full flex justify-between items-center cursor-pointer group mb-6">
-                    <span class="text-sm group-hover:text-pmk-red transition">Hubungi Kami</span>
-                    <i class="fas fa-chevron-right text-xs"></i>
-                </div>
-                <div class="flex gap-4">
-                    <i class="fab fa-whatsapp text-lg opacity-70 hover:opacity-100 cursor-pointer transition"></i>
-                    <i class="fab fa-instagram text-lg opacity-70 hover:opacity-100 cursor-pointer transition"></i>
-                    <i class="far fa-envelope text-lg opacity-70 hover:opacity-100 cursor-pointer transition"></i>
+            <div class="space-y-6">
+                <h4 class="font-black text-sm uppercase tracking-widest">Solutions</h4>
+                <p class="text-xs opacity-50 leading-loose">Solusi penyaringan industri tepat guna dimulai di sini.</p>
+                <div class="bg-white/10 p-4 rounded-2xl flex justify-between items-center group cursor-pointer hover:bg-white transition-all duration-500">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-white group-hover:text-pmk-red">Hubungi Kami</span>
+                    <i class="fas fa-arrow-right text-xs text-white group-hover:text-pmk-red"></i>
                 </div>
             </div>
         </div>
         
-        <div class="text-center text-[0.7rem] opacity-50">
-            <p>© 2026 PT Perdana Mitra Kencana. All rights reserved. Designed by PMK Digital Team.</p>
+        <div class="text-center text-[10px] font-bold opacity-30 tracking-[0.2em] uppercase">
+            <p>© 2026 PT Perdana Mitra Kencana. Designed by PMK Digital Team.</p>
         </div>
     </footer>
 
