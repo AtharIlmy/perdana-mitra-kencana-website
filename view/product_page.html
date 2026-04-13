@@ -1,221 +1,501 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT Perdana Mitra Kencana</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'pmk-red': '#7a1f1f',
-                        'pmk-sidebar': '#962323',
-                        'pmk-dark': '#851f1f',
-                    },
-                    fontFamily: {
-                        inter: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
+    <title>Perdana Mitra Kencana | Product</title>
+    <link href="output.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gallery_page.html">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="font-inter bg-white overflow-x-hidden">
-
-    <header class="fixed top-0 left-0 w-full py-6 px-[8%] flex items-center justify-between z-[1000] bg-white/80 backdrop-blur-md md:bg-transparent">
-        <div class="logo">
-            <img src="img/pmk_logo.png" alt="Logo" class="h-12 w-auto">
+<body>
+    
+    <!-- Header Navigation -->
+    <header class=" top-0 left-0 w-full pt-10 px-6 md:px-20 z-40 flex items-center justify-center fixed">
+        <div class="absolute left-6 md:left-20">
+            <img class="w-15 h-auto" src="../images/pmk_logo.png" alt="pmk-logo">
         </div>
-        
-        <nav class="hidden md:block bg-pmk-red px-4 py-2 rounded-full shadow-xl">
-            <ul class="flex items-center gap-1 text-white text-sm font-medium">
-                <li><a href="#home" class="px-5 py-2 rounded-full hover:bg-white/10 transition">Home</a></li>
-                <li><a href="#product" class="px-5 py-2 rounded-full bg-white text-pmk-red font-bold transition">Product</a></li>
-                <li><a href="#gallery" class="px-5 py-2 rounded-full hover:bg-white/10 transition">Gallery</a></li>
-                <li><a href="#about" class="px-5 py-2 rounded-full hover:bg-white/10 transition">About</a></li>
-                <li><a href="#contact" class="px-5 py-2 rounded-full hover:bg-white/10 transition">Contact</a></li>
+
+        <nav class="mx-auto bg-[#7a1f1f] rounded-full p-2 z-10">
+            <ul id="navbar-links" class="flex justify-center items-center gap-2 text-[16px] font-medium font-inter">
+                <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="../index.html">Home</a>
+                </li>
+                <li class="nav-item active px-6 py-2 bg-white text-[#7a1f1f] font-bold rounded-full cursor-pointer transition-all duration-300">
+                    <a href="#">Product</a>
+                </li>
+                <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="gallery_page.html">Gallery</a>
+                </li>
+                <!-- <li class="nav-item px-8 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="#about">About</a>
+                </li> -->
+                <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="#contact">Contact</a>
+                </li>
             </ul>
         </nav>
-
-        <div class="md:hidden text-pmk-red text-2xl cursor-pointer">
-            <i class="fas fa-bars"></i>
-        </div>
     </header>
 
-    <main id="home" class="relative pt-40 px-[8%] pb-20 min-h-screen flex flex-col justify-center">
-        <div class="relative z-10 mb-16">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-black tracking-tight">
-                PT Perdana Mitra Kencana
-            </h1>
-            <p class="max-w-2xl text-gray-500 leading-relaxed text-lg md:text-xl">
-                Filter Mesh Berkualitas Tinggi Untuk Kebutuhan Industri Casting Dan Peleburan Logam. Terbuat Dari Material Pilihan Dengan Daya Tahan Kuat.
-            </p>
-        </div>
+    <main>
+        <section class="bg-[#7A1F1F] h-[100vh]">
+            <div class="grid grid-cols-3 h-full">
+                <div class="col-span-1 flex flex-col justify-center h-full px-20 space-y-6">
+                    <div class="text-white text-8xl mt-8 font-semibold">
+                        <h1>
+                            Product Kami
+                        </h1>
+                    </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
-            <img src="img/product 2.png" alt="Mesh 1" class="w-full h-112.5 object-cover rounded-lg shadow-lg">
-            <img src="img/mesh 2.png" alt="Mesh 2" class="w-full h-112.5 object-cover rounded-lg shadow-lg">
-            <img src="img/mesh 3.png" alt="Mesh 3" class="w-full h-112.5 object-cover rounded-lg shadow-lg">
-        </div>
+                    <div class="text-white">
+                        <p>
+                            Kami menghadirkan rangkaian produk filter dan penyaringan industri berkualitas tinggi yang dirancang untuk mendukung proses peleburan logam dan manufaktur. Setiap produk diproduksi dengan standar mutu ketat untuk memastikan performa optimal, daya tahan tinggi, dan efisiensi produksi.
+                        </p>
+                    </div>
 
-        <div class="absolute bottom-0 right-0 w-1/2 h-125 bg-gray-100 rounded-tl-[100%_60%] z-0"></div>
-        <div class="absolute -bottom-10 left-0 w-full h-32 bg-pmk-red z-5"></div>
+                    <div class="bg-white px-6 py-2 w-fit rounded-full text-[#7A1F1F]">
+                        <a href="">
+                            Lihat Selebihnya
+                        </a>
+                    </div>
+                </div>
+                <div class="col-span-2 relative">
+                    <div class="relative z-20 h-full justify-end items-end flex flex-col">
+                        <div class="grid grid-cols-3">
+                            <!-- Single Info -->
+                           <div class="flex gap-4 px-10">
+                                <div class="flex flex-col justify-center items-center space-y-4">
+                                    <span class="bg-[#7A1F1F] w-4 h-4 inline-block rounded-full"></span>
+                                    <span class="bg-[#7A1F1F] inline-block w-[2px] h-34"></span>
+                                </div>
+    
+                                <div class="text-white flex flex-col justify-center space-y-2">
+                                    <div class="text-5xl font-semibold">
+                                        <h1>
+                                            Stok <br> Tertata
+                                        </h1>
+                                    </div>
+    
+                                    <div class="text-lg font-light">
+                                        <p>
+                                            Manajemen Penyimpanan <br> rapi dan sistematis.
+                                        </p>
+                                    </div>
+                                </div>
+                           </div>
+                           <!-- Single Info -->
+                            
+                            <!-- Single Info -->
+                           <div class="flex gap-4 px-10">
+                                <div class="flex flex-col justify-center items-center space-y-4">
+                                    <span class="bg-[#7A1F1F] w-4 h-4 inline-block rounded-full"></span>
+                                    <span class="bg-[#7A1F1F] inline-block w-[2px] h-34"></span>
+                                </div>
+    
+                                <div class="text-white flex flex-col justify-center space-y-2">
+                                    <div class="text-5xl font-semibold">
+                                        <h1>
+                                            Standar <br> Terjaga
+                                        </h1>
+                                    </div>
+    
+                                    <div class="text-lg font-light">
+                                        <p>
+                                            Proses kerja terkontrol dan konsisten.
+                                        </p>
+                                    </div>
+                                </div>
+                           </div>
+                           <!-- Single Info -->
+    
+                            <!-- Single Info -->
+                           <div class="flex gap-4 px-10">
+                                <div class="flex flex-col justify-center items-center space-y-4">
+                                    <span class="bg-[#7A1F1F] w-4 h-4 inline-block rounded-full"></span>
+                                    <span class="bg-[#7A1F1F] inline-block w-[2px] h-34"></span>
+                                </div>
+    
+                                <div class="text-white flex flex-col justify-center space-y-2">
+                                    <div class="text-5xl font-semibold">
+                                        <h1>
+                                            Produksi <br> Terlindungi
+                                        </h1>
+                                    </div>
+    
+                                    <div class="text-lg font-light">
+                                        <p>
+                                            Produksi Aman, Stabil dan Berkelanjutan.
+                                        </p>
+                                    </div>
+                                </div>
+                           </div>
+                           <!-- Single Info -->
+                        </div>
+
+                        <span class="bg-white/10 backdrop-blur-sm inline-block w-full mt-10 h-30"></span>
+                    </div>
+
+                    <img 
+                        src="../images/product_hero.png" 
+                        class="absolute h-full w-[66vw] inset-0"
+                        alt=""
+                        >
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white h-[100vh] px-30 py-20">
+            <div class="flex justify-center items-start">
+                <div class="text-6xl font-semibold">
+                    <h1>
+                        Our Product
+                    </h1>
+                </div>
+
+                <div class="text-right pl-60">
+                    <p class="mb-[5rem]">
+                        Wire Mesh Filter adalah media penyaring berbahan anyaman kawat logam yang digunakan pada proses peleburan dan pengecoran logam untuk menyaring kotoran dan slag. Terbuat dari material stainless steel berkualitas, tahan suhu tinggi dan korosi, serta membantu menghasilkan hasil casting yang lebih bersih, rapi, dan berkualitas. Cocok digunakan di berbagai industri manufaktur dan metal casting.
+                    </p>
+
+                    <hr class="mt-10 text-[#7A1F1F]">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-5 mt-8">
+                <div class="col-span-1 bg-[#7A1F1F] pr-6 py-4 space-y-4 rounded-r-[2rem] h-fit">
+                    <!-- Upper Sec -->
+                    <div class="bg-[#9C2A2A] text-white flex justify-between items-center w-full rounded-r-full px-4 py-2 font-semibold">
+                        <!-- Title -->
+                        <h1>
+                            Product
+                        </h1>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+
+                    <!-- Middle Sec -->
+                    <div class="bg-[#9C2A2A] text-white flex flex-col justify-center w-full rounded-r-[1rem] px-4 py-2 space-y-12 text-md">
+                        <!-- List -->
+                        <ul class="space-y-2">
+                            <li class="font-semibold flex justify-between items-center">
+                                <h1>
+                                    Filter Mesh Galvanized
+                                </h1>
+                                <h1>
+                                    |
+                                </h1>
+                            </li>
+                            <li>
+                                <h1>
+                                    Filter Mesh Glassweve
+                                </h1>
+                            </li>
+                            <li>
+                                <h1>
+                                    Filter Mesh SS
+                                </h1>
+                            </li>
+                            <li>
+                                <h1>
+                                    Steel Cap Stopper
+                                </h1>
+                            </li>
+                        </ul>
+
+                        <!-- Bottom -->
+                        <div class="font-semibold">
+                            <h1>
+                                Up Coming
+                            </h1>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Sec -->
+                    <div class="bg-[#9C2A2A] text-white flex flex-col justify-center w-full rounded-r-[1rem] px-4 py-2 space-y-4">
+                        <!-- Icon -->
+                        <div class="flex space-x-2">
+                            <div class="bg-transparent px-[.6rem] py-1 border-3 border-white rounded-full flex justify-center items-center">
+                                <h1>
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </h1>
+                            </div>
+                            <div class="bg-transparent px-[.6rem] py-1 border-3 border-white rounded-full flex justify-center items-center">
+                                <h1>
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </h1>
+                            </div>
+                            <div class="bg-transparent px-[.6rem] py-1 border-3 border-white rounded-full flex justify-center items-center">
+                                <h1>
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </h1>
+                            </div>
+                        </div>
+
+                        <!-- Telp -->
+                        <div class="bg-[#7A1F1F] rounded-full py-2 px-4 flex justify-center items-center w-fit">
+                            +08 000 0000 0000
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-4 min-w-0">
+                    <div class="grid grid-cols-3 px-12 max-h-[40rem] overflow-y-scroll gap-6">
+                        <!-- Single Product -->
+                        <div class="shadow-2xl w-[18rem]">
+                            <img 
+                                src="../images/product_sample.png" 
+                                alt=""
+                                class="w-full"
+                                >
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
+                                <h1>
+                                    Filter Wire Mesh Stainless Steel
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Single Product -->
+                        <!-- Single Product -->
+                        <div class="shadow-2xl w-[18rem]">
+                            <img 
+                                src="../images/product_sample2.png" 
+                                alt=""
+                                class="w-full"
+                                >
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
+                                <h1>
+                                    Filter Wire Mesh Stainless Steel
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Single Product -->
+                        <!-- Single Product -->
+                        <div class="shadow-2xl w-[18rem]">
+                            <img 
+                                src="../images/product_sample3.png" 
+                                alt=""
+                                class="w-full"
+                                >
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
+                                <h1>
+                                    Filter Wire Mesh Stainless Steel
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Single Product -->     
+                        <!-- Single Product -->
+                        <div class="shadow-2xl w-[18rem]">
+                            <img 
+                                src="../images/product_sample.png" 
+                                alt=""
+                                class="w-full"
+                                >
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
+                                <h1>
+                                    Filter Wire Mesh Stainless Steel
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Single Product -->
+                        <!-- Single Product -->
+                        <div class="shadow-2xl w-[18rem]">
+                            <img 
+                                src="../images/product_sample2.png" 
+                                alt=""
+                                class="w-full"
+                                >
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
+                                <h1>
+                                    Filter Wire Mesh Stainless Steel
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Single Product -->
+                        <!-- Single Product -->
+                        <div class="shadow-2xl w-[18rem]">
+                            <img 
+                                src="../images/product_sample3.png" 
+                                alt=""
+                                class="w-full"
+                                >
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
+                                <h1>
+                                    Filter Wire Mesh Stainless Steel
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Single Product -->     
+                        <!-- Single Product -->
+                        <div class="shadow-2xl w-[18rem]">
+                            <img 
+                                src="../images/product_sample.png" 
+                                alt=""
+                                class="w-full"
+                                >
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
+                                <h1>
+                                    Filter Wire Mesh Stainless Steel
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Single Product -->
+                        <!-- Single Product -->
+                        <div class="shadow-2xl w-[18rem]">
+                            <img 
+                                src="../images/product_sample2.png" 
+                                alt=""
+                                class="w-full"
+                                >
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
+                                <h1>
+                                    Filter Wire Mesh Stainless Steel
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Single Product -->
+                        <!-- Single Product -->
+                        <div class="shadow-2xl w-[18rem]">
+                            <img 
+                                src="../images/product_sample3.png" 
+                                alt=""
+                                class="w-full"
+                                >
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
+                                <h1>
+                                    Filter Wire Mesh Stainless Steel
+                                </h1>
+                            </div>
+                        </div>
+                        <!-- Single Product -->     
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact" class="relative min-h-screen py-20 mx-auto mt-40">
+            <div class="flex justify-between items-center mb-16 relative z-10 px-10">
+                <h1 class="text-[50px] font-semibold font-jakarta">Contact Us</h1>
+                <p class="text-[14px] text-right text-black mt-10 leading-relaxed">Hubungi Kami <br> Kami siap membantu kebutuhan Anda. Silakan hubungi kami untuk informasi lebih lanjut, <br> konsultasi produk, atau kerja sama bisnis. Tim kami akan merespons secepat mungkin.</p>
+            </div>
+
+            <div class="relative w-full h-[600px] flex items-center">
+                <div class="flex justify-start absolute inset-0">
+                    <img src="../images/contact_bg.png" alt="Contact Background" class="w-[1080px] h-[800px]">
+                </div>
+
+                <div class="relative z-10 w-1/2 pl-10">
+                    <h2 class="text-5xl font-bold text-[#7a1f1f] leading-tight mb-4">
+                        Kolaborasi yang tepat <br> dimulai dari komunikasi <br> yang baik.
+                    </h2>
+                    <p class="text-[16px] text-black">
+                        Hubungi kami untuk solusi industri yang andal dan berkelanjutan.
+                    </p>
+                </div>
+
+                <div class="z-10 bg-white border border-black p-8 rounded-3xl shadow-2xl w-[600px] h-[500px] mt-10">
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Nama</label>
+                            <input type="text" class="w-full h-[55px] p-3 bg-gray-100 rounded-2xl focus:outline-none" placeholder="Nama Anda">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" class="w-full p-3 bg-gray-100 rounded-xl focus:outline-none" placeholder="Email Anda">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Pesan</label>
+                            <textarea class="w-full p-3 bg-gray-100 rounded-xl h-44 focus:outline-none" placeholder="Pesan Anda"></textarea>
+                        </div>
+                        <button class="group flex items-center gap-2 bg-[#7a1f1f] text-white px-4 py-2 rounded-full hover:bg-[#651818] transition">
+                            <span class="text-[15px] font-medium">Kirim Pesan</span>
+
+                            <span class="flex items-center justify-center w-6 h-6 bg-white rounded-full group-hover:translate-x-1 transition">
+                                <i class="fa-solid fa-arrow-right text-[#7a1f1f] text-lg"></i>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+       <section class="flex justify-center items-center py-10 mt-30 px-20 w-full">
+            <div class="container flex justify-center">
+                <div class="overflow-hidden rounded-3xl shadow-lg border border-gray-200">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.2784700288985!2d106.8869848540482!3d-6.111949706415569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f006cdfa0b5%3A0x2a09ead5cb0fa2cf!2sPT.%20Perdana%20Mitra%20Kencana!5e0!3m2!1sen!2sid!4v1771299882137!5m2!1sen!2sid" class="w-[100rem] h-[300px]" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <section id="product" class="py-32 px-[8%] bg-white">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
-            <h2 class="text-6xl md:text-8xl font-extrabold leading-none text-black">Our<br>Product</h2>
-            <p class="max-w-md text-right text-gray-400 text-sm italic border-r-4 border-pmk-red pr-4">
-                Wire Mesh Filter adalah media penyaring berbahan anyaman kawat logam yang digunakan pada proses peleburan dan pengecoran logam.
-            </p>
-        </div>
-        
-        <hr class="border-gray-100 mb-16">
+    <!-- Footer Section -->
+       <footer class="w-full bg-[#7A1F1F] rounded-t-[20px] mt-30 px-10 py-10 flex flex-col">
+            <div class="fle w-full mb-10">
+                <h1 class="text-white text-[90px] font-semibold ">PT. Perdana Mitra Kencana</h1>
+            </div>
 
-        <div class="flex flex-col lg:flex-row gap-12">
-            <aside class="lg:w-1/4">
-                <div class="bg-pmk-sidebar rounded-4xl overflow-hidden sticky top-32 shadow-2xl">
-                    <div class="p-6 flex justify-between items-center font-bold text-white border-b border-white/10 uppercase tracking-widest text-xs">
-                        Product Categories <i class="fas fa-chevron-right"></i>
-                    </div>
-                    <div class="p-8 text-white">
-                        <div class="inline-block border-r-4 border-white pr-4 font-bold text-lg mb-6">Filter Mesh Galvanized</div>
-                        <ul class="space-y-4 opacity-70 text-sm">
-                            <li class="hover:translate-x-2 hover:opacity-100 transition duration-300 cursor-pointer">Filter Mesh Glassweve</li>
-                            <li class="hover:translate-x-2 hover:opacity-100 transition duration-300 cursor-pointer text-white opacity-100 font-semibold">Filter Mesh SS</li>
-                            <li class="hover:translate-x-2 hover:opacity-100 transition duration-300 cursor-pointer">Steel Cap Stoper</li>
-                        </ul>
-                    </div>
-                    <div class="bg-pmk-dark p-8">
-                        <div class="flex gap-4 mb-6">
-                            <a href="#" class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-pmk-dark transition-all duration-300"><i class="fab fa-whatsapp"></i></a>
-                            <a href="#" class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-pmk-dark transition-all duration-300"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-pmk-dark transition-all duration-300"><i class="far fa-envelope"></i></a>
+            <div class="w-full flex flex-col gap-8">
+                <hr class="w-full border-t border-white-30 pt-3">
+                <div class="flex justify-start items-start gap-x-10">
+                    <div class="flex justify-between gap-10">
+                        <div class="flex flex-col gap-y-17">
+                            <a href=""><i class="fa-solid fa-location-dot text-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
+                            <div class="flex flex-col gap-12">
+                                <a href=""><i class="fa-solid fa-envelope text-white text-xl"></i></a>
+                                <a href=""><i class="fa-solid fa-phone text-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
+                            </div>
                         </div>
-                        <div class="bg-black/30 py-3 px-6 rounded-full text-xs text-white text-center font-bold tracking-widest">
-                            +62 800 0000 0000
+                        <div class="flex flex-col gap-6 text-white text-[14px]">
+                            <p>Jl. Kb. Bawang No.35, RT.8/RW.6, Kb.<br> Bawang, Kec. Tj. Priok, Jkt Utara, Daerah <br> Khusus Ibukota Jakarta 14320</p>
+                            <div class="flex flex-col gap-12">
+                                <p>perdanamitrakencana@outlook.com</p>
+                                <p>perdanamitrakencana@outlook.co</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </aside>
-
-            <div class="lg:w-3/4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
-                <div class="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:-translate-y-3 hover:shadow-3xl transition-all duration-500">
-                    <div class="h-64 bg-gray-50 overflow-hidden">
-                        <img src="images/product 1.png" alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xs text-pmk-sidebar font-black uppercase tracking-tighter">Filter Wire Mesh Stainless Steel</h3>
-                    </div>
-                </div>
-                <div class="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:-translate-y-3 hover:shadow-3xl transition-all duration-500">
-                    <div class="h-64 bg-gray-50 overflow-hidden">
-                        <img src="images/product 2.png" alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xs text-pmk-sidebar font-black uppercase tracking-tighter">Filter Wire Mesh Stainless Steel</h3>
-                    </div>
-                </div>
-                <div class="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:-translate-y-3 hover:shadow-3xl transition-all duration-500">
-                    <div class="h-64 bg-gray-50 overflow-hidden">
-                        <img src="images/product 3.png" alt="Product" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xs text-pmk-sidebar font-black uppercase tracking-tighter">Filter Wire Mesh Stainless Steel</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-32 px-[8%] bg-gray-50/50">
-        <div class="flex flex-col lg:flex-row gap-20 items-center">
-            <div class="lg:w-1/2">
-                <span class="text-pmk-red font-bold uppercase tracking-widest text-sm mb-4 block">Get In Touch</span>
-                <h2 class="text-5xl md:text-6xl font-black leading-tight mb-8 text-black">Kolaborasi yang tepat dimulai dari komunikasi.</h2>
-                <p class="text-gray-500 text-lg italic border-l-4 border-pmk-red pl-6 py-2">
-                    Hubungi kami untuk solusi industri yang andal dan berkelanjutan.
-                </p>
-            </div>
-            
-            <div class="lg:w-1/2 w-full bg-white p-12 rounded-[3rem] shadow-2xl shadow-pmk-red/5 border border-gray-100">
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-[10px] uppercase font-black text-gray-400 mb-2 tracking-widest">Nama</label>
-                            <input type="text" placeholder="Nama Lengkap" class="w-full p-4 border border-gray-100 rounded-2xl bg-gray-50 focus:bg-white focus:ring-2 focus:ring-pmk-red outline-none transition">
+                    
+                    <div class="flex gap-x-30">
+                        <div class="flex flex-col gap-4">
+                            <h1 class="text-[18px] text-white font-semibold">Product</h1>
+                            <p class="text-white text-[16px] font-light">Filter Mesh Stainless</p>
+                            <p class="text-white text-[16px] font-light">Filter Mesh Galvanized</p>
+                            <p class="text-white text-[16px] font-light">Filter Mesh SS</p>
+                            <p class="text-white text-[16px] font-light">Steel Cap Stoper</p>
                         </div>
-                        <div>
-                            <label class="block text-[10px] uppercase font-black text-gray-400 mb-2 tracking-widest">Email</label>
-                            <input type="email" placeholder="Email Anda" class="w-full p-4 border border-gray-100 rounded-2xl bg-gray-50 focus:bg-white focus:ring-2 focus:ring-pmk-red outline-none transition">
+                        <div class="flex flex-col gap-4">
+                            <h1 class="text-[18px] text-white font-semibold">Quick Link</h1>
+                            <p class="text-white text-[16px] font-light">Home</p>
+                            <p class="text-white text-[16px] font-light">Product</p>
+                            <p class="text-white text-[16px] font-light">Gallery</p>
+                            <p class="text-white text-[16px] font-light">Contact</p>
+                        </div>
+
+                        <div class="flex flex-col text-white">
+                            <h1 class="text-[18px] font-semibold">Call to Action</h1>
+                            <p class="text-[16px] font-light">Solusi penyaringan industri yang tepat.<br>Efisiensi produksi dimulai dari sistem filtrasi <br> yang berkualitas.</p>
+                            <div class="flex flex-col gap-4">
+                                <div class="relative">
+                                    <input type="text" placeholder="hubungi kami" class="w-60 h-8 bg-white text-black border border-white rounded-full px-[20px] py-[10px] text-[14px] mt-4">
+                                    <i class="fa-solid fa-angle-right absolute bottom-2 right-14" style="color: rgb(122, 31, 31);"></i></i>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
+                                    <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-instagram" style="color: white;"></i></a>
+                                    <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-solid fa-envelope" style="color: white;"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <label class="block text-[10px] uppercase font-black text-gray-400 mb-2 tracking-widest">Pesan</label>
-                        <textarea placeholder="Bagaimana kami bisa membantu Anda?" rows="4" class="w-full p-4 border border-gray-100 rounded-2xl bg-gray-50 focus:bg-white focus:ring-2 focus:ring-pmk-red outline-none transition resize-none"></textarea>
-                    </div>
-                    <button class="bg-pmk-red text-white w-full py-5 rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-pmk-red/20 transition-all duration-300">
-                        Kirim Pesan <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-
-        <div class="mt-24 w-full h-100 rounded-[3rem] overflow-hidden border-12 border-white shadow-2xl">
-            <img src="images/lokasi.png" alt="Lokasi" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-1000">
-        </div>
-    </section>
-
-    <footer class="bg-pmk-sidebar text-white pt-24 pb-12 px-[8%]">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 border-b border-white/5 pb-20 mb-10">
-            <div class="space-y-6">
-                <h2 class="text-2xl font-black">PT. Perdana Mitra Kencana</h2>
-                <p class="text-sm opacity-60 leading-loose">Spesialis manufaktur filter mesh dan sistem penyaringan untuk kebutuhan industri casting global.</p>
-                <div class="text-xs space-y-3 font-medium uppercase tracking-tighter">
-                    <p><i class="fas fa-map-marker-alt mr-3 text-white/50"></i> Bekasi, Jawa Barat</p>
-                    <p><i class="fas fa-envelope mr-3 text-white/50"></i> contact@pmk.com</p>
+    
+                </div>
+                <div class="flex justify-center items-center">
+                    <p class="text-white/50 text-[18px] font-light">© 2026 PT Perdana Mitra Kencana. All rights reserved. Designed by PMK Digital Team.</p>
                 </div>
             </div>
-            
-            <div class="space-y-6">
-                <h4 class="font-black text-sm uppercase tracking-widest">Products</h4>
-                <div class="flex flex-col space-y-4 text-xs font-bold opacity-50">
-                    <a href="#" class="hover:text-white hover:pl-2 transition-all">Filter Mesh Stainless</a>
-                    <a href="#" class="hover:text-white hover:pl-2 transition-all">Filter Mesh Galvanized</a>
-                    <a href="#" class="hover:text-white hover:pl-2 transition-all">Filter Mesh Glassweave</a>
-                    <a href="#" class="hover:text-white hover:pl-2 transition-all">Steel Cap Stoper</a>
-                </div>
-            </div>
-
-            <div class="space-y-6">
-                <h4 class="font-black text-sm uppercase tracking-widest">Quick Links</h4>
-                <div class="flex flex-col space-y-4 text-xs font-bold opacity-50">
-                    <a href="#home" class="hover:text-white hover:pl-2 transition-all">Home</a>
-                    <a href="#" class="hover:text-white hover:pl-2 transition-all">About Us</a>
-                    <a href="#product" class="hover:text-white hover:pl-2 transition-all">Product</a>
-                    <a href="#contact" class="hover:text-white hover:pl-2 transition-all">Contact</a>
-                </div>
-            </div>
-
-            <div class="space-y-6">
-                <h4 class="font-black text-sm uppercase tracking-widest">Solutions</h4>
-                <p class="text-xs opacity-50 leading-loose">Solusi penyaringan industri tepat guna dimulai di sini.</p>
-                <div class="bg-white/10 p-4 rounded-2xl flex justify-between items-center group cursor-pointer hover:bg-white transition-all duration-500">
-                    <span class="text-[10px] font-black uppercase tracking-widest text-white group-hover:text-pmk-red">Hubungi Kami</span>
-                    <i class="fas fa-arrow-right text-xs text-white group-hover:text-pmk-red"></i>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center text-[10px] font-bold opacity-30 tracking-[0.2em] uppercase">
-            <p>© 2026 PT Perdana Mitra Kencana. Designed by PMK Digital Team.</p>
-        </div>
-    </footer>
+        </footer>
 
 </body>
 </html>
