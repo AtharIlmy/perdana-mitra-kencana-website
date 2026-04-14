@@ -1,20 +1,35 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const navItems = document.querySelectorAll('.nav-item');
+// document.addEventListener('DOMContentLoaded', function () {
+//     const navItems = document.querySelectorAll('.nav-item');
 
-    navItems.forEach(item => {
-        item.addEventListener('click', function () {
-            // Reset semua item ke tampilan awal
-            navItems.forEach(btn => {
-                btn.classList.remove('bg-white', 'text-[#7a1f1f]', 'font-bold');
-                btn.classList.add('text-white');
-            });
+//     navItems.forEach(item => {
+//         item.addEventListener('click', function () {
+//             // Reset semua item ke tampilan awal
+//             navItems.forEach(btn => {
+//                 btn.classList.remove('bg-white', 'text-[#7a1f1f]', 'font-bold');
+//                 btn.classList.add('text-white');
+//             });
 
-            // Set item yang diklik jadi aktif
-            this.classList.add('bg-white', 'text-[#7a1f1f]', 'font-bold');
-            this.classList.remove('text-white');
-        });
-    });
-});
+//             // Set item yang diklik jadi aktif
+//             this.classList.add('bg-white', 'text-[#7a1f1f]', 'font-bold');
+//             this.classList.remove('text-white');
+//         });
+//     });
+// });
+
+function onToggleMenu(e) {
+    const navLinks = document.getElementById('navLinks');
+    const icon = e.querySelector('i');
+    
+    // Toggle class hidden
+    navLinks.classList.toggle('hidden');
+    
+    // Ganti icon bars ke xmark jika terbuka
+    if (navLinks.classList.contains('hidden')) {
+        icon.classList.replace('fa-xmark', 'fa-bars');
+    } else {
+        icon.classList.replace('fa-bars', 'fa-xmark');
+    }
+}
 
 function onToggleMenu(e) {
     // 1. Ambil elemen menu navigasi berdasarkan ID

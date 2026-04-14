@@ -1,0 +1,317 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdana Mitra Kencana | Product</title>
+    <link href="output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div class="bg-[#7a1f1f] flex md:hidden py-3 px-4 gap-3 justify-end items-end">
+        <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
+        <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-instagram" style="color: white;"></i></a>
+        <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-solid fa-envelope" style="color: white;"></i></a>
+    </div>
+
+    <header class=" top-0 left-0 w-full pt-5 md:pt-10 px-6 md:px-20 z-40 flex items-center justify-between md:justify-center">
+        <div class="md:absolute md:left-20 flex items-center">
+            <img class="w-10 h-auto md:w-15" src="../images/pmk_logo.png" alt="pmk-logo">
+        </div>
+
+        <nav id="navLinks" class="hidden duration-500 md:static bg-[#7a1f1f] md:min-h-fit md:p-2 min-h-[35vh] left-0 top-0 w-full md:w-auto md:flex md:items-center px-5 py-3 md:rounded-full rounded-b-3xl z-10">
+            <ul id="navbar-links" class="flex md:flex-row flex-col justify-center items-center gap-4 md:gap-2 text-[16px] font-medium font-inter w-full py-10 md:py-0">
+                <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="../index.html">Home</a>
+                </li>
+                <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="product_page.html">Product</a>
+                </li>
+                <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="gallery_page.html">Gallery</a>
+                </li>
+                <li class="nav-item active px-6 py-2 bg-white text-[#7a1f1f] font-bold rounded-full cursor-pointer transition-all duration-300">
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div onclick="onToggleMenu(this)" class="flex md:hidden cursor-pointer rounded-full bg-[#7a1f1f] w-8 h-8 items-center justify-center z-50">
+            <i name="menu" class="fa-solid fa-bars fa-sm" style="color: white"></i>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative min-h-screen px-4 py-10 mx-auto md:px-14 md:items-start bg-[url('../images/contact_bg.png')] bg-cover">
+            <div class="md:hidden flex justify-center md:justify-start md:items-start absolute inset-0">
+                <img class="h-50" src="../images/contact_bg.png" alt="">
+            </div>
+            <div class="hidden md:flex md:absolute md:right-50 md:gap-3">
+                <div class="bg-[#7A1F1F] rounded-full w-7 h-7"></div>
+                <div class="bg-[#A83A3A] rounded-full w-7 h-7"></div>
+                <div class="bg-[#A96262] rounded-full w-7 h-7"></div>
+            </div>
+            <div class="relative z-10 px-2 md:px-0 text-center md:pt-10">
+                <h1 class="text-[50px] md:text-[180px] font-bold md:text-[#7A1F1F] md:font-semibold tracking-tight md:text-center">Contact Us</h1>
+                <p class="text-[14px] md:text-[14px] mt-4 md:mt-0 text-center">
+                    Kolaborasi yang kuat selalu berawal dari komunikasi yang baik. Kami siap menjadi mitra terpercaya untuk memenuhi <br class="hidden md:block">kebutuhan Anda. Jangan ragu menghubungi kami untuk informasi lebih lanjut, konsultasi produk, maupun peluang <br class="hidden md:block">kerja sama bisnis. Tim kami akan merespons dengan cepat dan profesional.
+                </p>
+                <button class="bg-[#9C2A2A] text-white px-7 py-2 md:py-3 rounded-full mt-6 transition-all duration-500 hover:bg-[#772424]">
+                   <a class="text-sm" href="">Ketuk Untuk Lihat</a>
+                </button>
+                <div class="md:hidden flex grid-cols-2 mt-20 gap-3">
+                    <div>
+                        <img class="w-full" src="../images/ft_1.png" alt="">
+                    </div>
+                    <div>
+                        <img class="w-full" src="../images/ft_2.png" alt="">
+                    </div>
+                </div>
+                <div class="md:hidden mt-3">
+                    <img class="w-full" src="../images/ft_3.png" alt="">
+                    <p class="text-[12px] text-justify leading-4 mt-5">Kami siap menjadi mitra terpercaya untuk kebutuhan Anda. Jangan ragu untuk menghubungi kami untuk informasi, konsultasi, maupun peluang kerja sama. Tim kami akan merespons dengan cepat dan profesional.</p>
+                </div>
+            </div>
+        </section>
+
+       <section class="hidden md:grid grid-cols-2 gap-30 px-12 py-20 mx-auto items-start">
+            <div>
+                <p class="text-sm opacity-80 leading-relaxed text-justify mb-5 mr-20">
+                Kami percaya bahwa setiap kerja sama yang sukses selalu dimulai dari komunikasi yang terbuka dan saling percaya. Oleh karena itu, kami mengundang Anda untuk terhubung dengan kami dan menjalin hubungan yang lebih dekat. Apapun kebutuhan Anda—baik itu informasi lebih lanjut mengenai layanan dan produk kami, konsultasi untuk menemukan solusi terbaik, maupun penjajakan peluang kerja sama bisnis—kami siap membantu dengan sepenuh hati.
+                </p>
+                <p class="text-sm opacity-80 leading-relaxed text-justify mb-10 mr-20">
+                Tim kami berkomitmen untuk memberikan respons yang cepat, ramah, dan profesional, sehingga setiap pertanyaan dan kebutuhan Anda dapat ditangani dengan baik. Jangan ragu untuk menghubungi kami kapan saja, karena kepuasan dan kepercayaan Anda adalah prioritas utama kami. Mari bersama-sama menciptakan kolaborasi yang bermanfaat dan berkelanjutan.
+                </p>
+                <button class="bg-red-900 text-white px-4 py-3 rounded-full text-sm font-medium hover:bg-red-800 transition-colors">
+                Ketuk Untuk Lanjutkan
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+                <img src="../images/ft_1.png" class="rounded-md object-cover h-60 w-full" />
+                <img src="../images/ft_2.png" class="rounded-md object-cover h-60 w-full" />
+                <img src="../images/ft_3.png" class="rounded-md object-cover h-60 w-full col-span-2" />
+            </div>
+
+        </section>
+        
+        <section id="contact" class="relative min-h-screen py-6 mx-auto md:px-14 md:items-start">
+            <div class="flex justify-center md:justify-start absolute inset-0">
+                    <img src="../images/contact_bg.png" alt="Contact Background">
+            </div>
+
+            <div class="md:flex md:flex-row flex flex-col justify-between items-center mt-3 relative z-10 px-4 md:items-start">
+                <h1 class="text-[40px] md:text-[50px] font-bold md:font-semibold font-jakarta text-center md:text-left">Contact Us</h1>
+                <p class="hidden md:block text-[14px] text-right text-black mt-5 leading-relaxed">Hubungi Kami <br> Kami siap membantu kebutuhan Anda. Silakan hubungi kami untuk informasi lebih lanjut, <br> konsultasi produk, atau kerja sama bisnis. Tim kami akan merespons secepat mungkin.</p>
+            </div>
+
+            <div class="relative w-full h-100 flex flex-col md:flex-row items-center md:gap-6 md:justify-between">
+                
+                <div class="relative z-10 px-4 mt-3">
+                    <h2 class="text-[16px] md:text-[36px] font-medium text-[#7a1f1f] leading-tight mb-4 text-justify md:text-left">
+                        Kolaborasi yang tepat <br class="hidden md:block">dimulai dari komunikasi <br class="hidden md:block">yang baik.
+                    </h2>
+                    <p class="text-[14px] md:text-[16px] text-black mt-5">
+                        Hubungi kami untuk solusi industri yang andal dan berkelanjutan.
+                    </p>
+                    <div class="hidden md:flex gap-3 md:absolute items-center md:items-start md:justify-start justify-center mt-5 md:mt-40">
+                        <a href="" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border-2 border-[#7A1F1F] rounded-full" ><i class="fa-brands fa-whatsapp fa-lg" style="color: #7A1F1F;"></i></a>
+                        <a href="" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border-2 border-[#7A1F1F] rounded-full" ><i class="fa-brands fa-instagram fa-lg" style="color: #7A1F1F;"></i></a>
+                        <a href="" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border-2 border-[#7A1F1F] rounded-full" ><i class="fa-solid fa-envelope fa-lg" style="color: #7A1F1F;"></i></a>
+                    </div>
+                </div>
+
+                <div class="z-10 bg-white border border-black p-6 rounded-3xl shadow-2xl md:w-150 md:h-115 w-75 mt-5 md:mt-36">
+                    <form class="space-y-5">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Nama</label>
+                            <input type="text" class="w-full p-3 bg-gray-100 rounded-2xl text-sm focus:outline-none" placeholder="Nama Anda">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" class="w-full p-3 bg-gray-100 rounded-xl text-sm focus:outline-none" placeholder="Email Anda">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Pesan</label>
+                            <textarea class="w-full p-3 bg-gray-100 rounded-xl h-36 text-sm focus:outline-none" placeholder="Pesan Anda"></textarea>
+                        </div>
+                        <button class="group flex items-center gap-2 bg-[#7a1f1f] text-white px-3 py-2 rounded-full hover:bg-[#651818] transition">
+                            <span class="text-[10px] md:text-[12px] font-medium">Kirim Pesan</span>
+
+                            <span class="flex items-center justify-center w-4 h-4 bg-white rounded-full">
+                                <i class="fa-solid fa-arrow-right text-[#7a1f1f] text-xs"></i>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class=" mt-30 px-2">
+            <div class="hidden md:flex gap-10 justify-center items-center">
+                <div class="bg-[#7A1F1F] rounded-3xl p-6 w-75 md:w-90 h-60 space-y-5">
+                    <a class="opacity-25" href="mailto:perdanamitrakencana@outlook.com">
+                        <i class="fa-solid fa-envelope text-7xl" style="color: rgb(255, 255, 255);"></i>
+                    </a>
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-white text-[16px]">perdanamitrakencana@outlook.com</h4>
+                        <p class="text-[16px] text-white">Kirimkan pertanyaan, permintaan penawaran, atau kebutuhan kerja sama melalui email kami.</p>
+                    </div>
+                </div>
+                <div class="bg-[#962121] rounded-3xl p-6 w-75 md:w-90 h-60 space-y-5">
+                    <a class="opacity-25" href="mailto:perdanamitrakencana@outlook.com">
+                        <i class="fa-solid fa-phone text-7xl" style="color: rgb(255, 255, 255);"></i>
+                    </a>
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-white text-sm">perdanamitrakencana@outlook.com</h4>
+                        <p class="text-[16px] text-white">Hubungi kami untuk konsultasi cepat, informasi produk, dan pemesanan secara langsung.</p>
+                    </div>
+                </div>
+                <div class="bg-[#A13838] rounded-3xl p-6 w-75 md:w-90 h-60 space-y-5">
+                    <a class="opacity-25" href="mailto:perdanamitrakencana@outlook.com">
+                        <i class="fa-solid fa-location-dot text-7xl" style="color: rgb(255, 255, 255);"></i>
+                    </a>
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-white text-sm">Google Map</h4>
+                        <p class="text-[16px] text-white">Kunjungi kantor kami untuk diskusi lebih lanjut dan melihat proses kerja secara langsung.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:hidden swiper mySwiper px-2 mt-10 h-fit">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide w-auto">
+                       <div class="bg-[#7A1F1F] rounded-3xl px-6 py-3 w-fit h-auto space-y-5">
+                        <a class="opacity-25" href="mailto:perdanamitrakencana@outlook.com">
+                            <i class="fa-solid fa-envelope text-7xl" style="color: rgb(255, 255, 255);"></i>
+                        </a>
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-white text-sm">perdanamitrakencana@outlook.com</h4>
+                            <p class="text-[12px] text-white opacity-80">Kirimkan pertanyaan, permintaan penawaran, atau kebutuhan kerja sama melalui email kami.</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide w-auto">
+                        <div class="bg-[#7A1F1F] rounded-3xl px-6 py-3 w-fit h-auto space-y-5">
+                            <a class="opacity-25" href="mailto:perdanamitrakencana@outlook.com">
+                                <i class="fa-solid fa-phone text-7xl" style="color: rgb(255, 255, 255);"></i>
+                            </a>
+                            <div class="space-y-3">
+                                <h4 class="font-bold text-white text-sm">perdanamitrakencana@outlook.com</h4>
+                                <p class="text-[12px] text-white opacity-80">Hubungi kami untuk konsultasi cepat, informasi produk, dan pemesanan secara langsung.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide w-auto">
+                        <div class="bg-[#7A1F1F] rounded-3xl px-6 py-3 w-fit h-auto space-y-5">
+                            <a class="opacity-25" href="mailto:perdanamitrakencana@outlook.com">
+                               <i class="fa-solid fa-location-dot text-7xl" style="color: rgb(255, 255, 255);"></i>
+                            </a>
+                            <div class="space-y-3">
+                                <h4 class="font-bold text-white text-sm">Google Map</h4>
+                                <p class="text-[12px] text-white opacity-80">Kunjungi kantor kami untuk diskusi lebih lanjut dan melihat proses kerja secara langsung.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination static mt-10"></div>
+            </div>
+        </section>
+
+        <section class="hidden md:flex justify-center items-center py-10 mt-10 w-full">
+            <div class="container flex justify-center">
+                <div class="overflow-hidden rounded-3xl shadow-lg border border-gray-200">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.2784700288985!2d106.8869848540482!3d-6.111949706415569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f006cdfa0b5%3A0x2a09ead5cb0fa2cf!2sPT.%20Perdana%20Mitra%20Kencana!5e0!3m2!1sen!2sid!4v1771299882137!5m2!1sen!2sid" class="w-600 h-80" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+     <!-- Footer Section -->
+       <footer class=" bg-[#7A1F1F] rounded-t-[20px] p-8 flex flex-col mt-20">
+            <div class="md:flex md:flex-col w-full mb-10">
+                <h1 class="text-white text-[35px] md:text-[95px] font-semibold">PT. Perdana Mitra Kencana</h1>
+                <div class="bg-white w-full h-0.5 mt-3"></div>
+            </div>
+
+            <div class="w-full flex flex-col gap-8">
+                <div class="flex flex-col md:flex-row justify-start items-start gap-x-10">
+                    <div class="flex justify-between gap-8">
+                        <div class="flex flex-col gap-y-20 md:gap-y-24 mt-4">
+                            <a href=""><i class="fa-solid fa-location-dot fa-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
+                            <div class="flex flex-col gap-18">
+                                <a href=""><i class="fa-solid fa-envelope text-white fa-xl"></i></a>
+                                <a href=""><i class="fa-solid fa-phone fa-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-6 text-white text-[12.75px] md:text-[16px]">
+                            <p>Jl. Kb. Bawang No.35, RT.8/RW.6, Kb.<br> Bawang, Kec. Tj. Priok, Jkt Utara, Daerah <br> Khusus Ibukota Jakarta 14320</p>
+                            <div class="flex flex-col gap-14">
+                                <p>perdanamitrakencana@outlook.com</p>
+                                <p>perdanamitrakencana@outlook.co</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:flex md:flex-row md:gap-x-20">
+                        <div class="hidden md:flex md:flex-col md:gap-5">
+                            <h1 class="text-[18px] md:text-[22px] text-white font-semibold">Product</h1>
+                            <p class="text-white text-[14px] font-light">Filter Mesh Stainless</p>
+                            <p class="text-white text-[14px] font-light">Filter Mesh Galvanized</p>
+                            <p class="text-white text-[16px] font-light">Filter Mesh SS</p>
+                            <p class="text-white text-[16px] font-light">Steel Cap Stoper</p>
+                        </div>
+                        <div class="md:flex md:gap-40">
+                            <div class="hidden md:flex md:flex-col md:gap-5">
+                                <h1 class="text-[18px] md:text-[22px] text-white font-semibold">Quick Links</h1>
+                                <p class="text-white text-[16px] font-light">Home</p>
+                                <p class="text-white text-[16px] font-light">Product</p>
+                                <p class="text-white text-[16px] font-light">Gallery</p>
+                                <p class="text-white text-[16px] font-light">Contact</p>
+                            </div>
+
+                            <div class="md:hidden container flex justify-center mt-7">
+                                <div class="overflow-hidden rounded-3xl shadow-lg border border-gray-200">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.2784700288985!2d106.8869848540482!3d-6.111949706415569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f006cdfa0b5%3A0x2a09ead5cb0fa2cf!2sPT.%20Perdana%20Mitra%20Kencana!5e0!3m2!1sen!2sid!4v1771299882137!5m2!1sen!2sid" class="w-full h-50" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col text-white mt-5 md:mt-0">
+                                <h1 class="text-[22px] font-bold">Call to Action</h1>
+                                <p class="text-[12.75px] md:text-[16px] font-light text-justify">Solusi penyaringan industri yang tepat. <br class="hidden md:block">Efisiensi produksi dimulai dari sistem filtrasi <br class="hidden md:block">yang berkualitas.</p>
+                                <div class="flex flex-col gap-4">
+                                    <div class="relative">
+                                        <input type="text" placeholder="hubungi kami" class="w-full md:w-60 h-8 bg-white text-black border border-white rounded-full px-5 py-2.5 text-[14px] mt-4">
+                                        <i class="fa-solid fa-angle-right absolute bottom-2 right-4 md:right-14" style="color: rgb(122, 31, 31);"></i></i>
+                                    </div>
+                                    <div class="flex gap-3 items-center md:items-start md:justify-start justify-center mt-5 md:mt-0">
+                                        <a href="" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
+                                        <a href="" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border border-white rounded-full" ><i class="fa-brands fa-instagram" style="color: white;"></i></a>
+                                        <a href="" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border border-white rounded-full" ><i class="fa-solid fa-envelope" style="color: white;"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+                <div class="flex justify-center items-center mt-5">
+                    <p class="text-white/50 text-[14px] md:text-[18px] font-light text-center">© 2026 PT Perdana Mitra Kencana. All rights reserved. Designed by PMK Digital Team.</p>
+                </div>
+            
+        </footer>
+
+        <script src="../js/script.js"></script>
+</body>
+</html>
