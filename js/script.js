@@ -64,6 +64,24 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
+var swiper = new Swiper(".myProduct", {
+   slidesPerView: 2,
+    slidesPerGroup: 2,
+    spaceBetween: 7,
+    grabCursor: true,
+    loop: true,
+     pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    
+    },
+
+    navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+    },
+});
+
 
     emailjs.init('DrG9NNxTyUGNwsVhf'); // ganti dengan public key kamu
 
@@ -110,3 +128,10 @@ var swiper = new Swiper(".mySwiper", {
                 }, 3000);
             });
     });
+
+ function toggleDropdown() {
+    const dropdown = document.getElementById('dropdown');
+    const chevron = document.getElementById('chevron');
+    dropdown.classList.toggle('hidden');
+    chevron.classList.toggle('rotate-180');
+ }
