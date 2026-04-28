@@ -17,50 +17,36 @@
 // });
 
 function onToggleMenu(e) {
-    const navLinks = document.getElementById('navLinks');
-    const icon = e.querySelector('i');
-    
-    // Toggle class hidden
-    navLinks.classList.toggle('hidden');
-    
-    // Ganti icon bars ke xmark jika terbuka
-    if (navLinks.classList.contains('hidden')) {
-        icon.classList.replace('fa-xmark', 'fa-bars');
-    } else {
-        icon.classList.replace('fa-bars', 'fa-xmark');
-    }
-}
+        const navLinks = document.getElementById('navLinks');
+        const logo = document.getElementById('logo');
+        const menuBtn = document.getElementById('menuBtn');
+        const icon = e.querySelector('i');
 
-function onToggleMenu(e) {
-    // 1. Ambil elemen menu navigasi berdasarkan ID
-    const navLinks = document.getElementById('navLinks');
-    
-    // 2. Ambil elemen ikon (<i>) yang ada di dalam div yang diklik
-    const icon = e.querySelector('i');
-
-    // 3. Logic Toggle: Cek atribut 'name' pada ikon
-    if (icon.getAttribute('name') === 'menu') {
-        // Ganti jadi ikon 'close'
         icon.setAttribute('name', 'close');
-        // Ganti class FontAwesome ke silang (xmark)
         icon.classList.replace('fa-bars', 'fa-xmark');
-        // Munculkan menu (geser ke posisi terlihat)
-        navLinks.classList.remove('top-[-100%]');
+
         navLinks.classList.remove('hidden');
-        navLinks.classList.add('top-[10%]');
         navLinks.classList.add('flex');
-    } else {
-        // Balikin jadi ikon 'menu'
-        icon.setAttribute('name', 'menu');
-        // Ganti class FontAwesome kembali ke bars
-        icon.classList.replace('fa-xmark', 'fa-bars');
-        // Sembunyikan menu kembali ke atas
-        navLinks.classList.remove('top-[10%]');
-        navLinks.classList.remove('flex');
-        navLinks.classList.add('top-[-100%]');
-        navLinks.classList.add('hidden');
+
+        logo.classList.add('hidden');
+        menuBtn.classList.add('hidden');
     }
-}
+
+    function closeMenu() {
+        const navLinks = document.getElementById('navLinks');
+        const logo = document.getElementById('logo');
+        const menuBtn = document.getElementById('menuBtn');
+        const icon = menuBtn.querySelector('i');
+
+        icon.setAttribute('name', 'menu');
+        icon.classList.replace('fa-xmark', 'fa-bars');
+
+        navLinks.classList.remove('flex');
+        navLinks.classList.add('hidden');
+
+        logo.classList.remove('hidden');
+        menuBtn.classList.remove('hidden');
+    }
 
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
@@ -77,3 +63,50 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: '.swiper-button-prev',
     },
 });
+
+
+    emailjs.init('DrG9NNxTyUGNwsVhf'); // ganti dengan public key kamu
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const btn = this.querySelector('button[type="submit"]');
+        const btnText = btn.querySelector('span:first-child');
+
+        // Disable tombol saat loading
+        btn.disabled = true;
+        btnText.textContent = 'Mengirim...';
+
+        const templateParams = {
+            name:    document.getElementById('name').value,
+            time:   new Date().toLocaleString(),
+            email:   document.getElementById('email').value,
+            message: document.getElementById('message').value,
+        };
+
+        emailjs.send('service_pmk', 'template_j4s813h', templateParams)
+            .then(() => {
+                btnText.textContent = 'Terkirim!';
+                btn.classList.remove('bg-[#7a1f1f]', 'hover:bg-[#651818]');
+                btn.classList.add('bg-green-600');
+                document.getElementById('contactForm').reset();
+
+                setTimeout(() => {
+                    btnText.textContent = 'Kirim Pesan';
+                    btn.classList.add('bg-[#7a1f1f]', 'hover:bg-[#651818]');
+                    btn.classList.remove('bg-green-600');
+                    btn.disabled = false;
+                }, 3000);
+            })
+            .catch((error) => {
+                console.error(error);
+                btnText.textContent = 'Gagal, coba lagi';
+                btn.classList.add('bg-red-600');
+                btn.disabled = false;
+
+                setTimeout(() => {
+                    btnText.textContent = 'Kirim Pesan';
+                    btn.classList.remove('bg-red-600');
+                }, 3000);
+            });
+    });

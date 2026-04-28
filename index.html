@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 
@@ -27,17 +28,17 @@
 
 <body class="mx-auto bg-white">
     <div class="bg-[#7a1f1f] flex md:hidden py-3 px-4 gap-3 justify-end items-end">
-        <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
-        <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-instagram" style="color: white;"></i></a>
-        <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-solid fa-envelope" style="color: white;"></i></a>
+        <a href="https://wa.me/6281210035326" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
+        <a href="https://www.instagram.com/perdanamitrakencana?utm_source=qr&igsh=MTNvZXBvZWh6eW40ZQ==" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-instagram" style="color: white;"></i></a>
+        <a href="perdanamitrakencana@outlook.com" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-solid fa-envelope" style="color: white;"></i></a>
     </div>
     <!-- Header Navigation -->
-    <header class=" top-0 left-0 w-full pt-5 md:pt-10 px-6 md:px-20 z-40 flex items-center justify-between md:justify-center">
+    <!-- <header class=" top-0 left-0 w-full pt-5 md:pt-10 px-6 md:px-20 z-40 flex items-center justify-between md:justify-center">
         <div class="md:absolute md:left-20 flex items-center">
             <img class="w-10 h-auto md:w-15" src="../images/pmk_logo.png" alt="pmk-logo">
         </div>
 
-        <nav id="navLinks" class="hidden duration-500 md:static bg-[#7a1f1f] md:min-h-fit md:p-2 min-h-[35vh] left-0 top-0 w-full md:w-auto md:flex md:items-center px-5 py-3 md:rounded-full rounded-b-3xl z-10">
+        <nav id="navLinks" class="hidden duration-500 md:static bg-[#7a1f1f] md:min-h-fit md:p-2 min-h-[25vh] left-0 top-0 w-full md:w-auto md:flex md:items-center px-5 py-3 md:rounded-full rounded-b-3xl z-10">
             <ul id="navbar-links" class="flex md:flex-row flex-col justify-center items-center gap-4 md:gap-2 text-[16px] font-medium font-inter w-full py-10 md:py-0">
                 <li class="nav-item active px-6 py-2 bg-white text-[#7a1f1f] font-bold rounded-full cursor-pointer transition-all duration-300">
                     <a href="#home">Home</a>
@@ -57,11 +58,46 @@
         <div onclick="onToggleMenu(this)" class="flex md:hidden cursor-pointer rounded-full bg-[#7a1f1f] w-8 h-8 items-center justify-center z-50">
             <i name="menu" class="fa-solid fa-bars fa-sm" style="color: white"></i>
         </div>
+    </header> -->
+    <header class="top-0 left-0 w-full pt-5 md:pt-10 px-4 md:px-20 z-10 flex items-center justify-between md:justify-center">
+   <!-- Logo -->
+        <div id="logo" class="md:absolute md:left-10 flex items-center">
+            <img class="w-10 h-auto md:w-15" src="../images/pmk_logo.png" alt="pmk-logo">
+        </div>
+
+        <!-- Nav Drawer -->
+        <nav id="navLinks" class="hidden duration-500 md:static md:flex md:items-center md:bg-[#7a1f1f] min-h-fit md:p-2 md:w-auto md:rounded-full fixed top-12 inset-0 bg-[#7a1f1f] flex-col rounded-b-3xl justify-center items-center z-15 px-5 py-3">
+            <button onclick="closeMenu()" class="md:hidden absolute top-6 right-6 bg-[#6b1515] text-white w-10 h-10 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-xmark" style="color: white"></i>
+            </button>
+
+            <ul id="navbar-links" class="flex md:flex-row flex-col justify-center items-center gap-8 md:gap-2 text-[16px] font-medium font-inter w-full py-10 md:py-0">
+                <li class="nav-item active px-6 py-2 bg-white text-[#7a1f1f] font-bold rounded-full cursor-pointer transition-all duration-300">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="view/product_page.html">Product</a>
+                </li>
+                <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="view/gallery_page.html">Gallery</a>
+                </li>
+                <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
+                    <a href="view/contact_page.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Tombol Hamburger -->
+        <div id="menuBtn" onclick="onToggleMenu(this)" class="flex md:hidden cursor-pointer rounded-full bg-[#7a1f1f] w-8 h-8 items-center justify-center z-50">
+            <i name="menu" class="fa-solid fa-bars fa-sm" style="color: white"></i>
+        </div>
+
     </header>
+
 
     <main class="mx-auto w-full">
         <!-- Home Section -->
-        <section id="home" class="flex flex-col w-full min-h-screen py-8 md:text-center md:py-20">
+        <section id="home" class="flex flex-col w-full min-h-screen py-8 md:text-center md:pt-40">
             <div class="flex w-full flex-col mx-auto font-plus-jakarta-sans text-black gap-5 px-4">
                 <h1 class="font-bold font-plus-jakarta-sans text-[35px] md:text-[90px] items-start md:text-center leading-8 md:leading-none">Perdana Mitra <br>Kencana</h1>
                 <p class="font-plus-jakarta-sans text-[12px] md:text-[18px] text-gray-700 leading-relaxed">Velg ringan berkualitas tinggi yang dirancang <br>dengan presisi engineering dan memenuhi standar kinerja global.</p>
@@ -105,7 +141,7 @@
             <div class=" flex items-center px-3 gap-6 md:hidden">
                 <div class="w-full h-0.5 bg-red-900"></div>
             </div>
-            <div class="flex flex-col md:flex-row justify-center items-center md:justify-around gap-10 mt-6">
+            <div class="flex flex-col md:flex-row justify-center items-center md:justify-around gap-8 mt-6">
                 <div class="flex flex-col items-center text-center py-4 px-5 border border-gray-200 md:border-0 rounded-sm">
                     <div class="bg-[#7a1f1f] py-3 px-4 md:py-4 md:px-4 rounded-2xl mb-4">
                         <i class="fa-solid fa-gear text-white fa-2xl"></i>
@@ -114,7 +150,7 @@
                     <p class="text-gray-600 text-[12px] md:text-[14px]">Penyediaan wiremesh berkualitas <br>untuk konstruksi dan industri.</p>
                 </div>
 
-                <div class="flex flex-col items-center text-center py-4 px-8 border border-gray-200 md:border-0 lg:border lg:border-gray-700 rounded-sm md:rounded-none">
+                <div class="flex flex-col items-center text-center py-4 px-8 border border-gray-200 md:border-0 rounded-sm">
                     <div class="bg-[#7a1f1f] py-3 px-4 md:py-4 md:px-4 rounded-2xl mb-4">
                         <i class="fa-solid fa-box text-white fa-2xl"></i>
                     </div>
@@ -146,7 +182,7 @@
                     <div class="swiper-wrapper">
     
                         <div class="swiper-slide w-auto">
-                            <div class="bg-white shadow-xl w-65 h-95 flex flex-col justify-between overflow-hidden rounded-md border border-gray-100">
+                            <div class="bg-white shadow-xl w-full h-90 flex flex-col justify-between overflow-hidden rounded-md border border-gray-100">
                                 <div class="relative h-40">
                                     <h2 class="text-[120px] font-bold text-[#7a1f1f] opacity-10 absolute -top-16 -right-2">3+</h2>
                                     <h2 class="text-[90px] font-bold text-[#7a1f1f] absolute top-6 left-8 z-10">3+</h2>
@@ -158,7 +194,7 @@
                         </div>
     
                         <div class="swiper-slide w-auto">
-                            <div class="bg-white shadow-xl w-65 h-95 flex flex-col justify-between overflow-hidden rounded-md border border-gray-100">
+                            <div class="bg-white shadow-xl w-full h-90 flex flex-col justify-between overflow-hidden rounded-md border border-gray-100">
                                 <div class="relative h-40">
                                     <h2 class="text-[110px] font-bold text-[#7a1f1f] opacity-10 absolute -top-10 -right-8">98%</h2>
                                     <h2 class="text-[90px] font-bold text-[#7a1f1f] absolute top-8 left-4 z-10">98%</h2>
@@ -169,8 +205,8 @@
                             </div>
                         </div>
     
-                        <div class="swiper-slide w-auto!">
-                            <div class="bg-white shadow-xl w-65 h-95 flex flex-col justify-between overflow-hidden rounded-md border border-gray-100">
+                        <div class="swiper-slide w-auto">
+                            <div class="bg-white shadow-xl w-full h-90 flex flex-col justify-between overflow-hidden rounded-md border border-gray-100">
                                 <div class="relative h-40">
                                     <h2 class="text-[110px] font-bold text-[#7a1f1f] opacity-10 absolute -top-10 -right-8">20+</h2>
                                     <h2 class="text-[90px] font-bold text-[#7a1f1f] absolute top-8 left-4 z-10">20+</h2>
@@ -191,17 +227,17 @@
                         <p class="text-[14px] mt-3 md:mt-0 text-justify">Komitmen pada Kepuasan & <br class="hidden md:block"> Kepercayaan Klien <br class="hidden md:block"> Kami mengutamakan ketepatan <br class="hidden md:block">waktu, komunikasi yang jelas,<br class="hidden md:block">serta layanan yang responsif <br>demi membangun kerja sama <br>jangka panjang.</p>
                         <div class="mt-10 flex md:flex-col gap-8 justify-between items-center md:items-start">
                             <div class="flex justify-center">
-                                <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
-                                <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
-                                <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
-                                <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
-                                <i class="fa-solid fa-star fa-xs" style="color: #FFD43B;"></i>
-                                <i class="fa-regular fa-star fa-xs" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star fa-sm" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star fa-sm" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star fa-sm" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star fa-sm" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star fa-sm" style="color: #FFD43B;"></i>
+                                <i class="fa-regular fa-star fa-sm" style="color: #FFD43B;"></i>
                             </div>
                             <div class="flex justify-center gap-2">
-                                <a href="#contact" class="bg-[#7a1f1f] text-[12px] md:text-[13px] px-5 py-1 md:px-6 md:py-1 text-white rounded-full font-medium">Hubungi kami</a>
-                                <a href="#" class="inline-flex items-center justify-center w-7 h-7 bg-[#7a1f1f] text-[#7a1f1f] rounded-full">
-                                    <i class="fa-brands fa-whatsapp fa-sm" style="color: #fff;"></i>
+                                <a href="#contact" class="bg-[#7a1f1f] text-[12px] md:text-[13px] px-5 py-2 md:px-6 md:py-2 text-white rounded-full font-medium">Hubungi kami</a>
+                                <a href="#" class="inline-flex items-center justify-center w-9 h-9 bg-[#7a1f1f] text-[#7a1f1f] rounded-full">
+                                    <i class="fa-brands fa-whatsapp fa-lg" style="color: #fff;"></i>
                                 </a>
                             </div>
                         </div>
@@ -257,7 +293,7 @@
                     <div class="swiper-wrapper">
                         
                         <div class="swiper-slide w-auto"> 
-                            <div class="w-75 bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                            <div class="w-full bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                                 <div class="aspect-square w-full">
                                     <img src="images/1.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                                 </div>
@@ -268,7 +304,7 @@
                         </div>
 
                         <div class="swiper-slide w-auto">
-                            <div class="w-75 bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                            <div class="w-full bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                                 <div class="aspect-square w-full">
                                     <img src="images/2.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                                 </div>
@@ -279,7 +315,7 @@
                         </div>
 
                         <div class="swiper-slide w-auto">
-                            <div class="w-75 bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                            <div class="w-full bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                                 <div class="aspect-square w-full">
                                     <img src="images/3.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                                 </div>
@@ -289,7 +325,7 @@
                             </div>
                         </div>
                         <div class="swiper-slide w-auto">
-                            <div class="w-75 bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                            <div class="w-full bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                                 <div class="aspect-square w-full">
                                     <img src="images/4.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                                 </div>
@@ -396,28 +432,28 @@
             <div class="swiper-wrapper">
 
                 <div class="swiper-slide w-auto">
-                    <div class="overflow-hidden w-75 aspect-square group cursor-pointer">
+                    <div class="overflow-hidden w-80 aspect-square group cursor-pointer">
                         <img src="../images/Galerry1.png" alt="gallery image"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
                 </div>
 
                 <div class="swiper-slide w-auto">
-                    <div class="overflow-hidden w-75 aspect-square group cursor-pointer">
+                    <div class="overflow-hidden w-80 aspect-square group cursor-pointer">
                         <img src="../images/Galerry2.png" alt="gallery image"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
                 </div>
 
                 <div class="swiper-slide w-auto">
-                    <div class="overflow-hidden w-75 aspect-square group cursor-pointer">
+                    <div class="overflow-hidden w-80 aspect-square group cursor-pointer">
                         <img src="../images/Galerry3.png" alt="gallery image"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
                 </div>
 
                 <div class="swiper-slide w-auto">
-                    <div class="overflow-hidden w-75 aspect-square group cursor-pointer">
+                    <div class="overflow-hidden w-80 aspect-square group cursor-pointer">
                         <img src="../images/Galerry4.png" alt="gallery image"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
@@ -464,43 +500,48 @@
     </section>
         
         <!-- Contact Us Section -->
-        <section id="contact" class="relative min-h-screen py-10 mx-auto md:px-14 md:items-start">
+         <section id="contact" class="relative min-h-screen py-6 mx-auto md:px-14 md:items-start">
             <div class="flex justify-center md:justify-start absolute inset-0">
                     <img src="images/contact_bg.png" alt="Contact Background">
             </div>
 
-            <div class="flex flex-col justify-between items-center mt-3 relative z-10 px-4 md:items-start">
-                <h1 class="text-[40px] md:text-[50px] font-bold font-jakarta text-center md:text-left">Contact Us</h1>
+            <div class="md:flex md:flex-row flex flex-col justify-between items-center mt-3 relative z-10 px-4 md:items-start">
+                <h1 class="text-[40px] md:text-[50px] font-bold md:font-semibold font-jakarta text-center md:text-left">Contact Us</h1>
+                <p class="hidden md:block text-[14px] text-right text-black mt-5 leading-relaxed">Hubungi Kami <br> Kami siap membantu kebutuhan Anda. Silakan hubungi kami untuk informasi lebih lanjut, <br> konsultasi produk, atau kerja sama bisnis. Tim kami akan merespons secepat mungkin.</p>
             </div>
 
             <div class="relative w-full h-100 flex flex-col md:flex-row items-center md:gap-6 md:justify-between">
                 
                 <div class="relative z-10 px-4 mt-3">
-                    <h2 class="text-[16px] md:text-[30px] font-bold text-[#7a1f1f] leading-tight mb-4 text-justify">
-                        Kolaborasi yang tepat <br>dimulai dari komunikasi <br>yang baik.
+                    <h2 class="text-[16px] md:text-[36px] font-medium text-[#7a1f1f] leading-tight mb-4 text-justify md:text-left">
+                        Kolaborasi yang tepat <br class="hidden md:block">dimulai dari komunikasi <br class="hidden md:block">yang baik.
                     </h2>
-                    <p class="text-[12px] md:text-[16px] text-black">
+                    <p class="text-[14px] md:text-[16px] text-black mt-5">
                         Hubungi kami untuk solusi industri yang andal dan berkelanjutan.
                     </p>
+                    <div class="hidden md:flex gap-3 md:absolute items-center md:items-start md:justify-start justify-center mt-5 md:mt-40">
+                        <a href="" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border-2 border-[#7A1F1F] rounded-full" ><i class="fa-brands fa-whatsapp fa-lg" style="color: #7A1F1F;"></i></a>
+                        <a href="" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border-2 border-[#7A1F1F] rounded-full" ><i class="fa-brands fa-instagram fa-lg" style="color: #7A1F1F;"></i></a>
+                        <a href="" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border-2 border-[#7A1F1F] rounded-full" ><i class="fa-solid fa-envelope fa-lg" style="color: #7A1F1F;"></i></a>
+                    </div>
                 </div>
 
-                <div class="z-10 bg-white border border-black p-6 rounded-3xl shadow-2xl md:w-150 md:h-115 w-75 mt-5">
-                    <form class="space-y-5">
+                <div class="z-10 bg-white border border-black p-6 md:p-8 rounded-3xl shadow-2xl md:w-150 md:h-125 w-85 mt-5 md:mt-36">
+                    <form id="contactForm" class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium mb-1">Nama</label>
-                            <input type="text" class="w-full p-3 bg-gray-100 rounded-2xl text-sm focus:outline-none" placeholder="Nama Anda">
+                            <input id="name" type="text" class="w-full p-3 bg-gray-100 rounded-2xl text-sm focus:outline-none" placeholder="Nama Anda">
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-1">Email</label>
-                            <input type="email" class="w-full p-3 bg-gray-100 rounded-xl text-sm focus:outline-none" placeholder="Email Anda">
+                            <input id="email" type="email" class="w-full p-3 bg-gray-100 rounded-xl text-sm focus:outline-none" placeholder="Email Anda">
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-1">Pesan</label>
-                            <textarea class="w-full p-3 bg-gray-100 rounded-xl h-36 text-sm focus:outline-none" placeholder="Pesan Anda"></textarea>
+                            <textarea id="message" class="w-full p-3 bg-gray-100 rounded-xl h-36 text-sm focus:outline-none" placeholder="Pesan Anda"></textarea>
                         </div>
-                        <button class="group flex items-center gap-2 bg-[#7a1f1f] text-white px-3 py-2 rounded-full hover:bg-[#651818] transition">
-                            <span class="text-[10px] md:text-[12px] font-medium">Kirim Pesan</span>
-
+                        <button type="submit" class="group flex items-center gap-2 bg-[#7a1f1f] text-white px-4 py-2 rounded-full hover:bg-[#651818] transition">
+                            <span class="text-[10px] md:text-[15px] font-medium">Kirim Pesan</span>
                             <span class="flex items-center justify-center w-4 h-4 bg-white rounded-full">
                                 <i class="fa-solid fa-arrow-right text-[#7a1f1f] text-xs"></i>
                             </span>
@@ -510,7 +551,7 @@
             </div>
         </section>
 
-       <section class="hidden md:flex justify-center items-center py-10 mt-10 w-full">
+       <section class="hidden md:flex justify-center items-center py-10 mt-5 w-full">
             <div class="container flex justify-center">
                 <div class="overflow-hidden rounded-3xl shadow-lg border border-gray-200">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.2784700288985!2d106.8869848540482!3d-6.111949706415569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f006cdfa0b5%3A0x2a09ead5cb0fa2cf!2sPT.%20Perdana%20Mitra%20Kencana!5e0!3m2!1sen!2sid!4v1771299882137!5m2!1sen!2sid" class="w-600 h-80" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -520,8 +561,7 @@
 
         </main>
 
-        <!-- Footer Section -->
-       <footer class=" bg-[#7A1F1F] rounded-t-[20px] p-8 flex flex-col mt-50">
+        <footer class=" bg-[#7A1F1F] rounded-t-[20px] p-8 flex flex-col mt-30">
             <div class="md:flex md:flex-col w-full mb-10">
                 <h1 class="text-white text-[35px] md:text-[95px] font-semibold">PT. Perdana Mitra Kencana</h1>
                 <div class="hidden md:block md:bg-white md:w-full md:h-0.5"></div>
@@ -530,9 +570,9 @@
             <div class="w-full flex flex-col gap-8">
                 <div class="flex flex-col md:flex-row justify-start items-start gap-x-10">
                     <div class="flex justify-between gap-10">
-                        <div class="flex flex-col gap-y-18 md:gap-y-18 mt-2">
+                        <div class="flex flex-col gap-y-12 md:gap-y-20 mt-2">
                             <a href=""><i class="fa-solid fa-location-dot fa-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
-                            <div class="flex flex-col gap-12 md:gap-14">
+                            <div class="flex flex-col gap-13 md:gap-10">
                                 <a href=""><i class="fa-solid fa-envelope text-white fa-xl"></i></a>
                                 <a href=""><i class="fa-solid fa-phone fa-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
                             </div>
@@ -591,7 +631,6 @@
                 <div class="flex justify-center items-center mt-5">
                     <p class="text-white/50 text-[14px] md:text-[18px] font-light text-center">© 2026 PT Perdana Mitra Kencana. All rights reserved. Designed by PMK Digital Team.</p>
                 </div>
-            
         </footer>
 
     <script src="js/script.js"></script>
