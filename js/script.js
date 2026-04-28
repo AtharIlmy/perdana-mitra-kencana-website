@@ -128,10 +128,3 @@ var swiper = new Swiper(".myProduct", {
                 }, 3000);
             });
     });
-
- function toggleDropdown() {
-    const dropdown = document.getElementById('dropdown');
-    const chevron = document.getElementById('chevron');
-    dropdown.classList.toggle('hidden');
-    chevron.classList.toggle('rotate-180');
- }
