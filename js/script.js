@@ -48,6 +48,13 @@ function onToggleMenu(e) {
         menuBtn.classList.remove('hidden');
     }
 
+document.querySelectorAll('button[data-target]').forEach(button => {
+  button.addEventListener('click', () => {
+    const target = button.getAttribute('data-target');
+    document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -128,3 +135,4 @@ var swiper = new Swiper(".myProduct", {
                 }, 3000);
             });
     });
+

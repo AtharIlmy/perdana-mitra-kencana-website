@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,21 +14,21 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
-<body>
+<body class="bg-white overflow-x-hidden">
     <div class="bg-[#7a1f1f] flex md:hidden py-3 px-4 gap-3 justify-end items-end">
         <a href="https://wa.me/6281210035326" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
         <a href="https://www.instagram.com/perdanamitrakencana?utm_source=qr&igsh=MTNvZXBvZWh6eW40ZQ==" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-instagram" style="color: white;"></i></a>
         <a href="perdanamitrakencana@outlook.com" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-solid fa-envelope" style="color: white;"></i></a>
     </div>
 
-    <header class="top-0 left-0 w-full pt-5 md:pt-10 px-6 md:px-20 z-10 flex items-center justify-between md:justify-center">
+     <header class="top-0 left-0 w-full pt-5 md:pt-10 px-4 md:px-20 md:pb-4 z-25 flex items-center justify-between md:justify-center md:fixed md:backdrop-blur md:bg-white/10">
    <!-- Logo -->
         <div id="logo" class="md:absolute md:left-10 flex items-center z-10">
             <img class="w-10 h-auto md:w-15" src="../images/pmk_logo.png" alt="pmk-logo">
         </div>
 
         <!-- Nav Drawer -->
-        <nav id="navLinks" class="hidden duration-500 md:static md:flex md:items-center md:bg-[#7a1f1f] min-h-fit md:p-2 md:w-auto md:rounded-full fixed top-12 inset-0 bg-[#7a1f1f] flex-col rounded-b-3xl justify-center items-center z-15 px-5 py-3">
+        <nav id="navLinks" class="hidden duration-500 md:static md:flex md:items-center md:bg-[#7a1f1f] min-h-screen w-screen md:min-h-0 md:p-2 md:w-auto md:rounded-full fixed top-12 inset-0 bg-[#7a1f1f] flex-col rounded-b-3xl justify-center items-center z-15">
             <button onclick="closeMenu()" class="md:hidden absolute top-6 right-6 bg-[#6b1515] text-white w-10 h-10 rounded-full flex items-center justify-center">
                 <i class="fa-solid fa-xmark" style="color: white"></i>
             </button>
@@ -58,7 +58,7 @@
 
 
     <main>
-        <section class="relative min-h-screen px-4 py-10 mx-auto md:px-14 md:items-start bg-[url('../images/contact_bg.png')] bg-cover">
+        <section class="relative min-h-screen px-4 py-10 mx-auto md:px-14 md:items-start bg-[url('../images/contact_bg.png')] bg-cover mt-20">
             <div class="md:hidden flex justify-center md:justify-start md:items-start absolute inset-0">
                 <img class="h-50" src="../images/contact_bg.png" alt="">
             </div>
@@ -73,7 +73,7 @@
                     Kolaborasi yang kuat selalu berawal dari komunikasi yang baik. Kami siap menjadi mitra terpercaya untuk memenuhi <br class="hidden md:block">kebutuhan Anda. Jangan ragu menghubungi kami untuk informasi lebih lanjut, konsultasi produk, maupun peluang <br class="hidden md:block">kerja sama bisnis. Tim kami akan merespons dengan cepat dan profesional.
                 </p>
                 <button class="bg-[#9C2A2A] text-white px-7 py-2 md:py-3 rounded-full mt-6 transition-all duration-500 hover:bg-[#772424]">
-                   <a class="text-sm" href="">Ketuk Untuk Lihat</a>
+                   <a class="text-sm" href="gallery_page.html">Ketuk Untuk Lihat</a>
                 </button>
                 <div class="md:hidden flex grid-cols-2 mt-20 gap-3">
                     <div>
@@ -99,7 +99,7 @@
                 Tim kami berkomitmen untuk memberikan respons yang cepat, ramah, dan profesional, sehingga setiap pertanyaan dan kebutuhan Anda dapat ditangani dengan baik. Jangan ragu untuk menghubungi kami kapan saja, karena kepuasan dan kepercayaan Anda adalah prioritas utama kami. Mari bersama-sama menciptakan kolaborasi yang bermanfaat dan berkelanjutan.
                 </p>
                 <button class="bg-red-900 text-white px-4 py-3 rounded-full text-sm font-medium hover:bg-red-800 transition-colors">
-                Ketuk Untuk Lanjutkan
+                <a href="#contact">Ketuk Untuk Lanjutkan</a>
                 </button>
             </div>
 
@@ -240,7 +240,7 @@
         <section class="hidden md:flex justify-center items-center py-10 mt-10 w-full">
             <div class="container flex justify-center">
                 <div class="overflow-hidden rounded-3xl shadow-lg border border-gray-200">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.2784700288985!2d106.8869848540482!3d-6.111949706415569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f006cdfa0b5%3A0x2a09ead5cb0fa2cf!2sPT.%20Perdana%20Mitra%20Kencana!5e0!3m2!1sen!2sid!4v1771299882137!5m2!1sen!2sid" class="w-600 h-80" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.2784700288985!2d106.8869848540482!3d-6.111949706415569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f006cdfa0b5%3A0x2a09ead5cb0fa2cf!2sPT.%20Perdana%20Mitra%20Kencana!5e0!3m2!1sen!2sid!4v1771299882137!5m2!1sen!2sid" class="w-400 h-75" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
@@ -248,16 +248,16 @@
     </main>
 
      <!-- Footer Section -->
-       <footer class=" bg-[#7A1F1F] rounded-t-[20px] p-8 flex flex-col mt-20">
-            <div class="md:flex md:flex-col w-full mb-10">
-                <h1 class="text-white text-[45px] md:text-[95px] font-bold md:font-semibold">PT. Perdana Mitra Kencana</h1>
-                <div class="bg-white w-full h-0.5 mt-3"></div>
+       <footer class=" bg-[#7A1F1F] rounded-t-[20px] p-8 flex flex-col mt-10">
+            <div class="md:flex md:flex-col w-full mb-5">
+                <h1 class="text-white min-w-screen text-[40px] md:text-[95px] font-bold md:font-semibold">PT. Perdana <br class="md:hidden">Mitra Kencana</h1>
+                <div class="hidden md:block md:bg-white md:w-full md:h-0.5"></div>
             </div>
 
             <div class="w-full flex flex-col gap-8">
                 <div class="flex flex-col md:flex-row justify-between gap-x-10">
                     <div class="flex justify-between gap-8">
-                        <div class="flex flex-col gap-y-20 md:gap-y-24 mt-4">
+                        <div class="flex flex-col gap-y-24 md:gap-y-24 mt-4">
                             <a href=""><i class="fa-solid fa-location-dot fa-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
                             <div class="flex flex-col gap-18">
                                 <a href=""><i class="fa-solid fa-envelope text-white fa-xl"></i></a>

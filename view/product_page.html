@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,22 +16,22 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
-<body class="bg-white">
+<body class="bg-white overflow-x-hidden">
     <div class="bg-[#7a1f1f] flex md:hidden py-3 px-4 gap-3 justify-end items-end">
         <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
         <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-instagram" style="color: white;"></i></a>
         <a href="" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-solid fa-envelope" style="color: white;"></i></a>
     </div>
     <!-- Header Navigation -->
-     <header class="top-0 left-0 w-full pt-5 md:pt-10 px-4 md:px-20 md:pb-4 z-25 flex items-center justify-between md:justify-center md:fixed md:backdrop-blur-md md:bg-white/10">
+     <header class="top-0 left-0 w-full pt-5 md:pt-10 px-4 md:px-20 md:pb-4 z-25 flex items-center justify-between md:justify-center md:fixed md:backdrop-blur md:bg-white/10">
    <!-- Logo -->
         <div id="logo" class="md:absolute md:left-10 flex items-center">
             <img class="w-10 h-auto md:w-15" src="../images/pmk_logo.png" alt="pmk-logo">
         </div>
 
         <!-- Nav Drawer -->
-        <nav id="navLinks" class="hidden duration-500 md:static md:flex md:items-center md:bg-[#7a1f1f] min-h-fit md:p-2 md:w-auto md:rounded-full fixed top-12 inset-0 bg-[#7a1f1f] flex-col rounded-b-3xl justify-center items-center z-100 px-5 py-3">
-            <button onclick="closeMenu()" class="md:hidden absolute top-6 right-6 bg-[#6b1515] text-white w-10 h-10 rounded-full flex items-center justify-center">
+        <nav id="navLinks" class="hidden duration-500 md:static md:flex md:items-center md:bg-[#7a1f1f] min-h-screen w-screen md:min-h-0 md:p-2 md:w-auto md:rounded-full fixed top-12 inset-0 bg-[#7a1f1f] flex-col rounded-b-3xl justify-center items-center z-15">
+            <button onclick="closeMenu()" class="md:hidden absolute top-6 right-6  bg-[#6b1515] text-white w-10 h-10 rounded-full flex items-center justify-center">
                 <i class="fa-solid fa-xmark" style="color: white"></i>
             </button>
 
@@ -73,11 +73,11 @@
                         </p>
                     </div>
 
-                    <div class="md:bg-white px-6 py-2 w-fit rounded-full md:text-[#7A1F1F] text-white bg-[#7A1F1F] text-sm">
-                        <a href="">
+                    <button class="md:bg-white px-6 py-2 w-fit rounded-full md:text-[#7A1F1F] text-white bg-[#7A1F1F] text-sm">
+                        <a href="#product">
                             Lihat Selebihnya
                         </a>
-                    </div>
+                    </button>
                 </div>
                <div class="swiper mySwiper w-full px-4 mt-5 md:hidden">
                     <div class="swiper-wrapper">
@@ -221,7 +221,7 @@
         <section class="md:bg-white h-screen md:px-10 py-10 mt-30">
             <div class="flex flex-col md:flex md:flex-row justify-center md:justify-between px-4">
                 <div class="font-semibold">
-                    <h1 class="mb-5 text-4xl md:text-6xl">
+                    <h1 id="product" class="mb-5 text-4xl md:text-6xl">
                         <span class="text-[#7A1F1F] md:text-black">Our </span><br class="hidden md:block">Product
                     </h1>
                 </div>
@@ -541,8 +541,8 @@
     <!-- Footer Section -->
      <footer class=" bg-[#7A1F1F] rounded-t-[20px] p-8 flex flex-col mt-30">
             <div class="md:flex md:flex-col w-full mb-10">
-                <h1 class="text-white text-[45px] md:text-[95px] font-bold md:font-semibold">PT. Perdana Mitra Kencana</h1>
-                <div class="bg-white w-full h-0.5 mt-3"></div>
+                <h1 class="text-white min-w-screen text-[40px] md:text-[95px] font-bold md:font-semibold">PT. Perdana Mitra Kencana</h1>
+                <div class="hidden md:block md:bg-white md:w-full md:h-0.5"></div>
             </div>
 
             <div class="w-full flex flex-col gap-8">
@@ -550,7 +550,7 @@
                     <div class="flex justify-between gap-8">
                         <div class="flex flex-col gap-y-20 md:gap-y-18">
                             <a href=""><i class="fa-solid fa-location-dot fa-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
-                            <div class="flex flex-col gap-18 md:gap-14">
+                            <div class="flex flex-col gap-y-12 md:gap-14">
                                 <a href=""><i class="fa-solid fa-envelope text-white fa-xl"></i></a>
                                 <a href=""><i class="fa-solid fa-phone fa-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
                             </div>
