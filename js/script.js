@@ -1,21 +1,3 @@
-// document.addEventListener('DOMContentLoaded', function () {
-//     const navItems = document.querySelectorAll('.nav-item');
-
-//     navItems.forEach(item => {
-//         item.addEventListener('click', function () {
-//             // Reset semua item ke tampilan awal
-//             navItems.forEach(btn => {
-//                 btn.classList.remove('bg-white', 'text-[#7a1f1f]', 'font-bold');
-//                 btn.classList.add('text-white');
-//             });
-
-//             // Set item yang diklik jadi aktif
-//             this.classList.add('bg-white', 'text-[#7a1f1f]', 'font-bold');
-//             this.classList.remove('text-white');
-//         });
-//     });
-// });
-
 function onToggleMenu(e) {
         const navLinks = document.getElementById('navLinks');
         const logo = document.getElementById('logo');
@@ -90,7 +72,7 @@ var swiper = new Swiper(".myProduct", {
 });
 
 
-    emailjs.init('DrG9NNxTyUGNwsVhf'); // ganti dengan public key kamu
+    emailjs.init('DrG9NNxTyUGNwsVhf'); 
 
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
