@@ -25,9 +25,17 @@
     .swiper-button-next, .swiper-button-prev {
         color: #7a1f1f;
     }
+    html, body {
+    overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
 </style>
 
-<body class="mx-auto bg-white overflow-x-hidden w-screen">
+<body class="bg-white overflow-x-hidden">
     <div class="bg-[#7a1f1f] flex md:hidden py-3 px-4 gap-3 justify-end items-end">
         <a href="https://wa.me/6281210035326" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
         <a href="https://www.instagram.com/perdanamitrakencana?utm_source=qr&igsh=MTNvZXBvZWh6eW40ZQ==" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-instagram" style="color: white;"></i></a>
@@ -41,7 +49,7 @@
         </div>
 
         <!-- Nav Drawer -->
-        <nav id="navLinks" class="hidden duration-500 md:static md:flex md:items-center md:bg-[#7a1f1f] min-h-screen w-screen md:min-h-0 md:p-2 md:w-auto md:rounded-full fixed top-12 inset-0 bg-[#7a1f1f] flex-col rounded-b-3xl justify-center items-center z-15">
+        <nav id="navLinks" class="hidden duration-500 md:static md:flex md:items-center md:bg-[#7a1f1f] min-h-screen md:min-h-0 md:p-2 md:w-auto md:rounded-full fixed top-12 inset-0 bg-[#7a1f1f] flex-col rounded-b-3xl justify-center items-center z-15">
             <button onclick="closeMenu()" class="md:hidden absolute top-6 right-6 bg-[#6b1515] text-white w-10 h-10 rounded-full flex items-center justify-center">
                 <i class="fa-solid fa-xmark" style="color: white"></i>
             </button>
@@ -72,17 +80,17 @@
 
     <main class="w-full">
         <!-- Home Section -->
-        <section id="home" class="flex flex-col w-full min-h-screen py-8 md:text-center md:pt-60">
+        <section id="home" class="flex flex-col md:w-full min-h-screen py-8 md:text-center md:pt-60 max-w-7xl mx-auto">
             <div class="flex w-full flex-col mx-auto font-plus-jakarta-sans text-black gap-5 px-4">
-                <h1 class="font-bold font-plus-jakarta-sans text-[35px] md:text-[90px] items-start md:text-center leading-8 md:leading-none">Perdana Mitra <br>Kencana</h1>
-                <p class="font-plus-jakarta-sans text-[13px] md:text-[18px] text-gray-700 leading-relaxed">Velg ringan berkualitas tinggi yang dirancang <br>dengan presisi engineering dan memenuhi standar kinerja global.</p>
+                <h1 class="font-bold font-plus-jakarta-sans text-5xl sm:text-6xl md:text-[90px] leading-tight md:leading-none">Perdana Mitra <br>Kencana</h1>
+                <p class="font-plus-jakarta-sans text-sm md:text-[18px] text-gray-700 leading-relaxed">Velg ringan berkualitas tinggi yang dirancang <br>dengan presisi engineering dan memenuhi standar kinerja global.</p>
             </div>
             <div class="swiper mySwiper w-full h-full px-2 mt-5 md:hidden">
                 
                 <div class="swiper-wrapper">
-                    <img src="images/new-1.png" alt="" class="swiper-slide rounded-2xl rounded-tl-none">
-                    <img src="images/new-1.png" alt="" class="swiper-slide rounded-2xl rounded-tl-none">
-                    <img src="images/new-1.png" alt="" class="swiper-slide rounded-2xl rounded-tl-none">
+                    <img src="images/new-1.png" alt="" class="swiper-slide rounded-3xl rounded-tl-none h-105 object-cover">
+                    <img src="images/new-1.png" alt="" class="swiper-slide rounded-3xl rounded-tl-none h-105 object-cover">
+                    <img src="images/new-1.png" alt="" class="swiper-slide rounded-3xl rounded-tl-none h-105 object-cover">
                 </div>
         
                 <div class="swiper-pagination"></div>
@@ -90,7 +98,7 @@
         </section> 
 
         <!-- Why Choose Us Section -->
-        <section class="flex flex-col md:flex-row justify-between px-4 md:px-8 py-16 bg-white gap-3">
+        <section class="flex flex-col md:flex-row justify-between px-4 md:px-8 py-16 bg-white gap-3 max-w-7xl mx-auto">
             <div class="max-w-md">
                 <h2 class="text-[40px] md:text-[50px] font-bold text-black text-center">Why Choose <span class="text-red-900">Us?</span></h2>
             </div>
@@ -112,7 +120,7 @@
             </div>
         </section>
 
-        <section class="w-full py-14">
+        <section class="w-full py-14 max-w-7xl mx-auto">
             <div class=" flex items-center px-3 gap-6 md:hidden">
                 <div class="w-full h-0.5 bg-red-900"></div>
             </div>
@@ -144,7 +152,7 @@
         </section>
 
         <!-- About Us Section -->
-        <section class="w-full md:py-14 py-10 mx-auto px-4 md:px-8">
+        <section class="w-full md:py-14 py-10 px-4 md:px-8 max-w-7xl mx-auto">
             <div>
                 <h1 class="text-[50px] font-jakarta font-medium text-center md:justify-start md:text-start">About <span class="text-[#7a1f1f]">Us</span></h1>
                 <p class="text-[12px] md:text-[14px] text-justify items-start justify-start mt-3">PT. Perdana Mitra Kencana adalah Perusahaan Industri manufaktur yang bergerak di bidang filter untuk kebutuhan casting/peleburan logam di industri otomotif dan supplier wiremesh dengan berbagai tipe dan ukuran.
@@ -157,7 +165,7 @@
                     <div class="swiper-wrapper">
     
                         <div class="swiper-slide w-auto">
-                            <div class="bg-white shadow-xl w-full h-90 flex flex-col justify-between overflow-hidden rounded-md border border-gray-100">
+                            <div class="bg-white shadow-xl w-full min-h-90 flex flex-col justify-between overflow-hidden rounded-md border border-gray-100">
                                 <div class="relative h-40">
                                     <h2 class="text-[120px] font-bold text-[#7a1f1f] opacity-10 absolute -top-16 -right-2">3+</h2>
                                     <h2 class="text-[90px] font-bold text-[#7a1f1f] absolute top-6 left-8 z-10">3+</h2>
@@ -169,7 +177,7 @@
                         </div>
     
                         <div class="swiper-slide w-auto">
-                            <div class="bg-white shadow-xl w-full h-90 flex flex-col justify-between overflow-hidden rounded-md border border-gray-100">
+                            <div class="bg-white shadow-xl w-full min-h-90 flex flex-col justify-between overflow-hidden rounded-md border border-gray-100">
                                 <div class="relative h-40">
                                     <h2 class="text-[110px] font-bold text-[#7a1f1f] opacity-10 absolute -top-10 -right-8">98%</h2>
                                     <h2 class="text-[90px] font-bold text-[#7a1f1f] absolute top-8 left-4 z-10">98%</h2>
@@ -181,7 +189,7 @@
                         </div>
     
                         <div class="swiper-slide w-auto">
-                            <div class="bg-white shadow-xl w-full h-90 flex flex-col justify-between overflow-hidden rounded-md border border-gray-100">
+                            <div class="bg-white shadow-xl w-full min-h-90 flex flex-col justify-between overflow-hidden rounded-md border border-gray-100">
                                 <div class="relative h-40">
                                     <h2 class="text-[110px] font-bold text-[#7a1f1f] opacity-10 absolute -top-10 -right-8">20+</h2>
                                     <h2 class="text-[90px] font-bold text-[#7a1f1f] absolute top-8 left-4 z-10">20+</h2>
@@ -219,7 +227,7 @@
                     </div>
                 </div>
     
-                <div class="hidden md:flex gap-6 lg:gap-8 mt-10">
+                <div class="hidden md:flex gap-6 lg:gap-8 mt-20">
                     <div class="bg-white shadow-xl w-65 h-85 md:w-75 md:h-90 xl:w-85 xl:h-95 flex flex-col justify-between overflow-hidden ">
                         <div class="relative mt-4">
                             <h2 class="text-[130px] font-semibold font-jakarta text-[#7a1f1f] opacity-20 absolute -top-20 left-34">3+</h2>
@@ -250,7 +258,7 @@
         </section>
  
         <!-- Product Section -->
-        <section id="product" class="w-full py-6 md:py-12 mx-auto px-4 md:px-8">
+        <section id="product" class="w-full py-6 md:py-12 px-4 md:px-8 max-w-7xl mx-auto">
             <div class="flex flex-col gap-10">
                 <div class="flex flex-col justify-between items-center md:items-start">
                     <h1 class="text-[35px] md:text-[50px] font-jakarta font-medium text-center">Product</h1>
@@ -268,7 +276,7 @@
                     <div class="swiper-wrapper">
                         
                         <div class="swiper-slide w-auto"> 
-                            <div class="w-full bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                            <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                                 <div class="aspect-square w-full">
                                     <img src="images/1.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                                 </div>
@@ -279,7 +287,7 @@
                         </div>
 
                         <div class="swiper-slide w-auto">
-                            <div class="w-full bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                            <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                                 <div class="aspect-square w-full">
                                     <img src="images/2.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                                 </div>
@@ -290,7 +298,7 @@
                         </div>
 
                         <div class="swiper-slide w-auto">
-                            <div class="w-full bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                            <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                                 <div class="aspect-square w-full">
                                     <img src="images/3.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                                 </div>
@@ -300,7 +308,7 @@
                             </div>
                         </div>
                         <div class="swiper-slide w-auto">
-                            <div class="w-full bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                            <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                                 <div class="aspect-square w-full">
                                     <img src="images/4.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                                 </div>
@@ -315,8 +323,8 @@
                     <div class="swiper-pagination static mt-8"></div>
                 </div>
                 
-                <div class="hidden md:grid md:grid-cols-4 md:gap-7">
-                    <div class="w-75 bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/1.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                         </div>
@@ -325,7 +333,7 @@
                         </div>
                     </div>
 
-                    <div class="w-75 bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                    <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/2.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                         </div>
@@ -334,7 +342,7 @@
                         </div>
                     </div>
 
-                    <div class="w-75 bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                    <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/3.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                         </div>
@@ -343,7 +351,7 @@
                         </div>
                     </div>
     
-                    <div class="w-75 bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                    <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/4.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                         </div>
@@ -351,7 +359,7 @@
                             <h2 class="text-[16px] font-medium text-amber-900 leading-tight">filter wire mesh stainless <br> steel</h2>
                         </div>
                     </div>
-                    <div class="w-75 bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                    <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/1.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                         </div>
@@ -360,7 +368,7 @@
                         </div>
                     </div>
 
-                    <div class="w-75 bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                    <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/2.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                         </div>
@@ -369,7 +377,7 @@
                         </div>
                     </div>
 
-                    <div class="w-75 bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                    <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/3.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                         </div>
@@ -378,7 +386,7 @@
                         </div>
                     </div>
     
-                    <div class="w-75 bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
+                    <div class="w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
                             <img src="images/4.png" alt="Filter wire mesh" class="w-full h-full object-cover">
                         </div>
@@ -391,7 +399,7 @@
         </section>
 
         <!-- ================= Gallery Section ================= -->
-    <section class="py-10 mx-auto px-4 md:px-4 max-w-[95%]">
+    <section class="py-10 px-4 md:px-4 max-w-7xl mx-auto">
         
         <h1 class="text-[50px] font-jakarta font-medium text-center md:text-start">Gallery</h1>
 
@@ -443,39 +451,39 @@
 
             <div class="overflow-hidden transition-all duration-300 group">
                 <img src="images/Galerry1.png" alt="gallery image"
-                    class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
+                    class="w-full h-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
             </div>
 
             <div class="overflow-hidden transition-all duration-300 group">
                 <img src="images/Galerry2.png" alt="gallery image"
-                    class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
+                    class="w-full h-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
             </div>
 
             <div class="overflow-hidden transition-all duration-300 group">
                 <img src="images/Galerry3.png" alt="gallery image"
-                    class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
+                    class="w-full h-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
             </div>
 
             <div class="overflow-hidden transition-all duration-300 group">
                 <img src="images/Galerry4.png" alt="gallery image"
-                    class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
+                    class="w-full h-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
             </div>
 
             <div class="overflow-hidden transition-all duration-300 group">
                 <img src="images/Galerry5.png" alt="gallery image"
-                    class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
+                    class="w-full h-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
             </div>
 
             <div class="overflow-hidden transition-all duration-300 group">
                 <img src="images/Galerry6.png" alt="gallery image"
-                    class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
+                    class="w-full h-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500">
             </div>
 
         </div>
     </section>
         
         <!-- Contact Us Section -->
-         <section id="contact" class="relative min-h-screen py-6 mx-auto md:px-14 md:items-start">
+         <section id="contact" class="relative min-h-screen py-6 md:px-14 md:items-start max-w-7xl mx-auto">
             <div class="flex justify-center md:justify-start absolute inset-0">
                     <img src="images/contact_bg.png" alt="Contact Background">
             </div>
@@ -485,7 +493,7 @@
                 <p class="hidden md:block text-[14px] text-right text-black mt-5 leading-relaxed">Hubungi Kami <br> Kami siap membantu kebutuhan Anda. Silakan hubungi kami untuk informasi lebih lanjut, <br> konsultasi produk, atau kerja sama bisnis. Tim kami akan merespons secepat mungkin.</p>
             </div>
 
-            <div class="relative w-full h-100 flex flex-col md:flex-row items-center md:gap-6 md:justify-between">
+            <div class="relative w-full min-h-screen flex flex-col md:flex-row items-center md:gap-6 md:justify-between">
                 
                 <div class="relative z-10 px-4 mt-3">
                     <h2 class="text-[16px] md:text-[36px] font-medium text-[#7a1f1f] leading-tight mb-4 text-justify md:text-left">
@@ -501,7 +509,7 @@
                     </div>
                 </div>
 
-                <div class="z-10 bg-white border border-black p-6 md:p-8 rounded-3xl shadow-2xl md:w-150 md:h-125 w-95 mt-5 md:mt-36">
+                <div class="z-10 bg-white border border-black p-6 md:p-8 rounded-3xl shadow-2xl w-full max-w-xl mt-5 md:mt-36">
                     <form id="contactForm" class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium mb-1">Nama</label>
@@ -545,7 +553,7 @@
             <div class="w-full flex flex-col gap-8">
                 <div class="flex flex-col md:flex-row justify-start items-start gap-x-10">
                     <div class="flex justify-between gap-10">
-                        <div class="flex flex-col gap-y-23 md:gap-y-17 mt-2">
+                        <div class="flex flex-col space-y-11 md:space-y-8 mt-2">
                             <a href=""><i class="fa-solid fa-location-dot fa-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
                             <div class="flex flex-col gap-15 md:gap-14">
                                 <a href=""><i class="fa-solid fa-envelope text-white fa-xl"></i></a>
@@ -556,7 +564,7 @@
                             <p>Jl. Kb. Bawang No.35, RT.8/RW.6, Kb.<br> Bawang, Kec. Tj. Priok, Jkt Utara, Daerah <br> Khusus Ibukota Jakarta 14320</p>
                             <div class="flex flex-col gap-14">
                                 <p>perdanamitrakencana@outlook.com</p>
-                                <p>perdanamitrakencana@outlook.co</p>
+                                <p>+62 812 1003 5326</p>
                             </div>
                         </div>
                     </div>
@@ -572,10 +580,10 @@
                         <div class="md:flex md:gap-40">
                             <div class="hidden md:flex md:flex-col md:gap-5">
                                 <h1 class="text-[18px] md:text-[22px] text-white font-semibold">Quick Links</h1>
-                                <p class="text-white text-[16px] font-light">Home</p>
-                                <p class="text-white text-[16px] font-light">Product</p>
-                                <p class="text-white text-[16px] font-light">Gallery</p>
-                                <p class="text-white text-[16px] font-light">Contact</p>
+                                <a href="../index.html"><p class="text-white text-[16px] font-light">Home</p></a>
+                                <a href="#"><p class="text-white text-[16px] font-light">Product</p></a>
+                                <a href="gallery_page.html"><p class="text-white text-[16px] font-light">Gallery</p></a>
+                                <a href="contact_page.html"><p class="text-white text-[16px] font-light">Contact</p></a>
                             </div>
 
                             <div class="md:hidden container flex justify-center mt-7">
@@ -589,8 +597,8 @@
                                 <p class="text-[12.75px] md:text-[16px] font-light text-justify">Solusi penyaringan industri yang tepat. <br class="hidden md:block">Efisiensi produksi dimulai dari sistem filtrasi <br class="hidden md:block">yang berkualitas.</p>
                                 <div class="flex flex-col gap-4">
                                     <div class="relative">
-                                        <input  id="message" type="text" placeholder="hubungi kami" class="w-full md:w-60 h-8 bg-white text-black border border-white rounded-full px-5 py-2.5 text-[14px] mt-4">
-                                        <button type="submit"><i class="fa-solid fa-angle-right absolute bottom-2 right-4 md:right-14" style="color: rgb(122, 31, 31);"></i></button>
+                                        <input type="text" placeholder="hubungi kami" class="w-full md:w-60 h-8 bg-white text-black border border-white rounded-full px-5 py-2.5 text-[14px] mt-4">
+                                        <i class="fa-solid fa-angle-right absolute bottom-2 right-4 md:right-14" style="color: rgb(122, 31, 31);"></i></i>
                                     </div>
                                     <div class="flex gap-3 items-center md:items-start md:justify-start justify-center mt-5 md:mt-0">
                                         <a href="https://wa.me/6281210035326" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>

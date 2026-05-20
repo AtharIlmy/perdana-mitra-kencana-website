@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perdana Mitra Kencana</title>
-    <link href="output.css" rel="stylesheet">
+    <link href="../output.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,17 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
+
+<style>
+    html, body {
+    overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+</style>
 
 <body class="bg-white mx-auto w-screen overflow-x-hidden">
     <!-- Header Navigation -->
@@ -259,9 +270,9 @@
 
 
  <!-- Contact Us Section -->
-         <section id="contact" class="relative min-h-screen py-6 mx-auto md:px-14 md:items-start">
+         <section id="contact" class="relative min-h-screen py-6 md:px-14 md:items-start max-w-7xl mx-auto">
             <div class="flex justify-center md:justify-start absolute inset-0">
-                    <img src="../images/contact_bg.png" alt="Contact Background">
+                    <img src="images/contact_bg.png" alt="Contact Background">
             </div>
 
             <div class="md:flex md:flex-row flex flex-col justify-between items-center mt-3 relative z-10 px-4 md:items-start">
@@ -269,7 +280,7 @@
                 <p class="hidden md:block text-[14px] text-right text-black mt-5 leading-relaxed">Hubungi Kami <br> Kami siap membantu kebutuhan Anda. Silakan hubungi kami untuk informasi lebih lanjut, <br> konsultasi produk, atau kerja sama bisnis. Tim kami akan merespons secepat mungkin.</p>
             </div>
 
-            <div class="relative w-full h-100 flex flex-col md:flex-row items-center md:gap-6 md:justify-between">
+            <div class="relative w-full min-h-screen flex flex-col md:flex-row items-center md:gap-6 md:justify-between">
                 
                 <div class="relative z-10 px-4 mt-3">
                     <h2 class="text-[16px] md:text-[36px] font-medium text-[#7a1f1f] leading-tight mb-4 text-justify md:text-left">
@@ -285,7 +296,7 @@
                     </div>
                 </div>
 
-                <div class="z-10 bg-white border border-black p-6 md:p-8 rounded-3xl shadow-2xl md:w-150 md:h-125 w-95 mt-5 md:mt-36">
+                <div class="z-10 bg-white border border-black p-6 md:p-8 rounded-3xl shadow-2xl w-full max-w-xl mt-5 md:mt-36">
                     <form id="contactForm" class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium mb-1">Nama</label>
@@ -329,7 +340,7 @@
             <div class="w-full flex flex-col gap-8">
                 <div class="flex flex-col md:flex-row justify-start items-start gap-x-10">
                     <div class="flex justify-between gap-10">
-                        <div class="flex flex-col gap-y-23 md:gap-y-17 mt-2">
+                        <div class="flex flex-col space-y-11 md:space-y-8 mt-2">
                             <a href=""><i class="fa-solid fa-location-dot fa-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
                             <div class="flex flex-col gap-15 md:gap-14">
                                 <a href=""><i class="fa-solid fa-envelope text-white fa-xl"></i></a>
@@ -340,7 +351,7 @@
                             <p>Jl. Kb. Bawang No.35, RT.8/RW.6, Kb.<br> Bawang, Kec. Tj. Priok, Jkt Utara, Daerah <br> Khusus Ibukota Jakarta 14320</p>
                             <div class="flex flex-col gap-14">
                                 <p>perdanamitrakencana@outlook.com</p>
-                                <p>perdanamitrakencana@outlook.co</p>
+                                <p>+62 812 1003 5326</p>
                             </div>
                         </div>
                     </div>
@@ -356,10 +367,10 @@
                         <div class="md:flex md:gap-40">
                             <div class="hidden md:flex md:flex-col md:gap-5">
                                 <h1 class="text-[18px] md:text-[22px] text-white font-semibold">Quick Links</h1>
-                                <p class="text-white text-[16px] font-light">Home</p>
-                                <p class="text-white text-[16px] font-light">Product</p>
-                                <p class="text-white text-[16px] font-light">Gallery</p>
-                                <p class="text-white text-[16px] font-light">Contact</p>
+                                <a href="../index.html"><p class="text-white text-[16px] font-light">Home</p></a>
+                                <a href="product_page.html"><p class="text-white text-[16px] font-light">Product</p></a>
+                                <a href="#"><p class="text-white text-[16px] font-light">Gallery</p></a>
+                                <a href="contact_page.html"><p class="text-white text-[16px] font-light">Contact</p></a>
                             </div>
 
                             <div class="md:hidden container flex justify-center mt-7">
