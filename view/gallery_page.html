@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perdana Mitra Kencana</title>
+    <title>PT Perdana Mitra Kencana</title>
+    <link rel="stylesheet" href="../images/pmk_logo.png">
     <link href="../css/output.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -36,7 +37,7 @@
 
      <header class="top-0 left-0 w-full pt-5 md:pt-10 px-4 md:px-20 md:pb-4 z-25 flex items-center justify-between md:justify-center md:fixed md:backdrop-blur md:bg-white/10">
    <!-- Logo -->
-        <div id="logo" class="md:absolute md:left-10 flex items-center">
+        <div id="logo" class="hidden md:absolute md:left-10 md:flex items-center">
             <img class="w-10 h-auto md:w-15" src="../images/pmk_logo.png" alt="pmk-logo">
         </div>
 
@@ -72,17 +73,20 @@
 
     <main class="w-full">
    <!-- Home Section -->
-    <section id="home" class="flex flex-col md:h-screen px-4 md:px-10 md:text-left md:pt-40 mt-10 md:mt-0">
-        <div class="flex w-full flex-col mx-auto font-plus-jakarta-sans md:items-start md:text-start items-center text-center text-black gap-5">
-            <h1 class="font-bold md:font-semibold font-plus-jakarta-sans text-[45px] md:text-[60px]  md:text-left leading-10 md:leading-none">Kami <br>Menghadirkan</h1>
+    <section id="home" class="flex flex-col md:h-screen min-h-80 px-4 md:px-10 md:items-center md:justify-center mt-30 md:mt-0">
+        <div class="flex justify-center md:items-start absolute inset-0 pt-12 md:pt-0">
+            <img src="../images/bg-gallery.png" alt="" class="w-full h-full">
+        </div>
+        <div class="flex w-full flex-col mx-auto font-plus-jakarta-sans md:items-center md:justify-center items-center text-center text-black gap-5">
+            <h1 class="font-bold md:font-semibold font-plus-jakarta-sans text-[45px] md:text-[90px]  md:items-center md:justify-center leading-10 md:leading-none">Our Gallery</h1>
             <p class="font-plus-jakarta-sans text-[14px] md:text-[16px] text-gray-700 leading-relaxed">Kami menghadirkan galeri sebagai bukti nyata <br>komitmen kami terhadap kualitas dan <br>profesionalisme.</p>
-            <button class="bg-red-900 text-white px-4 py-3 w-45 rounded-full text-sm hover:bg-red-800 transition-colors mt-3">
-             <a href="#photos">Ketuk Untuk Lihat</a>
+            <button class="bg-red-900 text-white px-4 py-3 w-45 rounded-full text-sm hover:bg-red-800 transition-colors mt-3 z-10">
+             <a href="#photos">Ketuk Untuk Lanjutkan</a>
             </button>
         </div>
     </section> 
 
-  <section class="py-10 mx-auto px-4 md:px-4 max-w-[95%]">
+  <section class="py-6 mx-auto px-4 md:px-4 max-w-[95%] mt-20">
         
         <h1 id="photos" class="text-[50px] font-jakarta font-medium text-start md:text-start"><span class="text-[#7A1F1F]">Our</span> Photos</h1>
 
@@ -180,7 +184,7 @@
                         <div class="swiper-slide w-auto">
                             <div class="w-full bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                                 <div class="aspect-square w-full">
-                                    <img src="../images/4.png" alt="Sharing Machine" class="w-full h-full object-cover">
+                                    <img src="../images/shearing machine.jpeg" alt="Sharing Machine" class="w-full h-full object-cover">
                                 </div>
                                 <div class="p-6">
                                     <h2 class="text-[18px] font-medium text-amber-900 leading-tight">Sharing Machine</h2>
@@ -191,7 +195,7 @@
                         <div class="swiper-slide w-auto">
                             <div class="w-full bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                                 <div class="aspect-square w-full">
-                                    <img src="../images/4.png" alt="Press Machine" class="w-full h-full object-cover">
+                                    <img src="../images/Press Machine.jpeg" alt="Press Machine" class="w-full h-full object-cover">
                                 </div>
                                 <div class="p-6">
                                     <h2 class="text-[18px] font-medium text-amber-900 leading-tight">Press Machine</h2>
@@ -202,10 +206,10 @@
                         <div class="swiper-slide w-auto">
                             <div class="w-full bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                                 <div class="aspect-square w-full">
-                                    <img src="../images/4.png" alt="Lathe Machine" class="w-full h-full object-cover">
+                                    <img src="../images/Brake Machine.jpeg" alt="Lathe Machine" class="w-full h-full object-cover">
                                 </div>
                                 <div class="p-6">
-                                    <h2 class="text-[18px] font-medium text-amber-900 leading-tight">Lathe Machine</h2>
+                                    <h2 class="text-[18px] font-medium text-amber-900 leading-tight">Brake Machine</h2>
                                 </div>
                             </div>
                         </div>
@@ -229,16 +233,16 @@
                 <div class="hidden md:grid grid-cols-4 gap-6">
                     <div class="max-w-xl bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
-                            <img src="../images/4.png" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
+                            <img src="../images/shearing machine.jpeg" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
                         </div>
                         <div class="p-6">
-                            <h2 class="text-[18px] font-medium text-amber-900 leading-tight">Sharing Machine</h2>
+                            <h2 class="text-[18px] font-medium text-amber-900 leading-tight">Shearing Machine</h2>
                         </div>
                     </div>
 
                     <div class="max-w-xl bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
-                            <img src="../images/4.png" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
+                            <img src="../images/Press Machine.jpeg" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
                         </div>
                         <div class="p-6">
                             <h2 class="text-[18px] font-medium text-amber-900 leading-tight">Press Machine</h2>
@@ -247,10 +251,10 @@
 
                     <div class="max-w-xl bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
                         <div class="aspect-square w-full">
-                            <img src="../images/4.png" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
+                            <img src="../images/Brake Machine.jpeg" alt="Filter wire mesh stainless steel" class="w-full h-full object-cover">
                         </div>
                         <div class="p-6">
-                            <h2 class="text-[18px] font-medium text-amber-900 leading-tight">Lathe Machine</h2>
+                            <h2 class="text-[18px] font-medium text-amber-900 leading-tight">Brake Machine</h2>
                         </div>
                     </div>
                     <div class="max-w-xl bg-white rounded-sm shadow-xl overflow-hidden border border-gray-100">
