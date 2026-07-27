@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PT Perdana Mitra Kencana</title>
-    <link rel="stylesheet" href="../images/pmk_logo.png">
+    <link rel="icon" href="../images/pmk_logo.png">
     <link href="../css/output.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <style>
-    html, body {
-    overflow-x: hidden;
+    html,
+    body {
+        overflow-x: hidden;
     }
 
     img {
@@ -29,42 +33,75 @@
 
 <body class="bg-white overflow-x-hidden">
     <div class="bg-[#7a1f1f] flex md:hidden py-3 px-4 gap-3 justify-end items-end">
-        <a href="https://wa.me/6281210035326" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
-        <a href="https://www.instagram.com/perdanamitrakencana?utm_source=qr&igsh=MTNvZXBvZWh6eW40ZQ==" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-brands fa-instagram" style="color: white;"></i></a>
-        <a href="mailto:perdanamitrakencana@outlook.com" class="flex justify-center items-center w-7 h-7 border border-white rounded-full" ><i class="fa-solid fa-envelope" style="color: white;"></i></a>
+        <a href="https://wa.me/6281210035326"
+            class="flex justify-center items-center w-7 h-7 border border-white rounded-full"><i
+                class="fa-brands fa-whatsapp" style="color: white;"></i></a>
+        <a href="https://www.instagram.com/perdanamitrakencana?utm_source=qr&igsh=MTNvZXBvZWh6eW40ZQ=="
+            class="flex justify-center items-center w-7 h-7 border border-white rounded-full"><i
+                class="fa-brands fa-instagram" style="color: white;"></i></a>
+        <a href="https://www.linkedin.com/in/pt-perdana-mitra-kencana-9b4a54413?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+            class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border border-white rounded-full"><i
+                class="fa-brands fa-linkedin" style="color: white;"></i></a>
     </div>
+    <!-- Half-Screen Mobile Menu Backdrop -->
+    <div id="menuBackdrop" onclick="closeMenu()"
+        class="fixed inset-0 bg-black/60 backdrop-blur-xs opacity-0 pointer-events-none z-40 md:hidden transition-opacity duration-300 ease-in-out">
+    </div>
+
     <!-- Header Navigation -->
-     <header class="top-0 left-0 w-full pt-5 md:pt-10 px-4 md:px-20 md:pb-4 z-25 flex items-center justify-between md:justify-center md:fixed md:backdrop-blur md:bg-white/10">
-   <!-- Logo -->
-        <div id="logo" class="md:absolute md:left-10 flex items-center">
-            <img class="w-10 h-auto md:w-15" src="../images/pmk_logo.png" alt="pmk-logo">
+    <header
+        class="top-0 left-0 w-full pt-5 md:pt-10 px-4 md:px-20 md:pb-4 z-25 flex items-center justify-between md:justify-center md:fixed md:backdrop-blur md:bg-white/10">
+        <!-- Logo -->
+        <div id="logo" class="md:absolute md:left-10 flex items-center px-2 py-2 bg-white rounded-full">
+            <img class="w-10 h-10 md:w-15" src="../images/pmk_logo.png" alt="pmk-logo">
         </div>
 
-        <!-- Nav Drawer -->
-        <nav id="navLinks" class="hidden duration-500 md:static md:flex md:items-center md:bg-[#7a1f1f] min-h-screen w-screen md:min-h-0 md:p-2 md:w-auto md:rounded-full fixed top-12 inset-0 bg-[#7a1f1f] flex-col rounded-b-3xl justify-center items-center z-15">
-            <button onclick="closeMenu()" class="md:hidden absolute top-8 right-8  bg-[#6b1515] text-white w-10 h-10 rounded-full flex items-center justify-center">
-                <i class="fa-solid fa-xmark fa" style="color: white"></i>
-            </button>
+        <!-- Nav Drawer (Half-Screen Side Drawer with Smooth Slide Transition) -->
+        <nav id="navLinks"
+            class="flex md:static md:flex md:flex-row md:items-center md:justify-center md:bg-[#7a1f1f] md:min-h-0 md:h-auto md:w-auto md:max-w-none md:p-2 md:rounded-full md:inset-auto md:border-none md:shadow-none md:translate-x-0 md:overflow-visible fixed top-0 right-0 w-3/4 sm:w-1/2 max-w-[320px] h-full min-h-screen bg-[#7a1f1f] flex-col justify-start items-start z-50 p-6 shadow-2xl border-l border-white/15 overflow-y-auto translate-x-full transition-transform duration-300 ease-in-out">
 
-            <ul id="navbar-links" class="flex md:flex-row flex-col justify-center items-center gap-8 md:gap-2 text-[16px] font-medium font-inter w-full py-10 md:py-0">
-                <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
-                    <a href="../index.html">Home</a>
+            <!-- Mobile Menu Header (Visible only on Mobile) -->
+            <div class="flex md:hidden w-full items-center justify-between pb-4 border-b border-white/15 mb-6">
+                <div class="flex items-center gap-2.5">
+                    <img class="w-8 h-auto" src="../images/pmk_logo.png" alt="pmk-logo">
+                    <div class="flex flex-col text-left">
+                        <span class="text-white font-bold text-xs tracking-wide font-plus-jakarta-sans">PT Perdana Mitra
+                            Kencana</span>
+                    </div>
+                </div>
+                <button onclick="closeMenu()" aria-label="Close Menu"
+                    class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 text-white flex items-center justify-center border border-white/20 transition-all duration-200 cursor-pointer">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Nav Links List -->
+            <ul id="navbar-links"
+                class="flex md:flex-row flex-col justify-start items-stretch gap-3 md:gap-2 text-[16px] font-medium font-inter w-full md:w-auto">
+                <li
+                    class="nav-item px-5 py-2.5 md:py-2 rounded-2xl md:rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/15 w-full md:w-auto text-left md:text-center">
+                    <a href="../index.html" onclick="closeMenu()" class="block w-full">Home</a>
                 </li>
-                <li class="nav-item active px-6 py-2 bg-white text-[#7a1f1f] font-bold rounded-full cursor-pointer transition-all duration-300">
-                    <a href="#">Product</a>
+                <li
+                    class="nav-item active px-5 py-2.5 md:py-2 bg-white text-[#7a1f1f] font-bold rounded-2xl md:rounded-full cursor-pointer transition-all duration-300 w-full md:w-auto text-left md:text-center shadow-md">
+                    <a href="#" onclick="closeMenu()" class="block w-full">Product</a>
                 </li>
-                <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
-                    <a href="gallery_page.html">Gallery</a>
+                <li
+                    class="nav-item px-5 py-2.5 md:py-2 rounded-2xl md:rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/15 w-full md:w-auto text-left md:text-center">
+                    <a href="gallery_page.html" onclick="closeMenu()" class="block w-full">Gallery</a>
                 </li>
-                <li class="nav-item px-6 py-2 rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/10">
-                    <a href="contact_page.html">Contact</a>
+                <li
+                    class="nav-item px-5 py-2.5 md:py-2 rounded-2xl md:rounded-full text-white cursor-pointer transition-all duration-300 hover:bg-white/15 w-full md:w-auto text-left md:text-center">
+                    <a href="contact_page.html" onclick="closeMenu()" class="block w-full">Contact</a>
                 </li>
             </ul>
+
         </nav>
 
         <!-- Tombol Hamburger -->
-        <div id="menuBtn" onclick="onToggleMenu(this)" class="flex md:hidden cursor-pointer rounded-full bg-[#7a1f1f] w-8 h-8 items-center justify-center z-50">
-            <i name="menu" class="fa-solid fa-bars fa-sm" style="color: white"></i>
+        <div id="menuBtn" onclick="onToggleMenu(this)"
+            class="flex md:hidden cursor-pointer rounded-full bg-[#7a1f1f] w-10 h-10 items-center justify-center z-30 shadow-md hover:bg-[#651818] active:scale-95 transition-all">
+            <i name="menu" class="fa-solid fa-bars text-white text-base"></i>
         </div>
 
     </header>
@@ -80,65 +117,78 @@
 
                     <div class="md:text-white text-[13px]">
                         <p>
-                            Kami menghadirkan rangkaian produk filter dan penyaringan industri berkualitas tinggi yang dirancang untuk mendukung proses peleburan logam dan manufaktur. Setiap produk diproduksi dengan standar mutu ketat untuk memastikan performa optimal, daya tahan tinggi, dan efisiensi produksi.
+                            Kami menghadirkan rangkaian produk filter dan penyaringan industri berkualitas tinggi yang
+                            dirancang untuk mendukung proses peleburan logam dan manufaktur. Setiap produk diproduksi
+                            dengan standar mutu ketat untuk memastikan performa optimal, daya tahan tinggi, dan
+                            efisiensi produksi.
                         </p>
                     </div>
 
-                    <button class="md:bg-white px-6 py-2 w-fit rounded-full md:text-[#7A1F1F] text-white bg-[#7A1F1F] text-sm">
+                    <button
+                        class="md:bg-white px-6 py-2 w-fit rounded-full md:text-[#7A1F1F] text-white bg-[#7A1F1F] text-sm">
                         <a href="#product">
                             Lihat Selebihnya
                         </a>
                     </button>
                 </div>
-               <div class="swiper mySwiper w-full px-4 mt-5 md:hidden">
+                <div class="swiper mySwiper w-full px-4 mt-5 md:hidden">
                     <div class="swiper-wrapper">
 
                         <!-- Slide 1 -->
                         <div class="swiper-slide w-[80%] rounded-2xl overflow-hidden relative h-120">
-                        <img src="../images/product_slider_1.png" alt="Stok Tertata" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/20 rounded-2xl"></div>
-                        <div class="absolute bottom-8">
-                            <span class="relative w-3 h-3 bg-[#7A1F1F] rounded-full inline-block mb-3 left-4"></span>
-                            <div class="relative flex items-start gap-3 left-5">
-                                <div class="w-0.5 bg-[#7A1F1F] self-stretch"></div>
-                                <div class="text-white">
-                                    <h3 class="text-4xl font-semibold leading-tight">Stok<br>Tertata</h3>
-                                    <p class="text-sm font-light mt-2 text-white/90">Manajemen penyimpanan<br>rapi dan sistematis.</p>
+                            <img src="../images/product_slider_1.png" alt="Stok Tertata"
+                                class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/20 rounded-2xl"></div>
+                            <div class="absolute bottom-8">
+                                <span
+                                    class="relative w-3 h-3 bg-[#7A1F1F] rounded-full inline-block mb-3 left-4"></span>
+                                <div class="relative flex items-start gap-3 left-5">
+                                    <div class="w-0.5 bg-[#7A1F1F] self-stretch"></div>
+                                    <div class="text-white">
+                                        <h3 class="text-4xl font-semibold leading-tight">Stok<br>Tertata</h3>
+                                        <p class="text-sm font-light mt-2 text-white/90">Manajemen penyimpanan<br>rapi
+                                            dan sistematis.</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
 
                         <!-- Slide 2 -->
                         <div class="swiper-slide w-[80%] rounded-2xl overflow-hidden relative h-120">
-                        <img src="../images/product_slider_2.png" alt="Slide 2" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/20 rounded-2xl"></div>
-                        <div class="absolute bottom-8">
-                            <span class="relative w-3 h-3 bg-[#7A1F1F] rounded-full inline-block mb-3 left-4"></span>
-                            <div class="relative flex items-start gap-3 left-5">
-                                <div class="w-0.5 bg-[#7A1F1F] self-stretch"></div>
-                                <div class="text-white">
-                                    <h3 class="text-4xl font-semibold leading-tight">Standar<br>Terjaga</h3>
-                                    <p class="text-sm font-light mt-2 text-white/90">Proses kerja terkontrol dan <br>konsisten.</p>
+                            <img src="../images/product_slider_2.png" alt="Slide 2" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/20 rounded-2xl"></div>
+                            <div class="absolute bottom-8">
+                                <span
+                                    class="relative w-3 h-3 bg-[#7A1F1F] rounded-full inline-block mb-3 left-4"></span>
+                                <div class="relative flex items-start gap-3 left-5">
+                                    <div class="w-0.5 bg-[#7A1F1F] self-stretch"></div>
+                                    <div class="text-white">
+                                        <h3 class="text-4xl font-semibold leading-tight">Standar<br>Terjaga</h3>
+                                        <p class="text-sm font-light mt-2 text-white/90">Proses kerja terkontrol dan
+                                            <br>konsisten.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
 
                         <!-- Slide 3 -->
                         <div class="swiper-slide w-[80%] rounded-2xl overflow-hidden relative h-120">
-                        <img src="../images/product_slider_3.png" alt="Slide 3" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/20 rounded-2xl"></div>
-                        <div class="absolute bottom-8">
-                            <span class="relative w-3 h-3 bg-[#7A1F1F] rounded-full inline-block mb-3 left-4"></span>
-                            <div class="relative flex items-start gap-3 left-5">
-                                <div class="w-0.5 bg-[#7A1F1F] self-stretch"></div>
-                                <div class="text-white">
-                                    <h3 class="text-4xl font-semibold leading-tight">Produksi <br>Terlindungi</h3>
-                                    <p class="text-sm font-light mt-2 text-white/90">Produksi aman, stabil, dan <br>berkelanjutan..</p>
+                            <img src="../images/product_slider_3.png" alt="Slide 3" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/20 rounded-2xl"></div>
+                            <div class="absolute bottom-8">
+                                <span
+                                    class="relative w-3 h-3 bg-[#7A1F1F] rounded-full inline-block mb-3 left-4"></span>
+                                <div class="relative flex items-start gap-3 left-5">
+                                    <div class="w-0.5 bg-[#7A1F1F] self-stretch"></div>
+                                    <div class="text-white">
+                                        <h3 class="text-4xl font-semibold leading-tight">Produksi <br>Terlindungi</h3>
+                                        <p class="text-sm font-light mt-2 text-white/90">Produksi aman, stabil, dan
+                                            <br>berkelanjutan..
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
 
                     </div>
@@ -146,90 +196,86 @@
 
                 <div class="hidden md:block col-span-2 relative">
                     <div class="relative z-20 h-full justify-end items-end flex flex-col">
-                        <div class="grid grid-cols-3">
+                        <div class="absolute grid grid-cols-3 z-40 pb-40">
                             <!-- Single Info -->
-                           <div class="flex gap-2 px-6">
+                            <div class="flex gap-2 px-6">
                                 <div class="flex flex-col justify-center items-center space-y-4">
                                     <span class="bg-[#7A1F1F] w-4 h-4 inline-block rounded-full"></span>
                                     <span class="bg-[#7A1F1F] inline-block w-0.5 h-34"></span>
                                 </div>
-    
+
                                 <div class="md:text-white flex flex-col justify-center space-y-2">
                                     <div class="text-[40px] font-semibold leading-15">
                                         <h1>
                                             Stok <br> Tertata
                                         </h1>
                                     </div>
-    
+
                                     <div class="text-[18px] font-light">
                                         <p>
                                             Manajemen Penyimpanan <br> rapi dan sistematis.
                                         </p>
                                     </div>
                                 </div>
-                           </div>
-                           <!-- Single Info -->
-                            
+                            </div>
                             <!-- Single Info -->
-                           <div class="flex gap-4 px-6">
+
+                            <!-- Single Info -->
+                            <div class="flex gap-4 px-6">
                                 <div class="flex flex-col justify-center items-center space-y-4">
                                     <span class="bg-[#7A1F1F] w-4 h-4 inline-block rounded-full"></span>
                                     <span class="bg-[#7A1F1F] inline-block w-0.5 h-34"></span>
                                 </div>
-    
+
                                 <div class="text-white flex flex-col justify-center space-y-2">
                                     <div class="text-[40px] font-semibold leading-15">
                                         <h1>
                                             Standar <br> Terjaga
                                         </h1>
                                     </div>
-    
+
                                     <div class="text-[18px] font-light">
                                         <p>
                                             Proses kerja terkontrol dan konsisten.
                                         </p>
                                     </div>
                                 </div>
-                           </div>
-                           <!-- Single Info -->
-    
+                            </div>
                             <!-- Single Info -->
-                           <div class="flex gap-4 px-6">
+
+                            <!-- Single Info -->
+                            <div class="flex gap-4 px-6">
                                 <div class="flex flex-col justify-center items-center space-y-4">
                                     <span class="bg-[#7A1F1F] w-4 h-4 inline-block rounded-full"></span>
                                     <span class="bg-[#7A1F1F] inline-block w-0.5 h-34"></span>
                                 </div>
-    
+
                                 <div class="text-white flex flex-col justify-center space-y-2">
                                     <div class="text-[40px] font-semibold leading-15">
                                         <h1>
                                             Produksi <br> Terlindungi
                                         </h1>
                                     </div>
-    
+
                                     <div class="text-[18px] font-light">
                                         <p>
                                             Produksi Aman, Stabil dan Berkelanjutan.
                                         </p>
                                     </div>
                                 </div>
-                           </div>
-                           <!-- Single Info -->
+                            </div>
+                            <!-- Single Info -->
                         </div>
 
-                        <span class="bg-white/10 backdrop-blur-sm inline-block w-full mt-10 h-30"></span>
+                        <span class="absolute bg-black/60 backdrop-blur-sm inline-block w-full mt-10 h-full"></span>
                     </div>
 
-                    <img 
-                        src="../images/product_hero.png" 
-                        class="absolute h-full w-[66vw] inset-0"
-                        alt=""
-                        >
+                    <img src="../images/product_hero.png" class="absolute h-full w-[66vw] inset-0" alt="">
                 </div>
             </div>
         </section>
 
-        <section class="md:bg-white h-screen md:px-10 py-10 mt-20">
+        <section class="md:bg-white h-auto min-h-screen md:px-10 py-10 mt-10 md:mt-20 pb-16">
             <div class="flex flex-col md:flex md:flex-row justify-center md:justify-between px-4">
                 <div class="font-semibold">
                     <h1 id="product" class="mb-5 text-4xl md:text-6xl">
@@ -239,10 +285,14 @@
 
                 <div class="md:text-right md:pl-60 text-justify text-sm">
                     <p class="mb-10 md:mb-0">
-                        Wire Mesh Filter adalah media penyaring berbahan anyaman kawat logam yang digunakan pada proses peleburan dan pengecoran logam untuk menyaring kotoran dan slag. Terbuat dari material stainless steel berkualitas, tahan suhu tinggi dan korosi, serta membantu menghasilkan hasil casting yang lebih bersih, rapi, dan berkualitas. Cocok digunakan di berbagai industri manufaktur dan metal casting.
+                        Wire Mesh Filter adalah media penyaring berbahan anyaman kawat logam yang digunakan pada proses
+                        peleburan dan pengecoran logam untuk menyaring kotoran dan slag. Terbuat dari material stainless
+                        steel berkualitas, tahan suhu tinggi dan korosi, serta membantu menghasilkan hasil casting yang
+                        lebih bersih, rapi, dan berkualitas. Cocok digunakan di berbagai industri manufaktur dan metal
+                        casting.
                     </p>
 
-                     <div class="hidden md:block mt-10">
+                    <div class="hidden md:block mt-10">
                         <div class=" flex items-center gap-3">
                             <div class="absolute left-80 w-40 h-px bg-[#7A1F1F]"></div>
                             <div class="w-full h-px bg-[#7a1f1f]"></div>
@@ -250,276 +300,818 @@
                     </div>
                 </div>
             </div>
-                <!-- Content -->
-                <div class="hidden mt-2 px-2 pb-2 mb-5">
-                    <a href="#" class="block px-5 py-3 text-white hover:bg-[#9B2C2C] rounded-xl transition">Wiremesh</a>
-                    <a href="#" class="block px-5 py-3 text-white hover:bg-[#9B2C2C] rounded-xl transition">Stainless</a>
-                    <a href="#" class="block px-5 py-3 text-white hover:bg-[#9B2C2C] rounded-xl transition">Galvanized</a>
-                </div>
-            </div>
-  
-            <div class="md:hidden relative rounded-2xl overflow-hidden mb-4">
-                <img src="../images/Card Product.png" alt="filter wire mesh" class="w-full h-full object-cover">
-                <p class="absolute bottom-14 left-10 text-white font-semibold text-xl leading-tight">
-                filter wire <br> mesh stainless <br> steel
-                </p>
-            </div>
 
-                <!-- Grid 2 kolom bawah -->
-           <div class="md:hidden swiper myProduct w-full p-2">
-                    <div class="swiper-wrapper">
+            <!-- Mobile Product Filter Pill Button (Matches Screenshot 1) -->
+            <div class="block md:hidden px-4 mb-6">
+                <!-- Main Pill Button -->
+                <button onclick="toggleMobileProductFilter()"
+                    class="w-full bg-[#7A1F1F] text-white px-8 py-4 rounded-full flex justify-between items-center shadow-xl active:scale-[0.99] transition-all cursor-pointer">
+                    <span class="font-bold text-xl font-plus-jakarta-sans tracking-wide">Product</span>
+                    <i id="mobileProductArrow"
+                        class="fa-solid fa-chevron-down text-base transition-transform duration-300"></i>
+                </button>
 
-                        <div class="swiper-slide w-auto ">
-                            <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-                                <div class="aspect-square w-full">
-                                    <img src="../images/4.png" alt="Sharing Machine" class="w-full h-full object-cover">
-                                </div>
-                                <div class="px-3 py-4">
-                                    <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Filter Mesh Galvanized Type 48</h2>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Expandable Filter Menu (Matches Desktop Web Sidebar Design) -->
+                <div id="mobileProductMenu"
+                    class="hidden mt-3 bg-[#7A1F1F] pr-4 py-4 space-y-4 rounded-r-3xl rounded-l-2xl shadow-2xl transition-all duration-300">
+                    <!-- Top Category List Box -->
+                    <div
+                        class="bg-[#9C2A2A] text-white flex flex-col justify-center w-full rounded-r-2xl rounded-l-xl px-4 py-4 space-y-6 text-md">
+                        <ul class="space-y-3">
+                            <li class="font-semibold">
+                                <button onclick="toggleDropdown('mobile4wDropdown', 'mobile4wArrow')"
+                                    class="w-full flex justify-between items-center text-left focus:outline-none cursor-pointer py-1">
+                                    <span class="text-base font-bold">4W</span>
+                                    <i id="mobile4wArrow"
+                                        class="fa-solid fa-angle-right text-xs transition-transform duration-300"></i>
+                                </button>
 
-                        <div class="swiper-slide w-auto">
-                            <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-                                <div class="aspect-square w-full">
-                                    <img src="../images/product 2.png" alt="Press Machine" class="w-full h-full object-cover">
+                                <div id="mobile4wDropdown"
+                                    class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out pl-4 space-y-2 text-sm font-normal text-gray-200">
+                                    <p onclick="filterCategory('galvanized42', this)"
+                                        class="menu-item hover:text-white cursor-pointer pt-3 transition-colors">
+                                        GALVANIZED MESH DIA 42 MM</p>
+                                    <p onclick="filterCategory('galvanized48.5', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">GALVANIZED
+                                        MESH DIA 48.5 MM</p>
+                                    <p onclick="filterCategory('galvanized52', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">GALVANIZED
+                                        MESH DIA 52 MM</p>
                                 </div>
-                                <div class="px-3 py-4">
-                                    <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Filter Mesh Galvanized Type 42</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide w-auto">
-                            <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-                                <div class="aspect-square w-full">
-                                    <img src="../images/product 1.png" alt="Lathe Machine" class="w-full h-full object-cover">
-                                </div>
-                                <div class="px-3 py-4">
-                                    <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Galvanized 44 MM</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide w-auto">
-                            <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-                                <div class="aspect-square w-full">
-                                    <img src="../images/product 3.png" alt="Milling Machine" class="w-full h-full object-cover">
-                                </div>
-                                <div class="px-3 py-4">
-                                    <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Galvanized 57 MM</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            <div class="hidden md:grid md:grid-cols-5 mt-8">
-                <div class="col-span-1 bg-[#7A1F1F] pr-6 py-4 space-y-4 rounded-r-4xl h-fit">
-                    <!-- Upper Sec -->
-                    <div class=" bg-[#9C2A2A] text-white flex justify-between items-center w-full rounded-r-full px-4 py-2 font-semibold">
-                        <!-- Title -->
-                        <h1>
-                            Product
-                        </h1>
-                    </div>
-
-                    <!-- Middle Sec -->
-                    <div class="bg-[#9C2A2A] text-white flex flex-col justify-center w-full rounded-r-2xl px-4 py-2 space-y-12 text-md">
-                        <!-- List -->
-                        <ul class="space-y-2">
-                            <li class="font-semibold flex justify-between items-center">
-                                <h1>
-                                    Filter Mesh Galvanized
-                                </h1>
-                                <h1>
-                                    |
-                                </h1>
                             </li>
-                            <li>
-                                <h1>
-                                    Filter Mesh Glassweve
-                                </h1>
-                            </li>
-                            <li>
-                                <h1>
-                                    Filter Mesh SS
-                                </h1>
-                            </li>
-                            <li>
-                                <h1>
-                                    Steel Cap Stopper
-                                </h1>
+
+                            <li class="font-semibold pt-1">
+                                <button onclick="toggleDropdown('mobile2wDropdown', 'mobile2wArrow')"
+                                    class="w-full flex justify-between items-center text-left focus:outline-none cursor-pointer py-1">
+                                    <span class="text-base font-bold">2W</span>
+                                    <i id="mobile2wArrow"
+                                        class="fa-solid fa-angle-right text-xs transition-transform duration-300"></i>
+                                </button>
+
+                                <div id="mobile2wDropdown"
+                                    class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out pl-4 space-y-2 text-sm font-normal text-gray-200">
+                                    <p onclick="filterCategory('mesh-kyt', this)"
+                                        class="menu-item hover:text-white cursor-pointer pt-3 transition-colors">STEEL
+                                        NET KYT MESH #18</p>
+                                    <p onclick="filterCategory('mesh-tabung', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
+                                        MESH #20 TANDEM</p>
+                                    <p onclick="filterCategory('mesh-gravity', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
+                                        TABUNG MESH 20</p>
+                                    <p onclick="filterCategory('mesh-gravity', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
+                                        GRAVITY SINGLE MESH #18</p>
+                                    <p onclick="filterCategory('mesh-tandem', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
+                                        BULAT MESH SS #18</p>
+                                    <p onclick="filterCategory('mesh-slinder', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
+                                        SILINDER TYPE 38 TANDEM MESH #24</p>
+                                    <p onclick="filterCategory('mesh-34', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
+                                        SILINDER TYPE 34 TANDEM MESH #24</p>
+                                </div>
                             </li>
                         </ul>
 
-                        <!-- Bottom -->
-                        <div class="font-semibold">
-                            <h1>
-                                Up Coming
+                        <div class="font-semibold pt-2">
+                            <h1 onclick="filterCategory('all', this)"
+                                class="menu-item cursor-pointer text-base hover:text-gray-300 transition-colors">
+                                All Products
                             </h1>
                         </div>
                     </div>
 
-                    <!-- Bottom Sec -->
-                    <div class=" bg-[#9C2A2A] text-white flex flex-col w-full rounded-r-2xl px-2 py-2 space-y-4">
-                        <!-- Icon -->
-                        <div class="flex">
-                            <div class="bg-transparent px-[.6rem] py-1 border-3 border-white rounded-full flex justify-center items-center">
-                                <h1>
-                                    <a href="https://wa.me/6281210035326" class="flex justify-center items-center w-9 h-9 md:w-8 md:h-8 border border-white rounded-full" ><i class="fa-brands fa-whatsapp fa-sm" style="color: white;"></i></a>
-                                </h1>
+                    <!-- Bottom Contact Section Box (Matches Desktop Sidebar) -->
+                    <div class="bg-[#9C2A2A] text-white flex flex-col w-full rounded-r-2xl rounded-l-xl p-3 space-y-3">
+                        <div class="flex gap-2">
+                            <div
+                                class="bg-transparent px-[.6rem] py-1 border-3 border-white rounded-full flex justify-center items-center">
+                                <a href="https://wa.me/6281210035326"
+                                    class="flex justify-center items-center w-8 h-8 border border-white rounded-full"><i
+                                        class="fa-brands fa-whatsapp fa-sm text-white"></i></a>
                             </div>
-                            <div class="bg-transparent px-[.6rem] py-1 border-3 border-white rounded-full flex justify-center items-center">
-                                <h1>
-                                    <a href="https://www.instagram.com/perdanamitrakencana?utm_source=qr&igsh=MTNvZXBvZWh6eW40ZQ==" class="flex justify-center items-center w-9 h-9 md:w-8 md:h-8 border border-white rounded-full" ><i class="fa-brands fa-instagram fa-sm" style="color: white;"></i></a>
-                                </h1>
+                            <div
+                                class="bg-transparent px-[.6rem] py-1 border-3 border-white rounded-full flex justify-center items-center">
+                                <a href="https://www.instagram.com/perdanamitrakencana?utm_source=qr&igsh=MTNvZXBvZWh6eW40ZQ=="
+                                    class="flex justify-center items-center w-8 h-8 border border-white rounded-full"><i
+                                        class="fa-brands fa-instagram fa-sm text-white"></i></a>
                             </div>
-                            <div class="bg-transparent px-[.6rem] py-1 border-3 border-white rounded-full flex justify-center items-center">
-                                <h1>
-                                    <a href="mailto:perdanamitrakencana@outlook.com" class="flex justify-center items-center w-9 h-9 md:w-8 md:h-8 border border-white rounded-full" ><i class="fa-solid fa-envelope fa-sm" style="color: white;"></i></a>
-                                </h1>
+                            <div
+                                class="bg-transparent px-[.6rem] py-1 border-3 border-white rounded-full flex justify-center items-center">
+                                <a href="mailto:perdanamitrakencana@outlook.com"
+                                    class="flex justify-center items-center w-8 h-8 border border-white rounded-full"><i
+                                        class="fa-solid fa-envelope fa-sm text-white"></i></a>
                             </div>
                         </div>
 
-                        <!-- Telp -->
+                        <div
+                            class="bg-[#7A1F1F] rounded-full py-2 px-4 flex justify-center items-center w-fit text-xs font-semibold">
+                            +62 812 1003 5326
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:hidden relative rounded-2xl overflow-hidden mb-4">
+                <img src="../images/Card Product.png" alt="filter wire mesh" class="w-full h-full object-cover">
+                <p class="absolute bottom-14 left-10 text-white font-semibold text-xl leading-tight">
+                    filter wire <br> mesh stainless <br> steel
+                </p>
+            </div>
+
+            <!-- Grid Mobile (Swiper) -->
+            <div class="md:hidden swiper myProduct w-full p-2">
+                <!-- 
+                    TIPS MENAMBAH GAMBAR/PRODUK BARU (MOBILE SWIPER):
+                    1. Tambahkan tag <div> dengan class "swiper-slide w-auto product-item".
+                    2. Sesuaikan atribut "data-category" ("galvanized", "glassweve", "mesh-ss", dll).
+                    3. Ganti src gambar dan judul produknya.
+                -->
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide w-auto product-item" data-category="galvanized48.5">
+                        <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                            <div class="aspect-square w-full">
+                                <img src="../images/4.png" alt="Sharing Machine" class="w-full h-full object-cover">
+                            </div>
+                            <div class="px-3 py-4">
+                                <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Filter Mesh Galvanized
+                                    Type 48</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide w-auto product-item" data-category="galvanized42">
+                        <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                            <div class="aspect-square w-full">
+                                <img src="../images/product 2.png" alt="Press Machine"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="px-3 py-4">
+                                <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Filter Mesh Galvanized
+                                    Type 42</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide w-auto product-item" data-category="galvanized42">
+                        <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                            <div class="aspect-square w-full">
+                                <img src="../images/product 1.png" alt="Lathe Machine"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="px-3 py-4">
+                                <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Galvanized 44 MM</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide w-auto product-item" data-category="galvanized52">
+                        <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                            <div class="aspect-square w-full">
+                                <img src="../images/product 3.png" alt="Milling Machine"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="px-3 py-4">
+                                <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Galvanized 57 MM</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide w-auto product-item" data-category="mesh-kyt">
+                        <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                            <div class="aspect-square w-full">
+                                <img src="../images/product_sample2.png" alt="Filter Wire Mesh SS"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="px-3 py-4">
+                                <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Filter Wire Mesh
+                                    Stainless Steel (Filter Mesh SS)</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide w-auto product-item" data-category="mesh-tabung">
+                        <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                            <div class="aspect-square w-full">
+                                <img src="../images/product_sample3.png" alt="Filter Mesh Glassweve"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="px-3 py-4">
+                                <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Filter Mesh Glassweve
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- === TANDA: PRODUK BARU UNTUK MOBILE SWIPER === -->
+                    <!-- Produk Baru: Galvanized 50 MM (Mobile) -->
+                    <div class="swiper-slide w-auto product-item" data-category="galvanized42">
+                        <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                            <div class="aspect-square w-full">
+                                <img src="../images/Galvanized_4 1.png" alt="Filter Mesh Galvanized"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="px-3 py-4">
+                                <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Filter Mesh Galvanized
+                                    Type 50</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk Baru: Glassweve Type 2 (Mobile) -->
+                    <div class="swiper-slide w-auto product-item" data-category="mesh-gravity">
+                        <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                            <div class="aspect-square w-full">
+                                <img src="../images/mesh_1.jpeg" alt="Filter Mesh Glassweve"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="px-3 py-4">
+                                <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Filter Mesh Glassweve
+                                    Type 2</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- === TANDA: STEEL CAP STOPPER BARU (MOBILE) === -->
+                    <!-- Stopper Item 1 -->
+                    <div class="swiper-slide w-auto product-item" data-category="mesh-tandem">
+                        <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                            <div class="aspect-square w-full">
+                                <img src="../images/mesh_2.jpeg" alt="Steel Cap Stopper"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="px-3 py-4">
+                                <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Steel Cap Stopper</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stopper Item 2 -->
+                    <div class="swiper-slide w-auto product-item" data-category="mesh-slinder">
+                        <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                            <div class="aspect-square w-full">
+                                <img src="../images/mesh_3.jpeg" alt="Steel Cap Stopper Type B"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="px-3 py-4">
+                                <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Steel Cap Stopper Type
+                                    B</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stopper Item 3 -->
+                    <div class="swiper-slide w-auto product-item" data-category="mesh-34">
+                        <div class="w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                            <div class="aspect-square w-full">
+                                <img src="../images/mesh 3.png" alt="Steel Cap Stopper Type C"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="px-3 py-4">
+                                <h2 class="text-[11px] font-medium text-amber-900 leading-tight">Steel Cap Stopper Type
+                                    C</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- === AKHIR TANDA: STEEL CAP STOPPER BARU (MOBILE) === -->
+                    <!-- === AKHIR TANDA: PRODUK BARU UNTUK MOBILE SWIPER === -->
+
+                </div>
+            </div>
+
+            <!-- Layout Desktop Grid -->
+            <div class="hidden md:grid md:grid-cols-5 mt-8">
+                <!-- Sidebar Menu -->
+                <div class="col-span-1 bg-[#7A1F1F] pr-6 py-4 space-y-4 rounded-r-4xl h-fit">
+                    <div
+                        class="bg-[#9C2A2A] text-white flex flex-col justify-center w-full rounded-r-2xl px-4 py-2 space-y-12 text-md">
+                        <ul class="space-y-2">
+
+                            <li class="font-semibold">
+                                <button onclick="toggleDropdown('mobilDropdown', 'mobilArrow')"
+                                    class="w-full flex justify-between items-center text-left focus:outline-none cursor-pointer">
+                                    <h1>4W</h1>
+                                    <h1>
+                                        <i id="mobilArrow"
+                                            class="fa-solid fa-angle-right text-xs transition-transform duration-300"></i>
+                                    </h1>
+                                </button>
+
+                                <div id="mobilDropdown"
+                                    class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out pl-4 space-y-2 text-sm font-normal text-gray-200">
+                                    <p onclick="filterCategory('galvanized44', this)"
+                                        class="menu-item hover:text-white cursor-pointer pt-3 transition-colors">
+                                        GALVANIZED MESH DIA 44 MM</p>
+                                    <p onclick="filterCategory('galvanized48.5', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">GALVANIZED
+                                        MESH DIA 48.5 MM</p>
+                                    <p onclick="filterCategory('galvanized52', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">GALVANIZED
+                                        MESH DIA 52 MM</p>
+                                </div>
+                            </li>
+
+                            <li class="font-semibold pt-2">
+                                <button onclick="toggleDropdown('motorDropdown', 'motorArrow')"
+                                    class="w-full flex justify-between items-center text-left focus:outline-none cursor-pointer">
+                                    <h1>2W</h1>
+                                    <h1>
+                                        <i id="motorArrow"
+                                            class="fa-solid fa-angle-right text-xs transition-transform duration-300"></i>
+                                    </h1>
+                                </button>
+
+                                <div id="motorDropdown"
+                                    class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out pl-4 space-y-2 text-sm font-normal text-gray-200">
+                                    <p onclick="filterCategory('mesh-kyt', this)"
+                                        class="menu-item hover:text-white cursor-pointer pt-3 transition-colors">STEEL
+                                        NET KYT MESH #18</p>
+                                    <p onclick="filterCategory('mesh-tandem', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
+                                        MESH #20 TANDEM</p>
+                                    <p onclick="filterCategory('mesh-tabung', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
+                                        TABUNG MESH 20</p>
+                                    <p onclick="filterCategory('mesh-gravity', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
+                                        GRAVITY SINGLE MESH #18</p>
+                                    <p onclick="filterCategory('mesh-bulat', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
+                                        BULAT MESH SS #18</p>
+                                    <p onclick="filterCategory('mesh-silinder', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
+                                        SILINDER TYPE 38 TANDEM MESH #24</p>
+                                    <p onclick="filterCategory('mesh-34', this)"
+                                        class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
+                                        SILINDER TYPE 34 TANDEM MESH #24</p>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <div class="font-semibold">
+                            <!-- Tombol Reset Manual -->
+                            <h1 onclick="filterCategory('all', this)"
+                                class="menu-item cursor-pointer hover:text-gray-300 transition-colors">
+                                All Products
+                            </h1>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Contact Section -->
+                    <div class="bg-[#9C2A2A] text-white flex flex-col w-full rounded-r-2xl px-2 py-2 space-y-4">
+                        <div class="flex">
+                            <div
+                                class="bg-transparent px-[.6rem] py-1 border-3 border-white rounded-full flex justify-center items-center">
+                                <a href="https://wa.me/6281210035326"
+                                    class="flex justify-center items-center w-9 h-9 md:w-8 md:h-8 border border-white rounded-full"><i
+                                        class="fa-brands fa-whatsapp fa-sm" style="color: white;"></i></a>
+                            </div>
+                            <div
+                                class="bg-transparent px-[.6rem] py-1 border-3 border-white rounded-full flex justify-center items-center">
+                                <a href="https://www.instagram.com/perdanamitrakencana?utm_source=qr&igsh=MTNvZXBvZWh6eW40ZQ=="
+                                    class="flex justify-center items-center w-9 h-9 md:w-8 md:h-8 border border-white rounded-full"><i
+                                        class="fa-brands fa-instagram fa-sm" style="color: white;"></i></a>
+                            </div>
+                            <div
+                                class="bg-transparent px-[.6rem] py-1 border-3 border-white rounded-full flex justify-center items-center">
+                                <a href="mailto:perdanamitrakencana@outlook.com"
+                                    class="flex justify-center items-center w-9 h-9 md:w-8 md:h-8 border border-white rounded-full"><i
+                                        class="fa-solid fa-envelope fa-sm" style="color: white;"></i></a>
+                            </div>
+                        </div>
+
                         <div class="bg-[#7A1F1F] rounded-full py-2 px-4 flex justify-center items-center w-fit">
                             +62 812 1003 5326
                         </div>
                     </div>
                 </div>
 
+                <!-- Grid Produk Kanan -->
                 <div class="hidden md:block col-span-4 min-w-0">
-                    <div class="grid grid-cols-3 pl-10 gap-3">
-                        <!-- Single Product -->
-                        <div class="shadow-2xl h-fit">
-                            <img 
-                                src="../images/product_sample.png" 
-                                alt=""
-                                class="w-full"
-                                >
-                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
-                                <h1>
-                                    Filter Mesh Galvanized Type 48
-                                </h1>
+                    <!-- 
+                        TIPS MENAMBAH GAMBAR/PRODUK BARU (DESKTOP):
+                        1. Buat tag <div> dengan class "product-item" di dalam grid.
+                        2. Tentukan kategori produk pada atribut "data-category".
+                           - "galvanized" = Filter Mesh Galvanized
+                           - "glassweve"  = Filter Mesh Glassweve
+                           - "mesh-ss"    = Filter Mesh SS
+                           - "stopper"    = Steel Cap Stopper
+                        3. Ganti src pada tag <img> dengan path file gambar kamu di folder "../images/".
+                    -->
+                    <div class="grid grid-cols-3 pl-10 gap-4">
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="galvanized44">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Galvanized Mesh DIA 44 MM.png" alt="Galvanized Mesh DIA 44 MM"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Galvanized Mesh DIA 44 MM</h1>
                             </div>
                         </div>
-                        <div class="shadow-xl">
-                            <img 
-                                src="../images/product_sample.png" 
-                                alt=""
-                                class="w-full"
-                                >
-                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
-                                <h1>
-                                    Filter Mesh Galvanized Type 42
-                                </h1>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="galvanized48.5">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Galvanized_2 1.png" alt="Galvanized Mesh DIA 48.5 MM"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Galvanized Mesh DIA 48.5 MM</h1>
                             </div>
                         </div>
-                        <!-- Single Product -->
-                        <!-- Single Product -->
-                        <div class="shadow-xl">
-                            <img 
-                                src="../images/product_sample.png" 
-                                alt=""
-                                class="w-full"
-                                >
-                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
-                                <h1>
-                                    Galvanized 44 MM
-                                </h1>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="galvanized52">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Galvanized Mesh DIA 52 MM.png" alt="Galvanized Mesh DIA 52 MM"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Galvanized Mesh DIA 52 MM</h1>
                             </div>
                         </div>
-                        <!-- Single Product -->
-                        <div class="shadow-xl">
-                            <img 
-                                src="../images/product_sample.png" 
-                                alt=""
-                                class="w-full"
-                                >
-                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
-                                <h1>
-                                    Galvanized 57 MM
-                                </h1>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-kyt">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Steel Net KYT MESH 18.png" alt="Steel Net KYT MESH #18"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net KYT MESH #18</h1>
                             </div>
                         </div>
-                        <!-- Single Product -->
-                        <!-- Single Product -->
-                        <div class="shadow-xl">
-                            <img 
-                                src="../images/product_sample2.png" 
-                                alt=""
-                                class="w-full"
-                                >
-                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
-                                <h1>
-                                    Filter Wire Mesh Stainless <br>Steel
-                                </h1>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-slinder">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Steel Net Slinder Type 34.png" alt="Steel Net Slinder Type 34"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Slinder Type 34</h1>
                             </div>
                         </div>
-                        <!-- Single Product -->
-                        <!-- Single Product -->
-                        <div class="shadow-xl">
-                            <img 
-                                src="../images/product_sample3.png" 
-                                alt=""
-                                class="w-full"
-                                >
-                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-6 text-md w-fit">
-                                <h1>
-                                    Filter Wire Mesh Stainless <br>Steel
-                                </h1>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-tabung">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Steel Net Tabung MESH 20.png" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Tabung MESH 20</h1>
                             </div>
                         </div>
+
+                        <!-- === TANDA: PRODUK BARU UNTUK DESKTOP GRID === -->
+                        <!-- Produk Baru: Galvanized 50 MM (Desktop) -->
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Galvanized_4 1.png" alt="Filter Mesh Galvanized Type 50"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Filter Mesh Galvanized Type 50</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="galvanized44" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/galvanized.44.jpeg" alt="Galvanized Mesh DIA 44 MM"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Galvanized Mesh DIA 44 MM</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="galvanized44" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Galvanized.jpeg" alt="Galvanized Mesh DIA 44 MM"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Galvanized Mesh DIA 44 MM</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="galvanized48.5" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Galvanized_48.5.jpeg" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Galvanized Mesh DIA 48.5 MM</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="galvanized48.5" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Galvanized_1 1.png" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Galvanized Mesh DIA 48.5 MM</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="galvanized52" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Galvanized_3 1.png" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Galvanized Mesh DIA 52 MM</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="galvanized52" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Galvanized.52.jpeg" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Galvanized Mesh DIA 52 MM</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-kyt" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/mesh_kyt.jpeg" alt="Steel Net KYT MESH #18"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net KYT MESH #18</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-kyt" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/mesh_kyt.1.jpeg" alt="Steel Net KYT MESH #18"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net KYT MESH #18</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-tabung" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Tabung.mesh.jpeg" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Tabung MESH 20</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-tabung" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/net_tabung.jpeg" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Tabung MESH 20</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-gravity" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/net_gravity.jpeg" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Gravity Single Mesh #18</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-gravity" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/net_gravity.1.jpeg" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Gravity Single Mesh #18</h1>
+                            </div>
+                        </div>
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-gravity" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/net_gravity.2.jpeg" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Gravity Single Mesh #18</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-silinder" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100 text-center">
+                                <img src="../images/silinder_type.38.jpeg" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Silinder Type 38</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-silinder" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100 text-center">
+                                <img src="../images/silinder_type.38 1.jpeg" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Silinder Type 38</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-silinder" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100 text-center">
+                                <img src="../images/silinder_type.38 2.jpeg" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Silinder Type 38</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-34" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/Steel Net Slinder Type 34.png" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Silinder Type 34</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-34" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100 text-center">
+                                <img src="../images/type.34.jpeg" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Silinder Type 34</h1>
+                            </div>
+                        </div>
+
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="mesh-34" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100 text-center">
+                                <img src="../images/type_34.2.jpeg" alt="Steel Net Tabung MESH 20"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Net Silinder Type 34</h1>
+                            </div>
+                        </div>
+
+                        <!-- Produk Baru: Glassweve Type 2 (Desktop) -->
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/mesh_1.jpeg" alt="Filter Mesh Glassweve Type 2"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Filter Mesh Glassweve Type 2</h1>
+                            </div>
+                        </div>
+
+                        <!-- === TANDA: STEEL CAP STOPPER BARU (DESKTOP) === -->
+                        <!-- Stopper Item 1 -->
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="stopper" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/mesh_2.jpeg" alt="Steel Cap Stopper"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Cap Stopper</h1>
+                            </div>
+                        </div>
+
+                        <!-- Stopper Item 2 -->
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="stopper" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/mesh_3.jpeg" alt="Steel Cap Stopper Type B"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Cap Stopper Type B</h1>
+                            </div>
+                        </div>
+
+                        <!-- Stopper Item 3 -->
+                        <div class="shadow-2xl h-fit rounded-2xl overflow-hidden bg-white product-item flex flex-col justify-between"
+                            data-category="stopper" data-hide-on-all="true" style="display: none;">
+                            <div class="aspect-square w-full overflow-hidden bg-gray-100">
+                                <img src="../images/mesh 3.png" alt="Steel Cap Stopper Type C"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div class="bg-white text-[#7A1F1F] font-semibold px-4 py-5 text-md w-full">
+                                <h1>Steel Cap Stopper Type C</h1>
+                            </div>
+                        </div>
+                        <!-- === AKHIR TANDA: STEEL CAP STOPPER BARU (DESKTOP) === -->
+                        <!-- === AKHIR TANDA: PRODUK BARU UNTUK DESKTOP GRID === -->
+
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Contact Us Section -->
-         <section id="contact" class="relative min-h-screen py-6 md:px-14 md:items-start max-w-7xl mx-auto mt-80">
-            <div class="flex justify-center md:justify-start absolute inset-0">
-                    <img src="../images/contact_bg.png" alt="Contact Background">
+        <section id="contact"
+            class="relative min-h-screen py-6 md:px-14 md:items-start max-w-7xl mx-auto mt-16 md:mt-40">
+            <div class="flex justify-center md:justify-start absolute inset-0 mt-20">
+                <img src="../images/contact_bg.png" alt="Contact Background">
             </div>
 
-            <div class="md:flex md:flex-row flex flex-col justify-between items-center mt-3 relative z-10 px-4 md:items-start">
-                <h1 class="text-[40px] md:text-[50px] font-bold md:font-semibold font-jakarta text-center md:text-left">Contact Us</h1>
-                <p class="hidden md:block text-[14px] text-right text-black mt-5 leading-relaxed">Hubungi Kami <br> Kami siap membantu kebutuhan Anda. Silakan hubungi kami untuk informasi lebih lanjut, <br> konsultasi produk, atau kerja sama bisnis. Tim kami akan merespons secepat mungkin.</p>
+            <div
+                class="md:flex md:flex-row flex flex-col justify-between items-center mt-3 relative z-10 px-4 md:items-start">
+                <h1 class="text-[40px] md:text-[50px] font-bold md:font-semibold font-jakarta text-center md:text-left">
+                    Contact Us</h1>
+                <p class="hidden md:block text-[14px] text-right text-black mt-5 leading-relaxed">Hubungi Kami <br> Kami
+                    siap membantu kebutuhan Anda. Silakan hubungi kami untuk informasi lebih lanjut, <br> konsultasi
+                    produk, atau kerja sama bisnis. Tim kami akan merespons secepat mungkin.</p>
             </div>
 
-            <div class="relative w-full min-h-screen flex flex-col md:flex-row items-center md:gap-6 md:justify-between">
-                
+            <div
+                class="relative w-full min-h-screen flex flex-col md:flex-row items-center md:gap-6 md:justify-between">
+
                 <div class="relative z-10 px-4 mt-3">
-                    <h2 class="text-[16px] md:text-[36px] font-medium text-[#7a1f1f] leading-tight mb-4 text-justify md:text-left">
-                        Kolaborasi yang tepat <br class="hidden md:block">dimulai dari komunikasi <br class="hidden md:block">yang baik.
+                    <h2
+                        class="text-[16px] md:text-[36px] font-medium text-[#7a1f1f] leading-tight mb-4 text-justify md:text-left">
+                        Kolaborasi yang tepat <br class="hidden md:block">dimulai dari komunikasi <br
+                            class="hidden md:block">yang baik.
                     </h2>
                     <p class="text-[14px] md:text-[16px] text-black mt-5">
                         Hubungi kami untuk solusi industri yang andal dan berkelanjutan.
                     </p>
-                    <div class="hidden md:flex gap-3 md:absolute items-center md:items-start md:justify-start justify-center mt-5 md:mt-40">
-                        <a href="https://wa.me/6281210035326" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border-2 border-[#7A1F1F] rounded-full" ><i class="fa-brands fa-whatsapp fa-lg" style="color: #7A1F1F;"></i></a>
-                        <a href="https://www.instagram.com/perdanamitrakencana?utm_source=qr&igsh=MTNvZXBvZWh6eW40ZQ==" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border-2 border-[#7A1F1F] rounded-full" ><i class="fa-brands fa-instagram fa-lg" style="color: #7A1F1F;"></i></a>
-                        <a href="mailto:perdanamitrakencana@outlook.com" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border-2 border-[#7A1F1F] rounded-full" ><i class="fa-solid fa-envelope fa-lg" style="color: #7A1F1F;"></i></a>
+                    <div
+                        class="hidden md:flex gap-3 md:absolute items-center md:items-start md:justify-start justify-center mt-5 md:mt-40">
+                        <a href="https://wa.me/6281210035326"
+                            class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border-2 border-[#7A1F1F] rounded-full"><i
+                                class="fa-brands fa-whatsapp fa-lg" style="color: #7A1F1F;"></i></a>
+                        <a href="https://www.instagram.com/perdanamitrakencana?utm_source=qr&igsh=MTNvZXBvZWh6eW40ZQ=="
+                            class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border-2 border-[#7A1F1F] rounded-full"><i
+                                class="fa-brands fa-instagram fa-lg" style="color: #7A1F1F;"></i></a>
+                        <a href="https://www.linkedin.com/in/pt-perdana-mitra-kencana-9b4a54413?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                            class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border-2 border-[#7A1F1F] rounded-full"><i
+                                class="fa-brands fa-linkedin fa-lg" style="color: #7A1F1F;"></i></a>
                     </div>
                 </div>
 
-                <div class="z-10 bg-white border border-black p-6 md:p-8 rounded-3xl shadow-2xl w-full max-w-xl mt-5 md:mt-36">
+                <div
+                    class="z-10 bg-white border border-black p-6 md:p-8 rounded-3xl shadow-2xl w-full max-w-xl mt-5 md:mt-36">
                     <form id="contactForm" class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium mb-1">Nama</label>
-                            <input id="name" type="text" class="w-full p-3 bg-gray-100 rounded-2xl text-sm focus:outline-none" placeholder="Nama Anda">
+                            <input id="name" type="text"
+                                class="w-full p-3 bg-gray-100 rounded-2xl text-sm focus:outline-none"
+                                placeholder="Nama Anda">
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-1">Email</label>
-                            <input id="email" type="email" class="w-full p-3 bg-gray-100 rounded-xl text-sm focus:outline-none" placeholder="Email Anda">
+                            <input id="email" type="email"
+                                class="w-full p-3 bg-gray-100 rounded-xl text-sm focus:outline-none"
+                                placeholder="Email Anda">
                         </div>
                         <div>
                             <label class="block text-sm font-medium mb-1">Pesan</label>
-                            <textarea id="message" class="w-full p-3 bg-gray-100 rounded-xl h-36 text-sm focus:outline-none" placeholder="Pesan Anda"></textarea>
+                            <textarea id="message"
+                                class="w-full p-3 bg-gray-100 rounded-xl h-36 text-sm focus:outline-none"
+                                placeholder="Pesan Anda"></textarea>
                         </div>
-                        <button type="submit" class="group flex items-center gap-2 bg-[#7a1f1f] text-white px-4 py-2 rounded-full hover:bg-[#651818] transition">
+                        <button type="submit"
+                            class="group flex items-center gap-2 bg-[#7a1f1f] text-white px-4 py-2 rounded-full hover:bg-[#651818] transition">
                             <span class="text-[12px] md:text-[15px] font-medium">Kirim Pesan</span>
                             <span class="flex items-center justify-center w-4 h-4 bg-white rounded-full">
                                 <i class="fa-solid fa-arrow-right text-[#7a1f1f] text-xs"></i>
@@ -531,89 +1123,122 @@
         </section>
 
 
-       <section class="hidden md:flex justify-center items-center py-10 mt-20 px-20 w-full">
+        <section class="hidden md:flex justify-center items-center py-10 mt-20 px-20 w-full">
             <div class="container flex justify-center">
                 <div class="overflow-hidden rounded-3xl shadow-lg border border-gray-200">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.2784700288985!2d106.8869848540482!3d-6.111949706415569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f006cdfa0b5%3A0x2a09ead5cb0fa2cf!2sPT.%20Perdana%20Mitra%20Kencana!5e0!3m2!1sen!2sid!4v1771299882137!5m2!1sen!2sid" class="w-400 h-75" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.2784700288985!2d106.8869848540482!3d-6.111949706415569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f006cdfa0b5%3A0x2a09ead5cb0fa2cf!2sPT.%20Perdana%20Mitra%20Kencana!5e0!3m2!1sen!2sid!4v1771299882137!5m2!1sen!2sid"
+                        class="w-400 h-75" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer Section -->
-     <footer class=" bg-[#7A1F1F] rounded-t-[20px] p-8 flex flex-col mt-10">
-            <div class="md:flex md:flex-col w-full mb-5">
-                <h1 class="text-white min-w-screen text-[55px] md:text-[95px] font-semibold">PT. Perdana <br class="md:hidden">Mitra Kencana</h1>
-                <div class="hidden md:block md:bg-white md:w-full md:h-0.5"></div>
-            </div>
+    <footer class=" bg-[#7A1F1F] rounded-t-[20px] p-8 flex flex-col mt-10">
+        <div class="md:flex md:flex-col w-full mb-5">
+            <h1 class="text-white min-w-screen text-[55px] md:text-[95px] font-semibold">PT. Perdana <br
+                    class="md:hidden">Mitra Kencana</h1>
+            <div class="hidden md:block md:bg-white md:w-full md:h-0.5"></div>
+        </div>
 
-            <div class="w-full flex flex-col gap-8">
-                <div class="flex flex-col md:flex-row justify-start items-start gap-x-10">
-                    <div class="flex justify-between gap-10">
-                        <div class="flex flex-col space-y-11 md:space-y-8 mt-2">
-                            <a href=""><i class="fa-solid fa-location-dot fa-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
-                            <div class="flex flex-col gap-15 md:gap-14">
-                                <a href=""><i class="fa-solid fa-envelope text-white fa-xl"></i></a>
-                                <a href=""><i class="fa-solid fa-phone fa-xl" style="color: rgba(255, 255, 255, 1.00);"></i></a>
+        <div class="w-full flex flex-col gap-8">
+            <div class="flex flex-col md:flex-row justify-start items-start gap-x-10">
+                <div class="flex justify-between gap-10">
+                    <div class="flex flex-col space-y-11 md:space-y-8 mt-2">
+                        <a href=""><i class="fa-solid fa-location-dot fa-xl"
+                                style="color: rgba(255, 255, 255, 1.00);"></i></a>
+                        <div class="flex flex-col gap-15 md:gap-14">
+                            <a href=""><i class="fa-solid fa-envelope text-white fa-xl"></i></a>
+                            <a href=""><i class="fa-solid fa-phone fa-xl"
+                                    style="color: rgba(255, 255, 255, 1.00);"></i></a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-6 text-white text-[16px] md:text-[16px]">
+                        <p>Jl. Kb. Bawang No.35, RT.8/RW.6, Kb.<br> Bawang, Kec. Tj. Priok, Jkt Utara, Daerah <br>
+                            Khusus Ibukota Jakarta 14320</p>
+                        <div class="flex flex-col gap-14">
+                            <p>perdanamitrakencana@outlook.com</p>
+                            <p>+62 812 1003 5326</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:flex md:flex-row md:gap-x-20">
+                    <div class="hidden md:flex md:flex-col md:gap-5">
+                        <h1 class="text-[18px] md:text-[22px] text-white font-semibold">Product</h1>
+                        <p class="text-white text-[16px] font-light">Filter Mesh Stainless</p>
+                        <p class="text-white text-[16px] font-light">Filter Mesh Galvanized</p>
+                        <p class="text-white text-[16px] font-light">Filter Mesh SS</p>
+                        <p class="text-white text-[16px] font-light">Steel Cap Stoper</p>
+                    </div>
+                    <div class="md:flex md:gap-40">
+                        <div class="hidden md:flex md:flex-col md:gap-5">
+                            <h1 class="text-[18px] md:text-[22px] text-white font-semibold">Quick Links</h1>
+                            <a href="../index.html">
+                                <p class="text-white text-[16px] font-light">Home</p>
+                            </a>
+                            <a href="#">
+                                <p class="text-white text-[16px] font-light">Product</p>
+                            </a>
+                            <a href="gallery_page.html">
+                                <p class="text-white text-[16px] font-light">Gallery</p>
+                            </a>
+                            <a href="contact_page.html">
+                                <p class="text-white text-[16px] font-light">Contact</p>
+                            </a>
+                        </div>
+
+                        <div class="md:hidden container flex justify-center mt-7">
+                            <div class="overflow-hidden rounded-3xl shadow-lg border border-gray-200">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.2784700288985!2d106.8869848540482!3d-6.111949706415569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f006cdfa0b5%3A0x2a09ead5cb0fa2cf!2sPT.%20Perdana%20Mitra%20Kencana!5e0!3m2!1sen!2sid!4v1771299882137!5m2!1sen!2sid"
+                                    class="w-full h-50" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
-                        <div class="flex flex-col gap-6 text-white text-[16px] md:text-[16px]">
-                            <p>Jl. Kb. Bawang No.35, RT.8/RW.6, Kb.<br> Bawang, Kec. Tj. Priok, Jkt Utara, Daerah <br> Khusus Ibukota Jakarta 14320</p>
-                            <div class="flex flex-col gap-14">
-                                <p>perdanamitrakencana@outlook.com</p>
-                                <p>+62 812 1003 5326</p>
+
+                        <div class="flex flex-col text-white mt-5 md:mt-0">
+                            <h1 class="text-[22px] font-bold">Call to Action</h1>
+                            <p class="text-[12.75px] md:text-[16px] font-light text-justify">Solusi penyaringan industri
+                                yang tepat. <br class="hidden md:block">Efisiensi produksi dimulai dari sistem filtrasi
+                                <br class="hidden md:block">yang berkualitas.
+                            </p>
+                            <div class="flex flex-col gap-4">
+                                <div class="relative">
+                                    <input type="text" id="hubungiInput" placeholder="hubungi kami"
+                                        class="w-full md:w-60 h-8 bg-white text-black border border-white rounded-full px-5 py-2.5 text-[14px] mt-4">
+                                    <i id="hubungiBtn"
+                                        class="fa-solid fa-angle-right absolute bottom-2 right-4 md:right-14 cursor-pointer"
+                                        style="color: rgb(122, 31, 31);"></i>
+                                </div>
+                                <div
+                                    class="flex gap-3 items-center md:items-start md:justify-start justify-center mt-5 md:mt-0">
+                                    <a href="https://wa.me/6281210035326"
+                                        class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border border-white rounded-full"><i
+                                            class="fa-brands fa-whatsapp" style="color: white;"></i></a>
+                                    <a href="https://www.instagram.com/perdanamitrakencana?utm_source=qr&igsh=MTNvZXBvZWh6eW40ZQ=="
+                                        class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border border-white rounded-full"><i
+                                            class="fa-brands fa-instagram" style="color: white;"></i></a>
+                                    <a href="https://www.linkedin.com/in/pt-perdana-mitra-kencana-9b4a54413?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                                        class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border border-white rounded-full"><i
+                                            class="fa-brands fa-linkedin" style="color: white;"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="md:flex md:flex-row md:gap-x-20">
-                        <div class="hidden md:flex md:flex-col md:gap-5">
-                            <h1 class="text-[18px] md:text-[22px] text-white font-semibold">Product</h1>
-                            <p class="text-white text-[16px] font-light">Filter Mesh Stainless</p>
-                            <p class="text-white text-[16px] font-light">Filter Mesh Galvanized</p>
-                            <p class="text-white text-[16px] font-light">Filter Mesh SS</p>
-                            <p class="text-white text-[16px] font-light">Steel Cap Stoper</p>
-                        </div>
-                        <div class="md:flex md:gap-40">
-                            <div class="hidden md:flex md:flex-col md:gap-5">
-                                <h1 class="text-[18px] md:text-[22px] text-white font-semibold">Quick Links</h1>
-                                <a href="../index.html"><p class="text-white text-[16px] font-light">Home</p></a>
-                                <a href="#"><p class="text-white text-[16px] font-light">Product</p></a>
-                                <a href="gallery_page.html"><p class="text-white text-[16px] font-light">Gallery</p></a>
-                                <a href="contact_page.html"><p class="text-white text-[16px] font-light">Contact</p></a>
-                            </div>
-
-                            <div class="md:hidden container flex justify-center mt-7">
-                                <div class="overflow-hidden rounded-3xl shadow-lg border border-gray-200">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7934.2784700288985!2d106.8869848540482!3d-6.111949706415569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f006cdfa0b5%3A0x2a09ead5cb0fa2cf!2sPT.%20Perdana%20Mitra%20Kencana!5e0!3m2!1sen!2sid!4v1771299882137!5m2!1sen!2sid" class="w-full h-50" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col text-white mt-5 md:mt-0">
-                                <h1 class="text-[22px] font-bold">Call to Action</h1>
-                                <p class="text-[12.75px] md:text-[16px] font-light text-justify">Solusi penyaringan industri yang tepat. <br class="hidden md:block">Efisiensi produksi dimulai dari sistem filtrasi <br class="hidden md:block">yang berkualitas.</p>
-                                <div class="flex flex-col gap-4">
-                                    <div class="relative">
-                                        <input type="text" placeholder="hubungi kami" class="w-full md:w-60 h-8 bg-white text-black border border-white rounded-full px-5 py-2.5 text-[14px] mt-4">
-                                        <i class="fa-solid fa-angle-right absolute bottom-2 right-4 md:right-14" style="color: rgb(122, 31, 31);"></i></i>
-                                    </div>
-                                    <div class="flex gap-3 items-center md:items-start md:justify-start justify-center mt-5 md:mt-0">
-                                        <a href="https://wa.me/6281210035326" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border border-white rounded-full" ><i class="fa-brands fa-whatsapp" style="color: white;"></i></a>
-                                        <a href="https://www.instagram.com/perdanamitrakencana?utm_source=qr&igsh=MTNvZXBvZWh6eW40ZQ==" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border border-white rounded-full" ><i class="fa-brands fa-instagram" style="color: white;"></i></a>
-                                        <a href="mailto:perdanamitrakencana@outlook.com" class="flex justify-center items-center w-7 h-7 md:w-9 md:h-9 border border-white rounded-full" ><i class="fa-solid fa-envelope" style="color: white;"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>    
                 </div>
             </div>
-                <div class="flex justify-center items-center mt-5">
-                    <p class="text-white/50 text-[14px] md:text-[18px] font-light text-center">© 2026 PT Perdana Mitra Kencana. All rights reserved. Designed by PMK Digital Team.</p>
-                </div>
-        </footer>
+        </div>
+        <div class="flex justify-center items-center mt-5">
+            <p class="text-white/50 text-[14px] md:text-[18px] font-light text-center">© 2026 PT Perdana Mitra Kencana.
+                All rights reserved. Designed by PMK Digital Team.</p>
+        </div>
+    </footer>
 
-        <script src="../js/script.js"></script>
+    <script src="../js/script.js"></script>
 
 </body>
+
 </html>
