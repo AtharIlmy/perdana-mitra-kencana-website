@@ -50,12 +50,15 @@
             <!-- Mobile Menu Header (Visible only on Mobile) -->
             <div class="flex md:hidden w-full items-center justify-between pb-4 border-b border-white/15 mb-6">
                 <div class="flex items-center gap-2.5">
-                    <img class="w-8 h-auto" src="../images/pmk_logo.png" alt="pmk-logo">
+                    <div class="flex px-1.5 py-1.5 rounded-xl bg-white"> 
+                        <img class="w-8 h-auto " src="../images/pmk_logo.png" alt="pmk-logo">
+                    </div>
                     <div class="flex flex-col text-left">
-                        <span class="text-white font-bold text-xs tracking-wide font-plus-jakarta-sans">PT Perdana Mitra Kencana</span>
+                        <span class="text-white font-bold text-sm tracking-wide font-plus-jakarta-sans">PT Perdana <br> Mitra Kencana</span>
                     </div>
                 </div>
-                <button onclick="closeMenu()" aria-label="Close Menu" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 text-white flex items-center justify-center border border-white/20 transition-all duration-200 cursor-pointer">
+                <button onclick="closeMenu()" aria-label="Close Menu"
+                    class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 text-white flex items-center justify-center border border-white/20 transition-all duration-200 cursor-pointer">
                     <i class="fa-solid fa-xmark text-sm"></i>
                 </button>
             </div>

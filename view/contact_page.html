@@ -60,12 +60,13 @@
             class="flex md:static md:flex md:flex-row md:items-center md:justify-center md:bg-[#7a1f1f] md:min-h-0 md:h-auto md:w-auto md:max-w-none md:p-2 md:rounded-full md:inset-auto md:border-none md:shadow-none md:translate-x-0 md:overflow-visible fixed top-0 right-0 w-3/4 sm:w-1/2 max-w-[320px] h-full min-h-screen bg-[#7a1f1f] flex-col justify-start items-start z-50 p-6 shadow-2xl border-l border-white/15 overflow-y-auto translate-x-full transition-transform duration-300 ease-in-out">
 
             <!-- Mobile Menu Header (Visible only on Mobile) -->
-            <div class="flex md:hidden w-full items-center justify-between pb-4 border-b border-white/15 mb-6">
+           <div class="flex md:hidden w-full items-center justify-between pb-4 border-b border-white/15 mb-6">
                 <div class="flex items-center gap-2.5">
-                    <img class="w-8 h-auto" src="../images/pmk_logo.png" alt="pmk-logo">
+                    <div class="flex px-1.5 py-1.5 rounded-xl bg-white"> 
+                        <img class="w-8 h-auto " src="../images/pmk_logo.png" alt="pmk-logo">
+                    </div>
                     <div class="flex flex-col text-left">
-                        <span class="text-white font-bold text-xs tracking-wide font-plus-jakarta-sans">PT Perdana Mitra
-                            Kencana</span>
+                        <span class="text-white font-bold text-sm tracking-wide font-plus-jakarta-sans">PT Perdana <br> Mitra Kencana</span>
                     </div>
                 </div>
                 <button onclick="closeMenu()" aria-label="Close Menu"
@@ -73,7 +74,6 @@
                     <i class="fa-solid fa-xmark text-sm"></i>
                 </button>
             </div>
-
             <!-- Nav Links List -->
             <ul id="navbar-links"
                 class="flex md:flex-row flex-col justify-start items-stretch gap-3 md:gap-2 text-[16px] font-medium font-inter w-full md:w-auto">

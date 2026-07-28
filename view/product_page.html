@@ -63,10 +63,12 @@
             <!-- Mobile Menu Header (Visible only on Mobile) -->
             <div class="flex md:hidden w-full items-center justify-between pb-4 border-b border-white/15 mb-6">
                 <div class="flex items-center gap-2.5">
-                    <img class="w-8 h-auto" src="../images/pmk_logo.png" alt="pmk-logo">
+                    <div class="flex px-1.5 py-1.5 rounded-xl bg-white">
+                        <img class="w-8 h-auto " src="../images/pmk_logo.png" alt="pmk-logo">
+                    </div>
                     <div class="flex flex-col text-left">
-                        <span class="text-white font-bold text-xs tracking-wide font-plus-jakarta-sans">PT Perdana Mitra
-                            Kencana</span>
+                        <span class="text-white font-bold text-sm tracking-wide font-plus-jakarta-sans">PT Perdana <br>
+                            Mitra Kencana</span>
                     </div>
                 </div>
                 <button onclick="closeMenu()" aria-label="Close Menu"
@@ -74,7 +76,6 @@
                     <i class="fa-solid fa-xmark text-sm"></i>
                 </button>
             </div>
-
             <!-- Nav Links List -->
             <ul id="navbar-links"
                 class="flex md:flex-row flex-col justify-start items-stretch gap-3 md:gap-2 text-[16px] font-medium font-inter w-full md:w-auto">
@@ -196,7 +197,7 @@
 
                 <div class="hidden md:block col-span-2 relative">
                     <div class="relative z-20 h-full justify-end items-end flex flex-col">
-                        <div class="absolute grid grid-cols-3 z-40 pb-40">
+                        <div class="absolute grid grid-cols-3 z-40 pb-60">
                             <!-- Single Info -->
                             <div class="flex gap-2 px-6">
                                 <div class="flex flex-col justify-center items-center space-y-4">
@@ -302,10 +303,10 @@
             </div>
 
             <!-- Mobile Product Filter Pill Button (Matches Screenshot 1) -->
-            <div class="block md:hidden px-4 mb-6">
+            <div class="block md:hidden px-2 mb-6">
                 <!-- Main Pill Button -->
                 <button onclick="toggleMobileProductFilter()"
-                    class="w-full bg-[#7A1F1F] text-white px-8 py-4 rounded-full flex justify-between items-center shadow-xl active:scale-[0.99] transition-all cursor-pointer">
+                    class="w-full bg-[#7A1F1F] text-white px-6 py-3 rounded-full flex justify-between items-center shadow-xl active:scale-[0.99] transition-all cursor-pointer">
                     <span class="font-bold text-xl font-plus-jakarta-sans tracking-wide">Product</span>
                     <i id="mobileProductArrow"
                         class="fa-solid fa-chevron-down text-base transition-transform duration-300"></i>
@@ -328,9 +329,9 @@
 
                                 <div id="mobile4wDropdown"
                                     class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out pl-4 space-y-2 text-sm font-normal text-gray-200">
-                                    <p onclick="filterCategory('galvanized42', this)"
+                                    <p onclick="filterCategory('galvanized44', this)"
                                         class="menu-item hover:text-white cursor-pointer pt-3 transition-colors">
-                                        GALVANIZED MESH DIA 42 MM</p>
+                                        GALVANIZED MESH DIA 44 MM</p>
                                     <p onclick="filterCategory('galvanized48.5', this)"
                                         class="menu-item hover:text-white cursor-pointer transition-colors">GALVANIZED
                                         MESH DIA 48.5 MM</p>
@@ -353,19 +354,19 @@
                                     <p onclick="filterCategory('mesh-kyt', this)"
                                         class="menu-item hover:text-white cursor-pointer pt-3 transition-colors">STEEL
                                         NET KYT MESH #18</p>
-                                    <p onclick="filterCategory('mesh-tabung', this)"
+                                    <p onclick="filterCategory('mesh-tandem', this)"
                                         class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
                                         MESH #20 TANDEM</p>
-                                    <p onclick="filterCategory('mesh-gravity', this)"
+                                    <p onclick="filterCategory('mesh-tabung', this)"
                                         class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
                                         TABUNG MESH 20</p>
                                     <p onclick="filterCategory('mesh-gravity', this)"
                                         class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
                                         GRAVITY SINGLE MESH #18</p>
-                                    <p onclick="filterCategory('mesh-tandem', this)"
+                                    <p onclick="filterCategory('mesh-bulat', this)"
                                         class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
                                         BULAT MESH SS #18</p>
-                                    <p onclick="filterCategory('mesh-slinder', this)"
+                                    <p onclick="filterCategory('mesh-silinder', this)"
                                         class="menu-item hover:text-white cursor-pointer transition-colors">STEEL NET
                                         SILINDER TYPE 38 TANDEM MESH #24</p>
                                     <p onclick="filterCategory('mesh-34', this)"
@@ -414,15 +415,25 @@
                 </div>
             </div>
 
-            <div class="md:hidden relative rounded-2xl overflow-hidden mb-4">
-                <img src="../images/Card Product.png" alt="filter wire mesh" class="w-full h-full object-cover">
-                <p class="absolute bottom-14 left-10 text-white font-semibold text-xl leading-tight">
-                    filter wire <br> mesh stainless <br> steel
-                </p>
+            <!-- Mobile Dynamic Product Swiper -->
+            <div class="md:hidden px-6 max-w-sm mx-auto mb-6">
+                <!-- Active category label -->
+                <div class="flex items-center justify-between px-1 mb-2.5">
+                    <p id="mobileSwiperLabel" class="text-[#7A1F1F] font-bold text-xs uppercase tracking-wider">Semua Produk</p>
+                    <span id="mobileSwiperCount" class="text-xs text-gray-400 font-medium"></span>
+                </div>
+
+                <!-- Swiper Card -->
+                <div id="mobileProductSwiper" class="swiper w-full">
+                    <div class="swiper-wrapper" id="mobileSwiperWrapper">
+                        <!-- slides injected by JS -->
+                    </div>
+                    <div class="swiper-pagination" style="margin-top:12px;position:relative;"></div>
+                </div>
             </div>
 
-            <!-- Grid Mobile (Swiper) -->
-            <div class="md:hidden swiper myProduct w-full p-2">
+            <!-- INVISIBLE: Grid Mobile (Swiper) — kept for JS compat -->
+            <div class="md:hidden swiper myProduct w-full p-2" style="display:none!important">
                 <!-- 
                     TIPS MENAMBAH GAMBAR/PRODUK BARU (MOBILE SWIPER):
                     1. Tambahkan tag <div> dengan class "swiper-slide w-auto product-item".
@@ -1049,7 +1060,7 @@
 
         <!-- Contact Us Section -->
         <section id="contact"
-            class="relative min-h-screen py-6 md:px-14 md:items-start max-w-7xl mx-auto mt-16 md:mt-40">
+            class="relative min-h-screen py-6 md:px-14 md:items-start max-w-7xl mx-auto mt-2 md:mt-40">
             <div class="flex justify-center md:justify-start absolute inset-0 mt-20">
                 <img src="../images/contact_bg.png" alt="Contact Background">
             </div>
